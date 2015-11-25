@@ -1,0 +1,251 @@
+
+<!--mixin nav(items)-->
+<!--    ul&attributes(attributes)-->
+<!--        each item, key in items-->
+<!--            - var active = ''-->
+<!--            - if (key === menuIndex) active = 'active'-->
+<!--            li(class=active)-->
+<!--                +link(item.title, item.href, item.text)(class=item.class)-->
+<!--                    span=item.title-->
+<!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+<!--                    +nav(item.itemsMenu)(class=item.class)-->
+<!--                - }-->
+<!-- Form--><!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="no-js ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><![endif]-->
+    <title>Form</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css"><![endif]-->
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body class="form">
+    <div id="navigation" class="collapse navbar-collapse">
+      <div class="menus">
+        <nav class="menu navbar navbar-default">
+          <div class="container">
+            <ul class="nav navbar-nav menu-level-1">
+              <li><a href="#about" title="About"><span>About</span></a>
+                <ul class="menu-level-2">
+                  <li><a href="#" title="submenu"><span>submenu</span></a>
+                    <ul class="menu-level-3">
+                      <li><a href="#" title="submenu 2"><span>submenu 2</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#" title="submenu"><span>submenu</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#design" title="Graphic design"><span>Graphic design</span></a>
+              </li>
+              <li><a href="#works" title="Feature works"><span>Feature works</span></a>
+              </li>
+              <li><a href="#profile" title="My profile"><span>My profile</span></a>
+              </li>
+              <li><a href="#contact" title="Get in touch"><span>Get in touch</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar-header">
+      <button type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" class="navbar-toggle collapsed"><span class="glyphicon glyphicon-option-vertical"></span></button>
+    </div>
+    <div id="page">
+      <header>
+        <div class="container"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
+        <!-- /.container-fluid-->
+      </header>
+      <main>
+        <h2>Validator</h2>
+        <hr>
+        <div class="row">
+          <div class="col-sm-8">
+            <form name="" action="" method="POST" data-validate>
+              <div class="input-group">
+                <div class="text">
+                  <label for="fullname">Fullname</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="fullname" name="fullname" placeholder="" class="input"/>
+                </div>
+              </div>
+              <div class="input-group error">
+                <div class="text">
+                  <label for="username">Username *</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="username" name="username" placeholder="" class="input" data-required="data-required"/>
+                  <p class="mess">This field is required !</p>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="email">Email address *</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="email" name="email" placeholder="" class="input"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="url">Website URL</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="url" name="url" placeholder="" class="input"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="password">Password *</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="password" name="password" placeholder="" class="input"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="confirmpassword">Confirm Password *</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="confirmpassword" name="confirmpassword" placeholder="" class="input"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="dateofbirth">Date of birth *</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="dateofbirth" name="dateofbirth" placeholder="" class="input" value="dd/mm/yyyy"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="file">Avatar *</label>
+                </div>
+                <div class="control">
+                  <div class="custom-upload">
+                    <input id="file" type="file" name="file" placeholder="" readonly>
+                    <input type="text" name="file" placeholder="" readonly>
+                    <button type="button" class="btn">Browse...</button>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="country">Country *</label>
+                </div>
+                <div class="control">
+                  <div data-select class="custom-select"><span title="Select" class="form-control"><span class="text-val">Select</span><span class="icon-arrow"></span></span>
+                    <select class="hidden">
+                      <option value="">Select</option>
+                      <option value="coding">Coding</option>
+                      <option value="reading">Reading</option>
+                      <option value="sleeping">Sleeping</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="male">Note (20 chars min, 100 max)</label>
+                </div>
+                <div class="control">
+                  <textarea name="textarea" placeholder class="input"></textarea>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="male">Gender *</label>
+                </div>
+                <div class="control">
+                  <div data-radio class="custom-radio">
+                    <label for="male"><span class="inner checked">
+                        <input id="male" type="radio" name="gender"></span><span>Male</span></label>
+                  </div>
+                  <div data-radio class="custom-radio">
+                    <label for="female"><span class="inner">
+                        <input id="female" type="radio" name="gender"></span><span>Female</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text">
+                  <label for="coding">Hobbies (2 minimum)</label>
+                </div>
+                <div class="control">
+                  <div data-checkbox class="custom-checkbox">
+                    <label for="coding"><span class="inner checked">
+                        <input id="coding" type="checkbox" name="coding"></span><span>Coding</span></label>
+                  </div>
+                  <div data-checkbox class="custom-checkbox">
+                    <label for="reading"><span class="inner">
+                        <input id="reading" type="checkbox" name="reading"></span><span>Reading</span></label>
+                  </div>
+                  <div data-checkbox class="custom-checkbox">
+                    <label for="sleeping"><span class="inner">
+                        <input id="sleeping" type="checkbox" name="sleeping"></span><span>Sleeping</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text"></div>
+                <div class="control">
+                  <div data-checkbox class="custom-checkbox">
+                    <label for="accept"><span class="inner">
+                        <input id="accept" type="checkbox" name="accept"></span><span>Accept out policy *</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="text"></div>
+                <div class="control">
+                  <button type="reset" class="btn style-1">Reset</button>
+                  <button type="submit" class="btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="to-top"><a id="to-top" href="javascript:void();" title="To top" class="to-top-toggle"><i></i></a></div>
+        <p>&copy; 2015 My The Trinh.</p>
+        <div class="in-detail">
+          <p>Crafted with<i class="icon icon-heart"></i>in<a href="#photoshop" title="Photoshop">Photoshop</a>&<a href="#illustrator" title="Illustrator">Illustrator</a>built with<a href="#HTML 5" title="HTML 5">HTML 5</a>,<a href="#CSS3" title="CSS3">CSS3</a>and<a href="#jQuery" title="jQuery">jQuery</a>.</p>
+        </div>
+      </footer>
+    </div>
+    <div style="top: 534px; left: 443px; display: block; width: 331px;" class="content-select">
+      <ul>
+        <li><span data-val="coding">Coding</span></li>
+        <li><span data-val="reading">Reading</span></li>
+        <li><span data-val="sleeping">Sleeping</span></li>
+      </ul>
+    </div>
+    <script src="js/l10n.js"></script>
+    <script src="js/libs.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/slick-carousel.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="localhost:35729/livereload.js"></script>
+    <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+    <noscript>JavaScript is off. Please enable to view full site.</noscript>
+  </body>
+</html>

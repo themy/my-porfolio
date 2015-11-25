@@ -1,0 +1,498 @@
+
+<!--mixin nav(items)-->
+<!--    ul&attributes(attributes)-->
+<!--        each item, key in items-->
+<!--            - var active = ''-->
+<!--            - if (key === menuIndex) active = 'active'-->
+<!--            li(class=active)-->
+<!--                +link(item.title, item.href, item.text)(class=item.class)-->
+<!--                    span=item.title-->
+<!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+<!--                    +nav(item.itemsMenu)(class=item.class)-->
+<!--                - }-->
+<!-- Form--><!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="no-js ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><![endif]-->
+    <title>Homepage</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css"><![endif]-->
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body class="home">
+    <div id="navigation" class="collapse navbar-collapse">
+      <div class="menus">
+        <nav class="menu navbar navbar-default">
+          <div class="container">
+            <ul class="nav navbar-nav menu-level-1">
+              <li><a href="#about" title="About"><span>About</span></a>
+                <ul class="menu-level-2">
+                  <li><a href="#" title="submenu"><span>submenu</span></a>
+                    <ul class="menu-level-3">
+                      <li><a href="#" title="submenu 2"><span>submenu 2</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#" title="submenu"><span>submenu</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#design" title="Graphic design"><span>Graphic design</span></a>
+              </li>
+              <li><a href="#works" title="Feature works"><span>Feature works</span></a>
+              </li>
+              <li><a href="#profile" title="My profile"><span>My profile</span></a>
+              </li>
+              <li><a href="#contact" title="Get in touch"><span>Get in touch</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="navbar-header">
+      <button type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" class="navbar-toggle collapsed"><span class="glyphicon glyphicon-option-vertical"></span></button>
+    </div>
+    <div id="page">
+      <header>
+        <div class="container"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
+        <!-- /.container-fluid-->
+      </header>
+      <main>
+        <!--mixin nav(items)-->
+        <!--    ul&attributes(attributes)-->
+        <!--        each item, key in items-->
+        <!--            - var active = ''-->
+        <!--            - if (key === menuIndex) active = 'active'-->
+        <!--            li(class=active)-->
+        <!--                +link(item.title, item.href, item.text)(class=item.class)-->
+        <!--                    span=item.title-->
+        <!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+        <!--                    +nav(item.itemsMenu)(class=item.class)-->
+        <!--                - }-->
+        <!-- Form-->
+        <!--Created by My.Trinh on 9/30/2015.-->
+        <section id="about" class="about-block">
+          <div class="container">
+            <div class="about-content">
+              I love creating clean and impresive interfaces
+              I’ve done projects for variety of platforms
+              now<strong> i’m available</strong> as<strong> UI designer frontend developer</strong>
+            </div>
+            <div class="social-toolbox">
+                      <ul>
+                        <li><a href="social.html" title="Social" class="icon icon-twitter"><span>Social</span></a>
+                        </li>
+                        <li><a href="social.html" title="Social" class="icon icon-facebook"><span>Social</span></a>
+                        </li>
+                        <li><a href="social.html" title="Social" class="icon icon-mail"><span>Social</span></a>
+                        </li>
+                        <li><a href="social.html" title="Social" class="icon icon-youtube"><span>Social</span></a>
+                        </li>
+                        <li><a href="social.html" title="Social" class="icon icon-instagram"><span>Social</span></a>
+                        </li>
+                        <li><a href="social.html" title="Social" class="icon icon-wordpress"><span>Social</span></a>
+                        </li>
+                      </ul>
+            </div>
+          </div>
+        </section>
+        <!--mixin nav(items)-->
+        <!--    ul&attributes(attributes)-->
+        <!--        each item, key in items-->
+        <!--            - var active = ''-->
+        <!--            - if (key === menuIndex) active = 'active'-->
+        <!--            li(class=active)-->
+        <!--                +link(item.title, item.href, item.text)(class=item.class)-->
+        <!--                    span=item.title-->
+        <!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+        <!--                    +nav(item.itemsMenu)(class=item.class)-->
+        <!--                - }-->
+        <!-- Form-->
+        <!--Created by My.Trinh on 6/10/2015.-->
+        <section id="graphic" data-loadmore class="graphic-block">
+          <div class="container-fluid">
+            <div class="graphic-content">
+              <h2 class="title">graphic design</h2>
+              <div id="griddesign" data-number="5" class="grid-design">
+                <div class="grid-sizer"></div>
+                        <div class="grid-item col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/design/01.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">American Education Group</h4><a href="http://aegvietnam.com" title="Aegvietnam.com">Aegvietnam.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/design/02.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Kampong Chiken House</h4><a href="http://www.kampong.vn" title="Kampong.vn">Kampong.vn</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/design/03.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Mie Flower</h4><a href="http://mieflower.com/" title="Mieflower.com">Mieflower.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/design/04.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Casagranda</h4><a href="http://www.casagranda.asia/" title="Casagranda.com">Casagranda.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/06.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Nguyen Cong Tri</h4><a href="http://nguyencongtri.com/" title="Nguyen Cong Tri">Nguyen Cong Tri</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span><span class="details"><i class="icon icon-heart"></i><span>Wordpress</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/07.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Royal Securities</h4><a href="https://rose.com.vn" title="Rose.com.vn">Rose.com.vn</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span><span class="details"><i class="icon icon-heart"></i><span>Flash banner</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/05.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Cocorico</h4><a href="http://www.cocorico.com.vn/" title="Cocorico.com">Cocorico.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              </div>
+              <div class="wrap-btn"><a href="#javascript:void()" title="Load more" class="btn btn-load-more" data-id="#griddesign">Load more</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--mixin nav(items)-->
+        <!--    ul&attributes(attributes)-->
+        <!--        each item, key in items-->
+        <!--            - var active = ''-->
+        <!--            - if (key === menuIndex) active = 'active'-->
+        <!--            li(class=active)-->
+        <!--                +link(item.title, item.href, item.text)(class=item.class)-->
+        <!--                    span=item.title-->
+        <!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+        <!--                    +nav(item.itemsMenu)(class=item.class)-->
+        <!--                - }-->
+        <!-- Form-->
+        <!--Created by My.Trinh on 6/10/2015.-->
+        <section id="feature" data-loadmore class="feature-block">
+          <div class="container-fluid">
+            <div class="feature-content">
+              <h2 class="title">feature works</h2>
+              <div id="gridfrontend" data-number="3" class="grid-frontend">
+                <div class="grid-sizer"></div>
+                        <div class="grid-item col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/01.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">American Education Group</h4><a href="http://aegvietnam.com" title="Aegvietnam.com">Aegvietnam.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/02.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Kampong Chiken House</h4><a href="http://www.kampong.vn" title="Kampong.vn">Kampong.vn</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/03.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Mie Flower</h4><a href="http://mieflower.com/" title="Mieflower.com">Mieflower.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/04.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Casagranda</h4><a href="http://www.casagranda.asia/" title="Casagranda.com">Casagranda.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/06.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Nguyen Cong Tri</h4><a href="http://nguyencongtri.com/" title="Nguyen Cong Tri">Nguyen Cong Tri</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span><span class="details"><i class="icon icon-heart"></i><span>Wordpress</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/07.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Royal Securities</h4><a href="https://rose.com.vn" title="Rose.com.vn">Rose.com.vn</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span><span class="details"><i class="icon icon-heart"></i><span>Flash banner</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid-item col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                          <div class="thumb"><img src="images/upload/thumb/05.jpg" alt="01">
+                            <div class="mask">
+                              <div class="outer">
+                                <div class="inner">
+                                  <h4 class="tooltip-title">Cocorico</h4><a href="http://www.cocorico.com.vn/" title="Cocorico.com">Cocorico.com</a><span class="details"><i class="icon icon-heart"></i><span>HTML5/CSS3</span></span><span class="details"><i class="icon icon-heart"></i><span>Javascript</span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              </div>
+              <div class="wrap-btn"><a href="javascript:void(0);" title="Load more" class="btn btn-load-more" data-id="#gridfrontend">Load more</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--mixin nav(items)-->
+        <!--    ul&attributes(attributes)-->
+        <!--        each item, key in items-->
+        <!--            - var active = ''-->
+        <!--            - if (key === menuIndex) active = 'active'-->
+        <!--            li(class=active)-->
+        <!--                +link(item.title, item.href, item.text)(class=item.class)-->
+        <!--                    span=item.title-->
+        <!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+        <!--                    +nav(item.itemsMenu)(class=item.class)-->
+        <!--                - }-->
+        <!-- Form-->
+        <!--Created by Meggie on 10/11/2015.-->
+        <section id="profile" class="profile-block">
+          <div class="container">
+            <div class="profile-content">
+              <h2 class="title">my profile</h2>
+              <div class="row information-block">
+                <div class="col-sm-6">
+                  <h3 class="title-s18">About me</h3>
+                  <div class="desc">
+                    <p>Hello, my name is The My. I’m working as a web designer & front-end developer based in HCM City, Vietnam.</p>
+                    <p>For the last 5 years I’ve worked with clients to provide responsive web design, front-end development, and WordPress integrations.</p>
+                    <p>I embrace creativity in all aspects of life. When I am not pushing pixels, I enjoy cooking, painting, gardening, and playing the ukelele. I love to travel and I'm deeply inspired by the diversity of cultures and the natural beauty of the Earth.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <h3 class="title-s18">My workflow includes the use of:</h3>
+                  <div class="list-style-1 list-work">
+                            <ul>
+                              <li><i class="icon icon-heart"></i><span class="title-s18">Design</span>
+                                        <ul>
+                                          <li><i class="icon icon-spinner"></i><span>User Interface Design</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>User Experience Design</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>Interaction Design</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>Website Design</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>Branding / Logo Design</span>
+                                          </li>
+                                        </ul>
+                              </li>
+                              <li><i class="icon icon-heart"></i><span class="title-s18">Frontend development</span>
+                                        <ul>
+                                          <li><i class="icon icon-spinner"></i><span>NodeJS / Grunt</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>HTML / Jade / Bootstrap</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>CSS / SASS / LESS / STYLUS</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>Responsive Newsletter</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>jQuery</span>
+                                          </li>
+                                          <li><i class="icon icon-spinner"></i><span>WordPress / Demandware</span>
+                                          </li>
+                                        </ul>
+                              </li>
+                            </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slideshow-wrap">
+              <div class="slider responsive">
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
+                          </div>
+                        </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--mixin nav(items)-->
+        <!--    ul&attributes(attributes)-->
+        <!--        each item, key in items-->
+        <!--            - var active = ''-->
+        <!--            - if (key === menuIndex) active = 'active'-->
+        <!--            li(class=active)-->
+        <!--                +link(item.title, item.href, item.text)(class=item.class)-->
+        <!--                    span=item.title-->
+        <!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
+        <!--                    +nav(item.itemsMenu)(class=item.class)-->
+        <!--                - }-->
+        <!-- Form-->
+        <!--Created by My.Trinh on 10/6/2015.-->
+        <section id="contact" class="contact-block">
+          <div class="container">
+            <div class="contact-content">
+              <h2 class="title">get in touch</h2>
+              <form name="" action="" method="POST" data-validate class="row form contact-form">
+                <div class="col-xs-12 col-sm-6">
+                          <div class="input-group">
+                            <div class="text">
+                              <label for="yourname">Your name</label>
+                            </div>
+                            <div class="control">
+                              <input type="text" id="yourname" name="yourname" placeholder="" class="input" required>
+                            </div>
+                          </div>
+                          <div class="input-group">
+                            <div class="text">
+                              <label for="yourmail">Your email</label>
+                            </div>
+                            <div class="control">
+                              <input type="email" id="yourmail" name="yourmail" placeholder="" class="input" required>
+                            </div>
+                          </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                          <div class="input-group">
+                            <div class="text">
+                              <label for="yourmsg">Your message</label>
+                            </div>
+                            <div class="control"><span class="input input-textarea">
+                                <textarea id="yourmsg" name="yourmsg" placeholder="" rows="5" required></textarea></span>
+                            </div>
+                          </div><span class="btn-primary btn-style pull-right"><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send it</span>
+                    <input type="submit" id="submit" name="submit" value="" class="btn"></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="to-top"><a id="to-top" href="javascript:void();" title="To top" class="to-top-toggle"><i></i></a></div>
+        <p>&copy; 2015 My The Trinh.</p>
+        <div class="in-detail">
+          <p>Crafted with<i class="icon icon-heart"></i>in<a href="#photoshop" title="Photoshop">Photoshop</a>&<a href="#illustrator" title="Illustrator">Illustrator</a>built with<a href="#HTML 5" title="HTML 5">HTML 5</a>,<a href="#CSS3" title="CSS3">CSS3</a>and<a href="#jQuery" title="jQuery">jQuery</a>.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="js/l10n.js"></script>
+    <script src="js/libs.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/slick-carousel.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="localhost:35729/livereload.js"></script>
+    <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+    <noscript>JavaScript is off. Please enable to view full site.</noscript>
+  </body>
+</html>
