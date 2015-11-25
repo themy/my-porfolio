@@ -22,8 +22,7 @@ var transporter = nodemailer.createTransport({
 var mailOptions = {
   from: 'themy.trinh@gmail.com', // sender address
   to: 'themy.trinh@gmail.com', // list of receivers
-  cc: 'truongthinnguyen@gmail.com',
-  subject: '{0} sent you a message - www.trinhthemy.com', // Subject line
+  subject: 'Someone sent you a message - www.trinhthemy.com', // Subject line
   text: 'Hello world ✔', // plaintext body
   html: '<b>Hello world ✔</b>' // html body
 };
