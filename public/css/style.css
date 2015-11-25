@@ -8542,6 +8542,15 @@ Copyright (c) 2015 Daniel Eden
     bottom: 0;
     content: '';
     position: absolute; }
+  .profile-block .flowers {
+    width: 558px;
+    height: 890px;
+    background: url("../images/flower.png") 0 0 no-repeat;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -65px;
+    margin-left: -600px; }
   .profile-block .title {
     color: #f2f2f2; }
   .profile-block .list-work > ul > li {
