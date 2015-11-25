@@ -185,6 +185,10 @@
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie); //IE8
 }
+@mixin filter($filter) {
+    -webkit-filter: $filter;
+    filter: $filter;
+}
 //Visually hide an element
 //    <button class="mobile-navigation-trigger">
 //    <b class="visually-hidden">Open the navigation</b>

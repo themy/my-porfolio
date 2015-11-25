@@ -276,7 +276,8 @@
                 @include opacity(0);
                 @include scale(.8);
                 @include transition(all .4s ease-in-out .2s);
-                background: $bgcolor url("../images/bg-main.jpg") 0 0 repeat;
+                /*background: $bgcolor url("../images/bg-main.jpg") 0 0 repeat;*/
+                background: rgba(255,255,255,0.8);
                 padding: 10px;
                 position: absolute;
                 top: 0;
@@ -290,7 +291,6 @@
 
                 .outer {
                     @include size(100%, 100%);
-                    border: 1px solid $color1;
                     display: table;
                 }
 
@@ -299,10 +299,10 @@
                     display: table-cell;
                     vertical-align: middle;
                     text-align: center;
-                    color: $color1;
+                    color: $color;
 
                     a, a:hover, a:focus, a:visited {
-                        color: $color1;
+                        color: $color;
                     }
 
                     a {
@@ -317,6 +317,9 @@
 
                     .tooltip-title {
                         @include font-size(1);
+                        border: 1px solid $color;
+                        display: inline-block;
+                        padding: 10px;
                     }
                 }
                 
@@ -349,8 +352,7 @@
 
         &:hover {
             .thumb img {
-                @include scale(5);
-                @include opacity(0);
+                @include scale(1.5);
             }
 
             .mask {

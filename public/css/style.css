@@ -8704,7 +8704,8 @@ Copyright (c) 2015 Daniel Eden
         -ms-transform: scale(0.8);
         transform: scale(0.8);
         transition: all 0.4s ease-in-out 0.2s;
-        background: #3f99ac url("../images/bg-main.jpg") 0 0 repeat;
+        /*background: $bgcolor url("../images/bg-main.jpg") 0 0 repeat;*/
+        background: rgba(255, 255, 255, 0.8);
         padding: 10px;
         position: absolute;
         top: 0;
@@ -8719,7 +8720,6 @@ Copyright (c) 2015 Daniel Eden
         .grid-design .grid-item .thumb .mask .outer {
           width: 100%;
           height: 100%;
-          border: 1px solid #f2f2f2;
           display: table; }
         .grid-frontend .grid-item .thumb .mask .inner,
         .grid-design .grid-item .thumb .mask .inner {
@@ -8727,13 +8727,13 @@ Copyright (c) 2015 Daniel Eden
           display: table-cell;
           vertical-align: middle;
           text-align: center;
-          color: #f2f2f2; }
+          color: #000; }
           .grid-frontend .grid-item .thumb .mask .inner a, .grid-frontend .grid-item .thumb .mask .inner a:hover, .grid-frontend .grid-item .thumb .mask .inner a:focus, .grid-frontend .grid-item .thumb .mask .inner a:visited,
           .grid-design .grid-item .thumb .mask .inner a,
           .grid-design .grid-item .thumb .mask .inner a:hover,
           .grid-design .grid-item .thumb .mask .inner a:focus,
           .grid-design .grid-item .thumb .mask .inner a:visited {
-            color: #f2f2f2; }
+            color: #000; }
           .grid-frontend .grid-item .thumb .mask .inner a,
           .grid-design .grid-item .thumb .mask .inner a {
             display: block;
@@ -8746,7 +8746,10 @@ Copyright (c) 2015 Daniel Eden
           .grid-frontend .grid-item .thumb .mask .inner .tooltip-title,
           .grid-design .grid-item .thumb .mask .inner .tooltip-title {
             font-size: 1em;
-            line-height: 1.25; }
+            line-height: 1.25;
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 10px; }
         .grid-frontend .grid-item .thumb .mask .details,
         .grid-design .grid-item .thumb .mask .details {
           font-size: 0.9em;
@@ -8768,11 +8771,9 @@ Copyright (c) 2015 Daniel Eden
       width: 100%; }
     .grid-frontend .grid-item:hover .thumb img,
     .grid-design .grid-item:hover .thumb img {
-      -webkit-transform: scale(5);
-      -ms-transform: scale(5);
-      transform: scale(5);
-      opacity: 0;
-      filter: alpha(opacity=0); }
+      -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.5); }
     .grid-frontend .grid-item:hover .mask,
     .grid-design .grid-item:hover .mask {
       opacity: 1;
@@ -8863,7 +8864,8 @@ header {
           float: left;
           padding: 15px 20px 5px; } }
       .navbar-default .navbar-nav > li:last-child {
-        background: none; }
+        background: none;
+        border: 0; }
       .navbar-default .navbar-nav > li:hover .menu-level-2 {
         opacity: 1;
         filter: alpha(opacity=100); }
