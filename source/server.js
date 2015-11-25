@@ -6,8 +6,28 @@ var express = require('express'),
   methodOverride = require('method-override');
 
 var app = express();
-
 var port = process.env.PORT || 3000;
+
+
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: "themy.trinh@gmail.com",
+    pass: "vbjcjxpfjiqcdbth"
+  }
+});
+
+// Message object
+var mailOptions = {
+  from: 'themy.trinh@gmail.com', // sender address
+  to: 'themy.trinh@gmail.com', // list of receivers
+  cc: 'truongthinnguyen@gmail.com',
+  subject: '{0} sent you a message - www.trinhthemy.com', // Subject line
+  text: 'Hello world ✔', // plaintext body
+  html: '<b>Hello world ✔</b>' // html body
+};
+
 app.set('port', port);
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
@@ -15,20 +35,33 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/me', function(req, res){
-  res.send({
-    app: 'Frontend template',
-    version: '1.0'
-  });
-});
+app.post('/contact', function(req, res){
+  mailOptions.subject = req.body.yourname + ' sent you a message - www.trinhthemy.com';
+  mailOptions.html = '<p>Name: ' + req.body.yourname + '</p>' +
+                     '<p>Email: ' + req.body.yourmail + '</p>' +
+                     '<p>Message: </p>' +
+                     '<p>' + req.body.yourmsg.replace(/\n/gi, '<br />') + '</p>';
 
-app.use(function(req, res){
-  res.setHeader('Content-Type', 'text/plain');
-  res.send(JSON.stringify(req.body, null, 2));
+  transporter.sendMail(mailOptions, function(error, info) {
+    var obj = { 
+      'error': false,
+      'msg': 'Thank you for your feedback!'
+    };
+
+    res.writeHead(200, {"Content-Type": "application/json"});
+    if(error){
+      obj.error = true;
+      obj.msg = 'There is an error while sending email. Please try later!';
+    }
+
+    var json = JSON.stringify(obj);
+    res.end(json);
+  });
 });
 
 http.createServer(app).listen(port);
