@@ -1,0 +1,48 @@
+.custom-select{
+  position: relative;
+  width: 100%;
+  .form-control{
+    float: left;
+    width: 100%;
+    border: 1px solid #A8ACAD;
+    box-shadow: inset 0 2px 2px #ccc;
+    box-sizing: border-box;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    .icon-arrow{
+      float: right;
+      &:before{
+        content: "▼";
+      }
+    }
+  }
+}
+
+.content-select{
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #A8ACAD;
+  box-shadow: inset 0 2px 2px #ccc;
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+  padding: 3px 0;
+  li{
+    strong{
+      padding: 5px 10px;
+      display: block;
+      font-weight: bold;
+    }
+    span{
+      padding: 5px 10px;
+      display: block;
+      font-weight: normal;
+      cursor: pointer;
+      &:hover{
+        background-color: #EAEAEA;
+      }
+    }
+  }
+}

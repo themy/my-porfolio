@@ -1,0 +1,81 @@
+// Plugin Layer
+.overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  &:before{
+      @include opacity(0);
+      @include transition(all .3s linear);
+    content: "";
+    background-color: $color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+    &.in:before {
+        @include opacity(.8);
+    }
+}
+
+.layer{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: auto;
+  transition: all 0.4s ease 0s;
+  z-index: 1001;
+  .inner{
+    background-color: #fff;
+    position: relative;
+    display: block;
+    margin: 25px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1002;
+    opacity: 0;
+  }
+  //heading
+  .heading{
+    position: relative;
+    .title{
+      text-align: left;
+      font-weight: bold;
+      padding: 0 20px 0 0;
+      margin-bottom: 15px;
+    }
+    .close{
+      position: absolute;
+      right: -20px;
+      top: -40px;
+      cursor: pointer;
+      background-color: #FF8A00;
+      padding: 4px;
+      text-align: center;
+      color: #fff;
+      @include size(20px,20px);
+      box-sizing: border-box;
+    }
+  }
+  //content
+  .content{
+    p{
+      margin-bottom: 15px;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px){
+  .layer{
+    .inner{
+      width: 600px;
+    }
+  }
+}

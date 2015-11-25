@@ -1,0 +1,26 @@
+include ../mixins/all
+//Created by My.Trinh on 6/10/2015.
+section#graphic.graphic-block(data-loadmore)
+    .container-fluid
+        .graphic-content
+            h2.title graphic design
+            #griddesign.grid-design(data-number="4")
+                .grid-sizer
+                +thumbnail([{alt: '01', src: 'upload/thumb/01.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
+                {text: 'html/css/js'},
+                {text: 'html/css/js'}
+                ]}])(class="col-lg-6 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/02.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
+                {text: 'html/css/js'},
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/03.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
+                {text: 'html/css/js'},
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/04.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
+                {text: 'html/css/js'},
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/05.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
+                {text: 'html/css/js'},
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+            .wrap-btn
+                +link('Load more', '#javascript:void()')(class="btn btn-load-more")(data-id="#griddesign")

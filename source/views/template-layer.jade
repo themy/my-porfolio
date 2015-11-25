@@ -1,0 +1,49 @@
+extends layouts/template
+
+block vars
+    -title = 'Layer'
+
+block container
+    h2 Layer
+    h2 Frame
+    h2 Canvas Banner
+    .canvas-banner
+        canvas(id="myCanvas", width="900", height="500")
+        script(type='text/javascript').
+            var canvas = document.getElementById('myCanvas');
+            var context = canvas.getContext('2d');
+            var myVar = setInterval(function(){
+                    fadeIn();
+                }, 10);
+            var op = 0;
+            var left = 0;
+            var moveTop = 0;
+            var moveAgain = false;
+            var stepLeft = 1;
+
+            function fadeIn() {
+                context.globalAlpha = op;
+                var imageObj = new Image();
+
+                imageObj.onload = function() {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.drawImage(imageObj, left, moveTop, 214, 192);
+                    window.console.log(moveTop);
+                };
+                imageObj.src = 'images/upload/thumb/image-1.jpg';
+                if(moveAgain == false){
+                    op = op + 0.01;
+                    left = left + stepLeft;
+                    moveTop = moveTop + 2;
+                }else{
+                    op = op - 0.01;
+                    left = left - stepLeft;
+                    moveTop = moveTop - 2;
+                }
+                if(left > 100) {
+                    moveAgain = true;
+
+                }else if(left == 0){
+                    moveAgain = false;
+                }
+            }

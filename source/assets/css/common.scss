@@ -1,0 +1,132 @@
+// Common
+// Title
+.title{
+    @include font(4.2em/1em $font-biloxi-script);
+    color: $color5;
+    margin: 80px auto 50px;
+    text-align: center;
+}
+.title-s20 {
+    @include font(1.1em/1em $font-lato-regular);
+}
+.title-s18 {
+    @include font(1em/1em $font-lato-regular);
+}
+
+// Button
+.wrap-btn {
+    text-align: center;
+}
+.btn-primary{
+    @include font(1em/1em $font-lato-bold);
+    background: url("#{$img-path}bg-btn.png") 0 0 repeat;
+    border: 0;
+    border-radius: 0;
+}
+.btn-style {
+    position: relative;
+    overflow: hidden;
+
+    i {
+        @include transition(all .3s linear);
+        @include font-size(1);
+        @include opacity(0);
+        color: $color6;
+        position: absolute;
+        top: 14px;
+        left: 0;
+        @include breakpoint(small) {
+            @include font-size(1.2);
+            top: 10px;
+        };
+    }
+
+    input {
+        background: none;
+        border: 0;
+        text-transform: uppercase;
+        width: 100%;
+        -webkit-appearance: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .value {
+        @include font-size(1.2);
+        @include scale(1);
+        @include transition(all .3s linear);
+        display: block;
+        padding: 10px 35px;
+        text-align: center;
+    }
+
+    &:after {
+        @include opacity(0);
+        @include scale(.55, .5);
+        @include transition(all .3s linear);
+        content: '';
+        background: $color6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+
+    &:hover {
+        &:after {
+            @include opacity(.2);
+            @include scale(.95, .9);
+        }
+
+        .value {
+            @include scale(.9);
+        }
+
+        i {
+            @include opacity(1);
+            left: 12px;
+        }
+    }
+}
+
+.btn-load-more {
+    @include border-radius(0);
+    @include transition(all .3s linear);
+    border: 1px solid $color7;
+    color: $color7;
+    padding: 1.1em 3.3em;
+
+    &:hover {
+        color: $color5;
+        border-color: $color5;
+    }
+}
+// List
+.list-style-1 {
+    > ul {
+        margin-left: 20px;
+        @include breakpoint(small) {
+            margin-left: 40px;
+        };
+
+        > li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+    }
+
+    li {
+        i {
+            display: inline-block;
+            margin-right: 14px;
+        }
+    }
+}

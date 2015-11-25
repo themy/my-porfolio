@@ -1,0 +1,87 @@
+extends layouts/layout
+
+block vars
+  -title = 'Form'
+  -bodyClass = 'form'
+  -menuIndex = 0
+
+mixin input-group(name, title , placeholder)
+  - if (typeof(placeholder) === "undefined") placeholder = ""
+  .input-group
+    .text
+      label(for="#{name}")!=title
+    .control
+      input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+
+mixin input-group-error(name, title , placeholder)
+  - if (typeof(placeholder) === "undefined") placeholder = ""
+  .input-group.error
+    .text
+      label(for="#{name}")!=title
+    .control
+      input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+      p.mess This field is required !
+
+block container
+  main
+    h2 Select
+    hr
+    .row
+      .col-sm-6
+        form(name="", action="", method="POST", data-validate)
+          .input-group
+            .control(style="width:74.6%")
+              .custom-select(data-select)
+                span.form-control(title='Select')
+                    span.text-val Select
+                    span.icon-arrow
+                  select.hidden
+                    option(value='coding') Coding
+                    option(value='reading') Reading
+                    option(value='sleeping') Sleeping
+      .col-sm-6
+        form(name="", action="", method="POST", data-validate)
+          .input-group
+            .control(style="width:74.6%")
+              .custom-select(data-select)
+                span.form-control(title='Select')
+                    span.text-val Select
+                    span.icon-arrow
+                  select.hidden
+                    optgroup(label="Web Design")
+                      option(value='item1') Photoshop
+                      option(value='item2') Illustrator
+                      option(value='item3') Fireworks
+                    optgroup(label="Web Development")
+                      option(value='item1') HTML
+                      option(value='item2') CSS
+                      option(value='item3') JavaScript
+
+block layer
+  .content-select(style="top: 159px; left: 181px; display: block; width: 331px;")
+    ul
+      li
+        span(data-val="coding") Coding
+      li
+        span(data-val="reading") Reading
+      li
+        span(data-val="sleeping") Sleeping
+
+  .content-select(style="top: 159px; left: 655px; display: block; width: 331px;")
+    ul
+      li 
+        strong Web Design
+      li
+        span(data-val="photoshop") Photoshop
+      li
+        span(data-val="illustrator") Illustrator
+      li
+        span(data-val="fireworks") Fireworks
+      li 
+        strong Web Development
+      li
+        span(data-val="html") HTML
+      li
+        span(data-val="css") CSS
+      li
+        span(data-val="javascript") JavaScript

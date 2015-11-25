@@ -1,0 +1,64 @@
+extends layouts/layout
+
+block vars
+  -title = 'Form'
+  -bodyClass = 'form'
+  -menuIndex = 0
+
+mixin input-group(name, title , placeholder)
+  - if (typeof(placeholder) === "undefined") placeholder = ""
+  .input-group
+    .text
+      label(for="#{name}")!=title
+    .control
+      input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+
+mixin input-group-error(name, title , placeholder)
+  - if (typeof(placeholder) === "undefined") placeholder = ""
+  .input-group.error
+    .text
+      label(for="#{name}")!=title
+    .control
+      input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+      p.mess This field is required !
+
+block container
+  main
+    h2 Check
+    hr
+    .row
+      .col-sm-8
+        form(name="", action="", method="POST", data-validate)
+          .input-group
+            .text
+              label(for="male") Gender
+            .control
+              .custom-radio(data-radio)
+                label(for='male')
+                  span.inner.checked
+                    input#male(type='radio', name="gender")
+                  span Male
+              .custom-radio(data-radio)
+                label(for='female')
+                  span.inner
+                    input#female(type='radio', name="gender")
+                  span Female
+          .input-group
+            .text
+              label(for="coding") Hobbies
+            .control
+              .custom-checkbox(data-checkbox)
+                label(for='coding')
+                  span.inner.checked
+                    input#coding(type='checkbox', name="coding")
+                  span Coding
+              .custom-checkbox(data-checkbox)
+                label(for='reading')
+                  span.inner
+                    input#reading(type='checkbox', name="reading")
+                  span Reading
+              .custom-checkbox(data-checkbox)
+                label(for='sleeping')
+                  span.inner
+                    input#sleeping(type='checkbox', name="sleeping")
+                  span Sleeping

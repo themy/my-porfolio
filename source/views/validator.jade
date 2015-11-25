@@ -1,0 +1,120 @@
+extends layouts/layout
+
+block vars
+  -title = 'Form'
+  -bodyClass = 'form'
+  -menuIndex = 0
+
+mixin input-group(name, title , placeholder)
+  - if (typeof(placeholder) === "undefined") placeholder = ""
+  .input-group
+    .text
+      label(for="#{name}")!=title
+    .control
+      input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+
+mixin input-group-error(name, title , placeholder)
+  - if (typeof(placeholder) === "undefined") placeholder = ""
+  .input-group.error
+    .text
+      label(for="#{name}")!=title
+    .control
+      input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+      p.mess This field is required !
+
+block container
+  main
+    h2 Validator
+    hr
+    .row
+      .col-sm-8
+        form(name="", action="", method="POST", data-validate)
+          +input-group("fullname", "Fullname")
+          +input-group-error("username", "Username *")(data-required)
+          +input-group("email", "Email address *")
+          +input-group("url", "Website URL")
+          +input-group("password", "Password *")
+          +input-group("confirmpassword", "Confirm Password *")
+          +input-group("dateofbirth", "Date of birth *")(value="dd/mm/yyyy")
+          .input-group
+            .text
+              label(for="file") Avatar *
+            .control
+              .custom-upload
+                input#file(type="file", name="file", placeholder="", readonly)
+                input(type="text", name="file", placeholder="", readonly)
+                button.btn(type="button") Browse...
+          .input-group
+            .text
+              label(for="country") Country *
+            .control
+              .custom-select(data-select)
+                span.form-control(title='Select')
+                    span.text-val Select
+                    span.icon-arrow
+                  select.hidden
+                    option(value='') Select
+                    option(value='coding') Coding
+                    option(value='reading') Reading
+                    option(value='sleeping') Sleeping
+          .input-group
+            .text
+              label(for="male") Note (20 chars min, 100 max)
+            .control
+              textarea.input(name="textarea", placeholder)
+          .input-group
+            .text
+              label(for="male") Gender *
+            .control
+              .custom-radio(data-radio)
+                label(for='male')
+                  span.inner.checked
+                    input#male(type='radio', name="gender")
+                  span Male
+              .custom-radio(data-radio)
+                label(for='female')
+                  span.inner
+                    input#female(type='radio', name="gender")
+                  span Female
+          .input-group
+            .text
+              label(for="coding") Hobbies (2 minimum)
+            .control
+              .custom-checkbox(data-checkbox)
+                label(for='coding')
+                  span.inner.checked
+                    input#coding(type='checkbox', name="coding")
+                  span Coding
+              .custom-checkbox(data-checkbox)
+                label(for='reading')
+                  span.inner
+                    input#reading(type='checkbox', name="reading")
+                  span Reading
+              .custom-checkbox(data-checkbox)
+                label(for='sleeping')
+                  span.inner
+                    input#sleeping(type='checkbox', name="sleeping")
+                  span Sleeping
+          .input-group
+            .text
+            .control
+              .custom-checkbox(data-checkbox)
+                label(for='accept')
+                  span.inner
+                    input#accept(type='checkbox', name="accept")
+                  span Accept out policy *
+          .input-group
+            .text
+            .control
+              button.btn.style-1(type="reset") Reset
+              button.btn(type="submit") Submit
+block layer
+  .content-select(style="top: 534px; left: 443px; display: block; width: 331px;")
+    ul
+      li
+        span(data-val="coding") Coding
+      li
+        span(data-val="reading") Reading
+      li
+        span(data-val="sleeping") Sleeping
+  

@@ -1,0 +1,29 @@
+extends layouts/layout
+
+mixin text-replace(list)
+  -for(var i=0; i< list; i++){
+    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  -}
+
+block vars
+  -title = 'Layer'
+  -bodyClass = ''
+  -menuIndex = 0
+
+block container
+  main
+    +link("Show layer [Fixed Top]", "#Pop-1", "Click here").btn
+    |  to show layer
+block layer
+  .layer
+    .inner.animated.fadeIn
+      .heading
+        h2.title Title
+        buton.close(title="Close") X
+      .content
+        +text-replace("8")
+
+  .overlay.animated.fadeIn
+
+
+

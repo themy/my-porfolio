@@ -1,0 +1,278 @@
+// Structure
+html.menu-block {
+    overflow: hidden;
+}
+
+body {
+    @include font-family($font-lato-thin);
+    background: $bgcolor url("#{$img-path}bg-main.jpg") 0 0 repeat;
+    color: $text-color;
+    font-size: 14px;
+    line-height: 30px;
+
+    @include breakpoint(small) {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .menu-block &{
+        overflow: hidden;
+    }
+}
+
+header {
+    padding-top: 100px;
+    text-align: center;
+
+    @include breakpoint(small) {
+        padding-top: 45px;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        float: none;
+        height: auto;
+        padding: 0 15px;
+    }
+
+    nav {
+        @include clearfix();
+
+        li {
+            display: block;
+            float: left;
+            position: relative;
+
+            a {
+                padding: 5px;
+            }
+        }
+
+        .active a {
+            color: gray;
+        }
+
+        &.navbar-default{
+            background: none;
+            border: none;
+        }
+    }
+}
+
+.navbar-header {
+    position: absolute;
+    right: 0;
+    z-index: 100;
+
+    .navbar-toggle{
+        background: none;
+
+        &:focus, &:hover{
+            background: none;
+        }
+
+        .glyphicon{
+            color: $color6;
+        }
+    }
+}
+
+.navbar-default{
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0;
+
+    .navbar-nav{
+        display: block;
+        float: none;
+        margin: 0 auto;
+        padding: 0 20px;
+        @include breakpoint(small){
+            display: inline-block;
+        };
+
+        > li{
+            float: none;
+            border-bottom: 1px solid $color8;
+            padding: 25px 20px 20px;
+            position: relative;
+            @include breakpoint(small){
+                border-bottom: 0;
+                background: url("#{$img-path}icon-nav.png") center bottom no-repeat;
+                background-position: center right;
+                float: left;
+                padding: 15px 20px 5px;
+            };
+
+            &:last-child{
+                background: none;
+            }
+
+            &:hover {
+                .menu-level-2 {
+                    @include opacity(1);
+                }
+            }
+
+            > a{
+                @include font-family($font-lato-regular);
+                line-height: 1.5em;
+                color: $color6;
+                padding: 0;
+
+                @include breakpoint(small){
+                    line-height: 8px;
+
+                    &:after{
+                        @include opacity(0);
+                        @include size(1%, 1px);
+                        @include transition(width .3s linear);
+                        background: $color6;
+                        content: '';
+                        display: inline-block;
+                        margin: 0 auto;
+                    }
+
+                    &:hover{
+                        color: $color6;
+
+                        &:after{
+                            @include opacity(1);
+                            @include size(80%, 1px);
+                        }
+                    }
+                }
+
+                &:hover {
+                    color: $color6;
+                }
+            }
+
+            &.active a{
+                background: none;
+                color: $color6;
+
+                &:hover{
+                    background: none;
+                    color: $color6;
+                }
+            }
+        }
+    }
+
+    .menu-level-2 {
+        @include opacity(0);
+        @include transition(all .7s ease-in-out);
+        position: absolute;
+        z-index: 1;
+
+        > li {
+            background: $color1;
+            padding: 10px;
+
+            &:hover {
+                background: #DF4B05;
+            }
+        }
+    }
+
+    @include breakpoint(small){
+        padding-top: 50px;
+    }
+}
+.navbar-collapse{
+    @include translate3d(-200px,0,0);
+    @include transition(transform .3s ease-in-out);
+    background: darken($color1, 80%);
+    border: none;
+    box-shadow: none;
+    height: auto !important;
+    max-width: 300px;
+    min-width: 200px;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1000;
+
+    &.in {
+        @include translate3d(0,0,0);
+    }
+
+    .menus {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .menu {
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        @include breakpoint(small) {
+            overflow: visible;
+        }
+    }
+
+    @include breakpoint(small){
+        @include translate3d(0,0,0);
+        background: none;
+        position: static;
+        min-width: auto;
+        max-width: inherit;
+
+        .menus,
+        .menu {
+            position: static;
+        }
+    }
+}
+
+main {
+    min-height: 500px;
+}
+
+footer {
+    padding-bottom: 0;
+    color: $color6;
+    text-align: center;
+
+    .icon-heart{
+        @include font-size(.6);
+        color: $color3;
+        margin: 0 5px;
+    }
+
+    a{
+        color: $color2;
+        &:hover,
+        &:visited,
+        &:focus{
+            color: $color2;
+        }
+    }
+
+    .in-detail {
+        line-height: 1.5em;
+
+        a {
+            margin: 0 5px;
+        }
+    }
+}
+
+.selection_bubble_root,
+.selection_img_search {
+    display: none;
+}

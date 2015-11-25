@@ -1,0 +1,362 @@
+//**********************************
+// Block - About
+//**********************************
+.about-block {
+    padding: 45px 0 100px 0;
+    .about-content{
+        @include font(1em/1.5em $font-lato-regular);
+        color: $color6;
+        max-width: 620px;
+        margin: 0 auto;
+        padding-bottom: 22px;
+        text-align: center;
+
+        strong {
+            @include font-family($font-lato-bold);
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+    }
+}
+
+//**********************************
+// Block - Graphic design
+//**********************************
+.graphic-block {
+    background: $color6;
+    padding-bottom: 100px;
+
+    .container-fluid {
+        @include breakpoint(small) {
+            width: 80%;
+        }
+    }
+
+    .grid-design {
+        .grid-item {
+            border-color: $color6;
+        }
+    }
+}
+
+//**********************************
+// Block - Feature works
+//**********************************
+.feature-block {
+    background: darken($color1, 1%);
+    padding-bottom: 100px;
+
+    .container-fluid {
+        @include breakpoint(small) {
+            width: 80%;
+        }
+    }
+}
+
+//**********************************
+// Block - Profile
+//**********************************
+.profile-block {
+    @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), true);
+    color: $color6;
+    position: relative;
+
+    &:after {
+        @include box-shadow(0, -1px, 6px, rgba(0,0,0,.5));
+        @include size(100%, 1px);
+        bottom: 0;
+        content: '';
+        position: absolute;
+    }
+
+    .title {
+        color: $color1;
+    }
+
+    .list-work {
+        > ul > li {
+            line-height: 2em;
+
+            > i {
+                @include font-size(.5);
+                position: relative;
+                top: -2px;
+            }
+
+            > ul > li {
+                line-height: 2em;
+
+                > i {
+                    @include font-size(.5);
+                    position: relative;
+                    top: -2px;
+                }
+            }
+        }
+    }
+
+    .information-block {
+        .desc {
+            p {
+                line-height: 1.6em;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+//**********************************
+// Block - Get in touch
+//**********************************
+.contact-block{
+    background: $color1;
+    padding-bottom: 150px;
+
+    .title{
+        color: $color5;
+    }
+}
+
+//**********************************
+// Small Blocks
+
+/* Back to Top button */
+.to-top{
+    @include box-shadow(0, 2px, 2px, rgba(0,0,0,.3), false);
+    @include size(100%, 38px);
+    background: $color1;
+    margin-bottom: 30px;
+
+    .to-top-toggle{
+        @include size(106px, 46px);
+        background: url("#{$img-path}bg-to-top.png") center center no-repeat;
+        display: inline-block;
+        text-align: center;
+
+        i {
+            @include animation(bounce1 2s infinite);
+            @include size(27px, 19px);
+            display: inline-block;
+            background: url("#{$img-path}icon-to-top.png") center center no-repeat;
+            margin-top: 23px;
+            margin-left: 4px;
+        }
+    }
+}
+
+/* Social */
+.social-toolbox{
+    ul{
+        text-align: center;
+
+        > li{
+            @include rotate(0deg);
+            @include transition(all .5s linear);
+            display: inline-block;
+            padding: 0 5px;
+
+            &:hover {
+                @include rotate(360deg);
+            }
+            a {
+                @include font-size(2, 1);
+                @include transition(all .3s linear);
+                color: darken($color5, 10%);
+                text-decoration: none;
+
+                &:hover {
+                    color: $color6;
+                }
+
+                > span {
+                    display: inline-block;
+                    text-indent: -9999em;
+                }
+            }
+        }
+    }
+}
+
+/* Slideshow */
+.slideshow-wrap {
+    margin: 0 -15px 0 -15px;
+
+    @include breakpoint(small) {
+        width: 70%;
+        margin-left: -50px;
+    }
+}
+
+.slick-slider {
+    bottom: -35px;
+    z-index: 1;
+    margin-bottom: 0;
+
+    .slick-list {
+        padding: 27px;
+    }
+
+    .slick-slide {
+        @include transition(opacity .2s linear);
+
+        &.hidden-slide {
+            @include opacity(0);
+        }
+
+
+        .thumb {
+            @include box-shadow(2px, 2px, 5px, rgba(0,0,0,.2));
+            border: 5px solid $color6;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+            }
+
+        }
+        &:nth-child(1n) .thumb{
+            @include rotate(10deg);
+        }
+
+        &:nth-child(2n) .thumb{
+            @include rotate(-10deg);
+        }
+
+        &:nth-child(3n) .thumb{
+            @include rotate(5deg);
+        }
+
+    }
+}
+
+.grid-frontend,
+.grid-design {
+    display: block;
+    margin: 30px auto;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    img{
+        display: block;
+        max-width: 100%;
+    }
+
+    .grid-sizer {
+        width: (100/12) + %;
+    }
+
+    .grid-item {
+        float: left;
+        border: 5px solid $color1;
+        height: 200px;
+        padding: 0;
+        overflow: hidden;
+        display: none;
+
+        @include breakpoint(small) {
+            height: auto;
+        }
+
+        .thumb {
+            position: relative;
+            height: 100%;
+
+            img {
+                @include scaleY(1);
+                @include transition(all .6s ease-in-out);
+            }
+
+            .mask {
+                @include size(100%, 100%);
+                @include opacity(0);
+                @include scale(.8);
+                @include transition(all .4s ease-in-out .2s);
+                background: $bgcolor url("../images/bg-main.jpg") 0 0 repeat;
+                padding: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                @include breakpoint(medium) {
+                    padding: 15px;
+                }
+
+                .outer {
+                    @include size(100%, 100%);
+                    border: 1px solid $color1;
+                    display: table;
+                }
+
+                .inner {
+                    @include font-family($font-lato-regular);
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: center;
+                    color: $color1;
+
+                    a, a:hover, a:focus, a:visited {
+                        color: $color1;
+                    }
+
+                    a {
+                        display: block;
+                        margin-top: 15px;
+                        text-transform: uppercase;
+
+                        @include breakpoint(small) {
+                            margin-top: 35px;
+                        }
+                    }
+
+                    .tooltip-title {
+                        @include font-size(1);
+                    }
+                }
+                
+                .details {
+                    @include font-size(0.9);
+                    display: block;
+                    margin-top: 8px;
+
+                    .icon {
+                        @include font-size(0.5);
+                        display: inline-block;
+                        margin-right: 10px;
+                        margin-top: -2px;
+                    }
+                }
+            }
+
+            &:hover {
+                .tooltip-content {
+                    .outer {
+                        border-width: 1px;
+                    }
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+            .thumb img {
+                @include scale(5);
+                @include opacity(0);
+            }
+
+            .mask {
+                @include opacity(1);
+                @include scale(1);
+            }
+        }
+    }
+}

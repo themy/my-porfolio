@@ -1,0 +1,47 @@
+// Form
+mixin input-group(name, title, type, placeholder)
+    - if (typeof(placeholder) === "undefined") placeholder = ""
+    - if (typeof(type) === "password") type = "password"
+    - if (typeof(type) === "email") type = "email"
+    - if (typeof(type) === "undefined") type = "text"
+    .input-group
+        .text
+            label(for="#{name}")!=title
+        .control
+            if type === "textarea"
+                span.input.input-textarea
+                    textarea(id="#{name}" ,name="#{name}", placeholder="#{placeholder}", rows="5")&attributes(attributes)
+            else
+                input.input(type="#{type}", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+
+
+mixin input-group-error(name, title, placeholder, type)
+    - if (typeof(placeholder) === "undefined") placeholder = ""
+    .input-group.error
+        .text
+            label(for="#{name}")!=title
+        .control
+            input.input(type="text", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
+            p.mess This field is required !
+
+mixin thumbnail(items)
+    each item, key in items
+        .grid-item&attributes(attributes)
+            .thumb
+                +img(item.alt, item.src)
+                .mask
+                    .outer
+                        .inner
+                            h4.tooltip-title!=item.titleTooltip
+                            +link(item.title, item.href, item.text)
+                            for detail in item.itemsDetail
+                                span.details
+                                    i.icon.icon-heart
+                                    span!=detail.text
+
+mixin slick-slide(items)
+    each item, key in items
+        div
+            .thumb
+                +link(item.title, item.href, item.text)
+                    +img(item.alt, item.src)

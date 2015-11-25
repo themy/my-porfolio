@@ -1,0 +1,14 @@
+extends layouts/layout
+
+block vars
+  -title = 'Homepage'
+  -bodyClass = 'home'
+  -menuIndex = 0
+
+block container
+  main
+    include modules/about
+    include modules/graphic-design
+    include modules/feature-works
+    include modules/my-profile
+    include modules/get-in-touch

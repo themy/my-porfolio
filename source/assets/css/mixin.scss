@@ -1,0 +1,373 @@
+// Mixin
+// Font
+//  p {
+//      @include font-size(14px)
+//  }
+//  p {
+//      font-size: 14px; //Will be overridden if browser supports rem
+//      font-size: 0.8rem;
+//  }
+@function calculateRem($size) {
+    $remSize: $size / 14px;
+    @return #{$remSize}rem;
+}
+@mixin font-size($size, $line-height: $size * 1.25) {
+    font-size: $size + em;
+    line-height: $line-height;
+}
+@mixin font-size-rem($sizeValue: 1.4, $line-height: 1) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+    line-height: $line-height;
+}
+@mixin font-family($family) {
+    font-family: '#{$family}',$font-family-base;
+}
+
+@mixin font($arg){
+    font: $arg, $font-family-base;
+}
+// Background image for svg, no-svg, retina screen
+//    pattern.svg
+//    pattern.png
+//    pattern@2x.png
+//    body {
+//        @include background-image('pattern');
+//    }
+@mixin background-image($name, $size:false){
+    background-image: url(#{$image-path}/#{$name}.svg);
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+@mixin cssreset() {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+// PX to EM
+//@function calculateEm($target, $default: $font-size-base){
+//    $emSize: round(($target / $default), 3);
+//    @return $emSize + 0em;
+//}
+//@mixin font-size($target, $default: $font-size-base) {
+//  font-size: calculateEm($target, $default: $font-size-base);
+//}
+// Sizing shortcuts
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+// Center-align a block level element
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin border-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+// Placeholder text
+@mixin placeholder($color: $placeholder-color) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+// Text overflow
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// Clearfix
+//    .container-with-floated-children {
+//        @extend %clearfix;
+//    }
+@mixin clearfix() {
+  *zoom: 1;
+  &:before, &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+//Animations and keyframes
+//    @include keyframes(slide-down) {
+//        0% { opacity: 1; }
+//        90% { opacity: 0; }
+//    }
+//
+//    .element {
+//        width: 100px;
+//        height: 100px;
+//        background: black;
+//        @include animation('slide-down 5s 3');
+//    }
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes $animation-name {
+        @content;
+    }
+    @-moz-keyframes $animation-name {
+        @content;
+    }
+    @-ms-keyframes $animation-name {
+        @content;
+    }
+    @-o-keyframes $animation-name {
+        @content;
+    }
+    @keyframes $animation-name {
+        @content;
+    }
+}
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+//Transitions
+//    a {
+//        color: gray;
+//        @include transition(color .3s ease);
+//        &:hover {
+//            color: black;
+//        }
+//    }
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+//Cross browser opacity
+//    .faded-text {
+//        @include opacity(0.8);
+//    }
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+//Visually hide an element
+//    <button class="mobile-navigation-trigger">
+//    <b class="visually-hidden">Open the navigation</b>
+//    <img src="img/mobile-navigation-icon.svg">
+//    </button>
+//      .visually-hidden {
+//          @extend %visuallyhidden;
+//      }
+%visuallyhidden {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $top $left $blur $color;
+        -moz-box-shadow:inset $top $left $blur $color;
+        box-shadow:inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+@mixin border-radius-round($top, $left, $right, $bottom){
+    border-radius: $top $left $right $bottom;
+    -moz-border-radius: $top $left $right $bottom;
+    -webkit-border-radius: $top $left $right $bottom;
+}
+@mixin bg-transparent($color, $alpha) {
+    $rgba: rgba($color, $alpha);
+    background-color: $rgba;
+}
+// Breakpoint
+//body {
+//    background: pink;
+//    @include breakpoint(large) { background: red; }
+//    @include breakpoint(medium) { background: cyan; }
+//    @include breakpoint(small) { background: green; }
+//    @include breakpoint(“max-width: 480px”) { background: yellow; }
+//}
+@mixin breakpoint($break) {
+    @if $break == large {
+        @media (min-width: $screen-lg) { @content; }
+    }
+    @else if $break == medium {
+        @media (min-width: $screen-md) { @content; }
+    }
+    @else if $break == small {
+        @media (min-width: $screen-sm) { @content; }
+    } @else {
+        @media ($break) { @content; }
+    }
+}
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}
+@mixin grid-fixed($gutter: $grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @include clearfix;
+}
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  @include clearfix;
+}
+@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  float: left;
+  width: percentage(($columns / $grid-columns));
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+@mixin make-xs-column-offset($columns) {
+  margin-left: percentage(($columns / $grid-columns));
+}
+@mixin make-xs-column-push($columns) {
+  left: percentage(($columns / $grid-columns));
+}
+@mixin make-xs-column-pull($columns) {
+  right: percentage(($columns / $grid-columns));
+}
+@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @media (min-width: $screen-sm-min) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-offset($columns) {
+  @media (min-width: $screen-sm-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-push($columns) {
+  @media (min-width: $screen-sm-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-pull($columns) {
+  @media (min-width: $screen-sm-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @media (min-width: $screen-md-min) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-offset($columns) {
+  @media (min-width: $screen-md-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-push($columns) {
+  @media (min-width: $screen-md-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-pull($columns) {
+  @media (min-width: $screen-md-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @media (min-width: $screen-lg-min) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-offset($columns) {
+  @media (min-width: $screen-lg-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-push($columns) {
+  @media (min-width: $screen-lg-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-pull($columns) {
+  @media (min-width: $screen-lg-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+@mixin responsive-visibility() {
+  display: block !important;
+  table & {
+    display: table;
+  }
+  tr & {
+    display: table-row !important;
+  }
+  th &,
+  td & {
+    display: table-cell !important;
+  }
+}
+@mixin responsive-invisibility() {
+  display: none !important;
+}

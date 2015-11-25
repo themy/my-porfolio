@@ -1,0 +1,25 @@
+#navigation.collapse.navbar-collapse
+    .menus
+        nav.menu.navbar.navbar-default
+            .container
+                +nav([
+                        {title: 'About', href: '#about', itemsMenu:
+                            [
+                                {title: 'submenu', itemsMenu:
+                                    [
+                                        {title: 'submenu 2'}
+                                    ], subMenu: 'menu-level-3'
+                                },
+                                {title: 'submenu'}
+                            ], subMenu: 'menu-level-2'
+                        },
+                        {title: 'Graphic design', href: '#design'},
+                        {title: 'Feature works', href: '#works'},
+                        {title: 'My profile', href: '#profile'},
+                        {title: 'Get in touch', href: '#contact'}
+                    ])(class="nav navbar-nav menu-level-1")
+
+.navbar-header
+    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navigation', aria-expanded='false')
+        span.glyphicon.glyphicon-option-vertical
+

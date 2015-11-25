@@ -1,0 +1,16 @@
+include ../mixins/all
+//Created by My.Trinh on 10/6/2015.
+section#contact.contact-block
+    .container
+        .contact-content
+            h2.title get in touch
+            form.row.form.contact-form(name="", action="", method="POST", data-validate)
+                .col-xs-12.col-sm-6
+                    +input-group('yourname', 'Your name')(required)
+                    +input-group('yourmail', 'Your email', 'email')(required)
+                .col-xs-12.col-sm-6
+                    +input-group('yourmsg', 'Your message', 'textarea')(required)
+                    span.btn-primary.btn-style.pull-right
+                        i.glyphicon.glyphicon-chevron-right
+                        span.value Send it
+                        input.btn(type="submit", id="submit", name="submit", value="")
