@@ -8432,7 +8432,8 @@ Copyright (c) 2015 Daniel Eden
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0; }
+    right: 0;
+    z-index: 100; }
   .btn-style .value {
     font-size: 1.2em;
     line-height: 1.5;
