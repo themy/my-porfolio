@@ -41,27 +41,31 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.post('/contact', function(req, res){
-  mailOptions.subject = req.body.yourname + ' sent you a message - www.trinhthemy.com';
-  mailOptions.html = '<p>Name: ' + req.body.yourname + '</p>' +
-                     '<p>Email: ' + req.body.yourmail + '</p>' +
-                     '<p>Message: </p>' +
-                     '<p>' + req.body.yourmsg.replace(/\n/gi, '<br />') + '</p>';
+  var obj = { error: false };
 
-  transporter.sendMail(mailOptions, function(error, info) {
-    var obj = { 
-      'error': false,
-      'msg': 'Thank you for your feedback!'
-    };
-
+  if(!req.body.yourname || !req.body.yourmail || !req.body.yourmsg) {
     res.writeHead(200, {"Content-Type": "application/json"});
-    if(error){
-      obj.error = true;
-      obj.msg = 'There is an error while sending email. Please try later!';
-    }
-
     var json = JSON.stringify(obj);
     res.end(json);
-  });
+  }
+  else {
+    mailOptions.subject = req.body.yourname + ' sent you a message - www.trinhthemy.com';
+    mailOptions.html = '<p>Name: ' + req.body.yourname + '</p>' +
+                       '<p>Email: ' + req.body.yourmail + '</p>' +
+                       '<p>Message: </p>' +
+                       '<p>' + req.body.yourmsg.replace(/\n/gi, '<br />') + '</p>';
+
+    transporter.sendMail(mailOptions, function(error, info) {
+      res.writeHead(200, {"Content-Type": "application/json"});
+
+      if(error){
+        obj.error = true;
+      }
+
+      var json = JSON.stringify(obj);
+      res.end(json);
+    });
+  }
 });
 
 http.createServer(app).listen(port);
