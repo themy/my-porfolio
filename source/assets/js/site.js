@@ -142,5 +142,38 @@ jQuery(function() {
     adjust_size();
     $(window).resize(adjust_size);
 
+    var contactForm = $('[name="contact-form"]');
+    if(contactForm.length){
+        contactForm.find('.close').on('click', function (e) {
+            e.preventDefault();
+            $(this).parent().addClass('hidden');
+        });
 
+        contactForm.on('submit', function(){
+            $.ajax({
+                url: contactForm.attr('action'),
+                type: 'POST',
+                data: contactForm.serialize(),
+                success: function(data) {
+                    if(data.error){
+                        $('.alert.alert-success').addClass('hidden');
+                        $('.alert.alert-danger').removeClass('hidden');
+                        
+                    }
+                    else{
+                        $('.alert.alert-success').removeClass('hidden');
+                        $('.alert.alert-danger').addClass('hidden');
+                        contactForm[0].reset();
+                    }
+                    
+                },
+                error: function() {
+                    $('.alert.alert-success').addClass('hidden');
+                    $('.alert.alert-danger').removeClass('hidden');
+                }
+            });
+
+            return false;
+        });
+    }
 });

@@ -4,10 +4,20 @@ section#contact.contact-block
     .container
         .contact-content
             h2.title get in touch
-            form.row.form.contact-form(name="", action="", method="POST", data-validate)
+            form.row.form.contact-form(name="contact-form", action="/contact", method="POST", data-validate)
+                
+                .alert.alert-success
+                    strong Thank you for your feedback!
+                    a.close(href="#") ×
+
+                .alert.alert-danger.hidden
+                    strong There is an error while sending email. Please try later!
+                    a.close(href="#") ×
+
                 .col-xs-12.col-sm-6
                     +input-group('yourname', 'Your name')(required)
                     +input-group('yourmail', 'Your email', 'email')(required)
+                    
                 .col-xs-12.col-sm-6
                     +input-group('yourmsg', 'Your message', 'textarea')(required)
                     span.btn-primary.btn-style.pull-right
