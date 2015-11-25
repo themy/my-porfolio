@@ -4,23 +4,39 @@ section#graphic.graphic-block(data-loadmore)
     .container-fluid
         .graphic-content
             h2.title graphic design
-            #griddesign.grid-design(data-number="4")
+            #griddesign.grid-design(data-number="5")
                 .grid-sizer
-                +thumbnail([{alt: '01', src: 'upload/thumb/01.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
-                {text: 'html/css/js'},
-                {text: 'html/css/js'}
+                +thumbnail([{alt: '01', src: 'upload/thumb/design/01.jpg', titleTooltip: 'American Education Group',
+                title: 'Aegvietnam.com', href: 'http://aegvietnam.com', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'}
+                ]}])(class="col-lg-6 col-md-8 col-sm-12 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/design/02.jpg', titleTooltip: 'Kampong Chiken House', title: 'Kampong.vn', href: 'http://www.kampong.vn', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'}
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/design/03.jpg', titleTooltip: 'Mie Flower', title: 'Mieflower.com', href: 'http://mieflower.com/', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'}
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/design/04.jpg', titleTooltip: 'Casagranda',
+                title: 'Casagranda.com', href: 'http://www.casagranda.asia/', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'}
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/06.jpg', titleTooltip: 'Nguyen Cong Tri', title: 'Nguyen Cong Tri', href: 'http://nguyencongtri.com/', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'},
+                {text: 'Wordpress'}
+                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/07.jpg', titleTooltip: 'Royal Securities', title: 'Rose.com.vn', href: 'https://rose.com.vn', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'},
+                {text: 'Flash banner'}
+                ]}])(class="col-lg-6 col-md-8 col-sm-12 col-xs-12")
+                +thumbnail([{alt: '01', src: 'upload/thumb/05.jpg', titleTooltip: 'Cocorico', title: 'Cocorico.com', href: 'http://www.cocorico.com.vn/', itemsDetail: [
+                {text: 'HTML5/CSS3'},
+                {text: 'Javascript'}
                 ]}])(class="col-lg-6 col-md-4 col-sm-6 col-xs-12")
-                +thumbnail([{alt: '01', src: 'upload/thumb/02.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
-                {text: 'html/css/js'},
-                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
-                +thumbnail([{alt: '01', src: 'upload/thumb/03.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
-                {text: 'html/css/js'},
-                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
-                +thumbnail([{alt: '01', src: 'upload/thumb/04.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
-                {text: 'html/css/js'},
-                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
-                +thumbnail([{alt: '01', src: 'upload/thumb/05.jpg', titleTooltip: 'Title test', title: 'AEGVIETNAM.COM', href: '#', itemsDetail: [
-                {text: 'html/css/js'},
-                ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
             .wrap-btn
                 +link('Load more', '#javascript:void()')(class="btn btn-load-more")(data-id="#griddesign")

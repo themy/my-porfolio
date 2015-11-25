@@ -11,6 +11,21 @@ var Site = (function($, window, undefined) {
     }
 });
 jQuery(function() {
+    // Isotope
+    $('.grid-frontend').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: '.grid-sizer'
+        }
+    });
+
+    $('.grid-design').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: '.grid-sizer'
+        }
+    });
+
     // Scroll to TOP
     if($('#to-top').length){
         $('#to-top').on('click', function(e){
@@ -56,21 +71,6 @@ jQuery(function() {
         $('html, body').animate({
             scrollTop: $(navLink).offset().top
         }, 500);
-    });
-
-    // Isotope
-    $('.grid-frontend').isotope({
-        itemSelector: '.grid-item',
-        masonry: {
-            columnWidth: '.grid-sizer'
-        }
-    });
-
-    $('.grid-design').isotope({
-        itemSelector: '.grid-item',
-        masonry: {
-            columnWidth: '.grid-sizer'
-        }
     });
 
     // Slick carousel
