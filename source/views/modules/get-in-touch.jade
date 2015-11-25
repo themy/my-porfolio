@@ -20,6 +20,9 @@ section#contact.contact-block
                     
                 .col-xs-12.col-sm-6
                     +input-group('yourmsg', 'Your message', 'textarea')(required)
+                    span.pull-left
+                        .g-recaptcha(data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw")
+                            
                     span.btn-primary.btn-style.pull-right
                         input.btn(type="submit", id="submit", name="submit", value="")
                         i.glyphicon.glyphicon-chevron-right
