@@ -5,7 +5,7 @@ html.menu-block {
 
 body {
     @include font-family($font-lato-thin);
-    background: $bgcolor url("#{$img-path}bg-main.jpg") 0 0 repeat;
+    background: $bgcolor /*url("#{$img-path}bg-main.jpg") 0 0 repeat*/;
     color: $text-color;
     font-size: 14px;
     line-height: 30px;
@@ -23,16 +23,12 @@ body {
 header {
     padding-top: 100px;
     text-align: center;
-
     @include breakpoint(small) {
-        padding-top: 45px;
+
     }
 
-    .navbar-brand {
-        display: inline-block;
-        float: none;
-        height: auto;
-        padding: 0 15px;
+    > .container {
+        position: relative;
     }
 
     nav {
@@ -59,6 +55,18 @@ header {
     }
 }
 
+.navbar-brand {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    display: inline-block;
+    float: none;
+    height: auto;
+    padding: 0 15px;
+    width: 300px;
+    margin: 0;
+}
+
 .navbar-header {
     position: absolute;
     right: 0;
@@ -81,12 +89,19 @@ header {
     background-color: transparent;
     border-color: transparent;
     margin: 0;
+    @include breakpoint(small){
+
+    }
+
+    > .container {
+        position: relative;
+        min-height: 120px;
+    }
 
     .navbar-nav{
         display: block;
-        float: none;
-        margin: 0 auto;
-        padding: 0 20px;
+        float: right;
+        margin: 60px auto 0;
         @include breakpoint(small){
             display: inline-block;
         };
@@ -98,7 +113,7 @@ header {
             position: relative;
             @include breakpoint(small){
                 border-bottom: 0;
-                background: url("#{$img-path}icon-nav.png") center bottom no-repeat;
+                /*background: url("#{$img-path}icon-nav.png") center bottom no-repeat;*/
                 background-position: center right;
                 float: left;
                 padding: 15px 20px 5px;
@@ -117,10 +132,9 @@ header {
 
             > a{
                 @include font-family($font-lato-regular);
-                line-height: 1.5em;
                 color: $color6;
                 padding: 0;
-
+                line-height: 1.5em;
                 @include breakpoint(small){
                     line-height: 8px;
 
@@ -165,7 +179,7 @@ header {
         @include opacity(0);
         @include transition(all .7s ease-in-out);
         position: absolute;
-        z-index: 1;
+        z-index: 800;
 
         > li {
             background: $color1;
@@ -175,10 +189,6 @@ header {
                 background: #DF4B05;
             }
         }
-    }
-
-    @include breakpoint(small){
-        padding-top: 50px;
     }
 }
 .navbar-collapse{
@@ -198,6 +208,21 @@ header {
     text-align: center;
     overflow: hidden;
     z-index: 1000;
+    @include breakpoint(small){
+        @include translate3d(0,0,0);
+        background: $color;
+        position: static;
+        min-width: auto;
+        max-width: inherit;
+    }
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        height: 120px !important;
+        width: 100%;
+        background: rgba(0,0,0,.8);
+    }
 
     &.in {
         @include translate3d(0,0,0);
@@ -209,6 +234,10 @@ header {
         left: 0;
         right: 0;
         bottom: 0;
+        @include breakpoint(small) {
+            position: static;
+            padding-top: 0;
+        }
     }
 
     .menu {
@@ -220,21 +249,8 @@ header {
         left: 0;
         right: 0;
         bottom: 0;
-
         @include breakpoint(small) {
             overflow: visible;
-        }
-    }
-
-    @include breakpoint(small){
-        @include translate3d(0,0,0);
-        background: none;
-        position: static;
-        min-width: auto;
-        max-width: inherit;
-
-        .menus,
-        .menu {
             position: static;
         }
     }
@@ -245,7 +261,7 @@ main {
 }
 
 footer {
-    padding-bottom: 0;
+    padding-bottom: 20px;
     color: $color6;
     text-align: center;
 

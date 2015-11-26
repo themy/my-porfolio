@@ -9,12 +9,11 @@ section#about.about-block
             strong  i’m available
             |  as
             strong  UI designer frontend developer
-        .social-toolbox
-            +nav([
-                {title: 'Social', href: 'social.html', class: 'icon icon-twitter'},
-                {title: 'Social', href: 'social.html', class: 'icon icon-facebook'},
-                {title: 'Social', href: 'social.html', class: 'icon icon-mail'},
-                {title: 'Social', href: 'social.html', class: 'icon icon-youtube'},
-                {title: 'Social', href: 'social.html', class: 'icon icon-instagram'},
-                {title: 'Social', href: 'social.html', class: 'icon icon-wordpress'},
-            ])
+        include ../blocks/social
+    .slideshow-wrap.slider-banner
+        #sliderbanner.slider.responsive
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/01.jpg'}])
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/02.jpg'}])
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/03.jpg'}])
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/04.jpg'}])
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/05.jpg'}])
