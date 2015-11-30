@@ -2,21 +2,22 @@
     .menus
         nav.menu.navbar.navbar-default
             .container
-                a.navbar-brand(href='#')
+                a.navbar-brand.hidden-xs(href='#')
                     img.img-responsive(src="images/themy-porfolio.png", alt="TheMy porfolio")
                 +nav([
-                        {title: 'About', href: '#about', itemsMenu:
-                            [
-                                {title: 'submenu', itemsMenu:
-                                    [
-                                        {title: 'submenu 2'}
-                                    ], subMenu: 'menu-level-3'
-                                },
-                                {title: 'submenu'}
-                            ], subMenu: 'menu-level-2'
+                        {title: 'About', href: '#about'
+                            //, itemsMenu:
+                            //[
+                            //    {title: 'submenu', itemsMenu:
+                            //        [
+                            //            {title: 'submenu 2'}
+                            //        ], subMenu: 'menu-level-3'
+                            //    },
+                            //    {title: 'submenu'}
+                            //], subMenu: 'menu-level-2'
                         },
-                        {title: 'Graphic design', href: '#design'},
-                        {title: 'Feature works', href: '#works'},
+                        {title: 'Graphic design', href: '#graphic'},
+                        {title: 'Feature works', href: '#feature'},
                         {title: 'My profile', href: '#profile'},
                         {title: 'Get in touch', href: '#contact'}
                     ])(class="nav navbar-nav menu-level-1")

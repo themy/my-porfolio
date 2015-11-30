@@ -1,23 +1,11 @@
 
-<!--mixin nav(items)-->
-<!--    ul&attributes(attributes)-->
-<!--        each item, key in items-->
-<!--            - var active = ''-->
-<!--            - if (key === menuIndex) active = 'active'-->
-<!--            li(class=active)-->
-<!--                +link(item.title, item.href, item.text)(class=item.class)-->
-<!--                    span=item.title-->
-<!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
-<!--                    +nav(item.itemsMenu)(class=item.class)-->
-<!--                - }-->
 <!-- Form-->
-<!--Created by Meggie on 10/11/2015.-->
 <section id="profile" class="profile-block">
   <div class="container">
     <div class="flowers"></div>
     <div class="profile-content">
-      <h2 class="title">my profile</h2>
       <div class="row information-block">
+        <h2 class="title hidden-xs">my profile</h2>
         <div class="col-sm-6">
           <h3 class="title-s18">About me</h3>
           <div class="desc">
@@ -27,8 +15,8 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <h3 class="title-s18">My workflow includes the use of:</h3>
           <div class="list-style-1 list-work">
+            <h3 class="title-s18">My workflow includes the use of:</h3>
             <ul>
               <li><i class="icon icon-heart"></i><span class="title-s18">Design</span>
                 <ul>

@@ -1,15 +1,4 @@
 
-<!--mixin nav(items)-->
-<!--    ul&attributes(attributes)-->
-<!--        each item, key in items-->
-<!--            - var active = ''-->
-<!--            - if (key === menuIndex) active = 'active'-->
-<!--            li(class=active)-->
-<!--                +link(item.title, item.href, item.text)(class=item.class)-->
-<!--                    span=item.title-->
-<!--                - if (typeof(item.itemsMenu) !== 'undefined'){-->
-<!--                    +nav(item.itemsMenu)(class=item.class)-->
-<!--                - }-->
 <!-- Form--><!DOCTYPE html>
 <!--[if IE 8]><html lang="en" class="no-js ie ie8"><![endif]-->
 <!--[if IE 9]><html lang="en" class="no-js ie ie9"><![endif]-->
@@ -36,23 +25,13 @@
     <div id="navigation" class="collapse navbar-collapse static">
       <div class="menus">
         <nav class="menu navbar navbar-default">
-          <div class="container"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a>
+          <div class="container"><a href="#" class="navbar-brand hidden-xs"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a>
             <ul class="nav navbar-nav menu-level-1">
               <li><a href="#about" title="About"><span>About</span></a>
-                <ul class="menu-level-2">
-                  <li><a href="#" title="submenu"><span>submenu</span></a>
-                    <ul class="menu-level-3">
-                      <li><a href="#" title="submenu 2"><span>submenu 2</span></a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="#" title="submenu"><span>submenu</span></a>
-                  </li>
-                </ul>
               </li>
-              <li><a href="#design" title="Graphic design"><span>Graphic design</span></a>
+              <li><a href="#graphic" title="Graphic design"><span>Graphic design</span></a>
               </li>
-              <li><a href="#works" title="Feature works"><span>Feature works</span></a>
+              <li><a href="#feature" title="Feature works"><span>Feature works</span></a>
               </li>
               <li><a href="#profile" title="My profile"><span>My profile</span></a>
               </li>
@@ -67,6 +46,9 @@
       <button type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" class="navbar-toggle collapsed"><span class="glyphicon glyphicon-option-vertical"></span></button>
     </div>
     <div id="page">
+      <header id="header" class="header visible-xs">
+        <div class="container"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
+      </header>
       <main>
         <h2>Check</h2>
         <hr>
@@ -111,7 +93,7 @@
           </div>
         </div>
       </main>
-      <footer>
+      <footer id="footer" class="footer">
         <div class="to-top"><a id="to-top" href="javascript:void();" title="To top" class="to-top-toggle"><i></i></a></div>
         <p>&copy; 2015 My The Trinh.</p>
         <div class="in-detail">

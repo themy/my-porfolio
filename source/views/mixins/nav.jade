@@ -1,15 +1,3 @@
-//mixin nav(items)
-//    ul&attributes(attributes)
-//        each item, key in items
-//            - var active = ''
-//            - if (key === menuIndex) active = 'active'
-//            li(class=active)
-//                +link(item.title, item.href, item.text)(class=item.class)
-//                    span=item.title
-//                - if (typeof(item.itemsMenu) !== 'undefined'){
-//                    +nav(item.itemsMenu)(class=item.class)
-//                - }
-
 mixin nav(items)
     ul&attributes(attributes)
         each item, key in items

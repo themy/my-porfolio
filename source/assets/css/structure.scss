@@ -5,7 +5,7 @@ html.menu-block {
 
 body {
     @include font-family($font-lato-thin);
-    background: $bgcolor /*url("#{$img-path}bg-main.jpg") 0 0 repeat*/;
+    background: $color6 url("#{$img-path}bg-main.jpg") 0 0 repeat;
     color: $text-color;
     font-size: 14px;
     line-height: 30px;
@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    padding-top: 100px;
+    padding-top: 50px;
     text-align: center;
     @include breakpoint(small) {
 
@@ -56,15 +56,21 @@ header {
 }
 
 .navbar-brand {
-    position: absolute;
-    top: 25px;
-    left: 0;
     display: inline-block;
     float: none;
     height: auto;
-    padding: 0 15px;
     width: 300px;
-    margin: 0;
+    @include breakpoint(small) {
+        position: absolute;
+        top: 18px;
+        left: 0;
+        display: inline-block;
+        float: none;
+        height: auto;
+        padding: 0 15px;
+        width: 300px;
+        margin: 0;
+    }
 }
 
 .navbar-header {
@@ -100,23 +106,35 @@ header {
 
     .navbar-nav{
         display: block;
-        float: right;
-        margin: 60px auto 0;
+        margin: 0 auto;
         @include breakpoint(small){
             display: inline-block;
+            float: right;
+            margin: 69px auto 0;
         };
+
+        li {
+            a {
+                 display: block;
+                 padding: 20px;
+            }
+        }
 
         > li{
             float: none;
             border-bottom: 1px solid $color8;
-            padding: 25px 20px 20px;
             position: relative;
             @include breakpoint(small){
                 border-bottom: 0;
-                /*background: url("#{$img-path}icon-nav.png") center bottom no-repeat;*/
                 background-position: center right;
                 float: left;
-                padding: 15px 20px 5px;
+
+                &:hover {
+                    .menu-level-2 {
+                        @include opacity(1);
+                        z-index: 800;
+                    }
+                }
             };
 
             &:last-child{
@@ -124,16 +142,9 @@ header {
                 border: 0;
             }
 
-            &:hover {
-                .menu-level-2 {
-                    @include opacity(1);
-                }
-            }
-
             > a{
                 @include font-family($font-lato-regular);
                 color: $color6;
-                padding: 0;
                 line-height: 1.5em;
                 @include breakpoint(small){
                     line-height: 8px;
@@ -158,7 +169,7 @@ header {
                     }
                 }
 
-                &:hover {
+                &:hover, &:focus {
                     color: $color6;
                 }
             }
@@ -172,21 +183,39 @@ header {
                     color: $color6;
                 }
             }
+
+            ul {
+                display: none;
+            }
         }
     }
 
     .menu-level-2 {
-        @include opacity(0);
-        @include transition(all .7s ease-in-out);
-        position: absolute;
-        z-index: 800;
+        position: static;
+        overflow: hidden;
+        @include breakpoint(small){
+            @include transition(all .7s ease-in-out);
+            background: $color6;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+        }
 
-        > li {
-            background: $color1;
-            padding: 10px;
+        li {
+            a {
+                padding: 10px;
+                color: $color6;
+                background: $color5;
 
-            &:hover {
-                background: #DF4B05;
+                &:visited, &:focus {
+                    color: $color6;
+                }
+
+                &:hover {
+                    background: $color9;
+                    color: $color6;
+                }
             }
         }
     }
@@ -196,7 +225,6 @@ header {
     @include transition(transform .3s ease-in-out);
     background: darken($color1, 80%);
     border: none;
-    box-shadow: none;
     height: auto !important;
     max-width: 300px;
     min-width: 200px;
@@ -209,11 +237,13 @@ header {
     overflow: hidden;
     z-index: 1000;
     @include breakpoint(small){
+        @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), false);
         @include translate3d(0,0,0);
-        background: $color;
-        position: static;
+        background: transparent;
+        position: relative;
         min-width: auto;
         max-width: inherit;
+        z-index: 1000;
     }
 
     &.fixed {
@@ -221,7 +251,7 @@ header {
         top: 0;
         height: 120px !important;
         width: 100%;
-        background: rgba(0,0,0,.8);
+        background: $color6 url("#{$img-path}bg-main.jpg") 0 0 repeat;
     }
 
     &.in {

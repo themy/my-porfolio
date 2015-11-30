@@ -33,6 +33,7 @@
 // Block - Graphic design
 //**********************************
 .graphic-block {
+    background: $color6;
     padding-bottom: 100px;
 
     .container-fluid {
@@ -46,6 +47,7 @@
 // Block - Feature works
 //**********************************
 .feature-block {
+    background: $color6;
     padding-bottom: 100px;
 
     .container-fluid {
@@ -59,7 +61,6 @@
 // Block - Profile
 //**********************************
 .profile-block {
-    @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), true);
     background: $bgcolor url("#{$img-path}bg-main.jpg") 0 0 repeat;;
     color: $color6;
     position: relative;
@@ -80,10 +81,6 @@
         left: 50%;
         top: -65px;
         margin-left: -600px;
-    }
-
-    .title {
-        color: $color1;
     }
 
     .list-work {
@@ -115,6 +112,15 @@
                 margin-bottom: 30px;
             }
         }
+        @include breakpoint(medium) {
+            .list-work {
+                margin-left: 100px;
+            }
+        }
+    }
+
+    .title {
+        color: $color6;
     }
 }
 
@@ -124,10 +130,6 @@
 .contact-block{
     background: $color1;
     padding-bottom: 150px;
-
-    .title{
-        color: $color5;
-    }
 }
 
 //**********************************
@@ -249,7 +251,7 @@
         }
 
         .slick-slide {
-            max-height: 1000px;
+            max-height: 500px;
 
             img {
                 max-width: 100%;

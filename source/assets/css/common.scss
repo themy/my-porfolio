@@ -2,7 +2,7 @@
 // Title
 .title{
     @include font(4.2em/1em $font-biloxi-script);
-    color: $color6;
+    color: $color5;
     margin: 80px auto 50px;
     text-align: center;
 }
@@ -98,17 +98,17 @@
 .btn-load-more {
     @include border-radius(0);
     @include transition(all .3s linear);
-    border: 1px solid $color7;
-    color: $color7;
+    border: 1px solid $color10;
+    color: $color10;
     padding: 1.1em 3.3em;
 
     &:visited, &:focus {
-        color: $color7;
+        color: $color10;
     }
 
     &:hover {
-        color: $color6;
-        border-color: $color6;
+        color: $color5;
+        border-color: $color5;
     }
 }
 // List
