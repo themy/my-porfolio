@@ -8557,7 +8557,7 @@ Copyright (c) 2015 Daniel Eden
     display: block;
     position: absolute;
     left: 50%;
-    top: -65px;
+    bottom: 0;
     margin-left: -600px; }
   .profile-block .list-work > ul > li {
     line-height: 2em; }
@@ -8643,9 +8643,13 @@ Copyright (c) 2015 Daniel Eden
       width: 70%;
       margin-left: -50px; } }
   .slideshow-wrap.slider-image .slick-slider {
-    bottom: -35px;
+    bottom: -28px;
     z-index: 1;
     margin-bottom: 0; }
+    @media (min-width: 768px) {
+      .slideshow-wrap.slider-image .slick-slider {
+        bottom: 50px;
+        margin-bottom: -100px; } }
     .slideshow-wrap.slider-image .slick-slider .slick-list {
       padding: 27px; }
     .slideshow-wrap.slider-image .slick-slider .slick-slide {
@@ -8680,6 +8684,9 @@ Copyright (c) 2015 Daniel Eden
   max-height: 500px; }
   .slideshow-wrap.slider-banner .slick-slide img {
     max-width: 100%; }
+    @media (min-width: 1200px) {
+      .slideshow-wrap.slider-banner .slick-slide img {
+        margin-top: -240px; } }
 
 .grid-frontend,
 .grid-design {
@@ -8822,8 +8829,12 @@ body {
   .menu-block body {
     overflow: hidden; }
 
+@media (min-width: 768px) {
+  #page {
+    margin-top: 120px; } }
+
 header {
-  padding-top: 50px;
+  padding: 30px 0;
   text-align: center; }
   header > .container {
     position: relative; }
@@ -8854,7 +8865,7 @@ header {
   @media (min-width: 768px) {
     .navbar-brand {
       position: absolute;
-      top: 18px;
+      top: 23px;
       left: 0;
       display: inline-block;
       float: none;
@@ -8986,11 +8997,15 @@ header {
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
-      background: transparent;
-      position: relative;
+      background: #fff url("../images/bg-main.jpg") 0 0 repeat;
+      position: fixed;
+      width: 100%;
+      top: 0;
       min-width: auto;
       max-width: inherit;
-      z-index: 1000; } }
+      z-index: 1000; }
+      .navbar-collapse.collapse {
+        height: 120px !important; } }
   .navbar-collapse.fixed {
     position: fixed;
     top: 0;

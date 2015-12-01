@@ -20,8 +20,14 @@ body {
     }
 }
 
+#page {
+    @include breakpoint(small){
+        margin-top: 120px;
+    }
+}
+
 header {
-    padding-top: 50px;
+    padding: 30px 0;
     text-align: center;
     @include breakpoint(small) {
 
@@ -62,7 +68,7 @@ header {
     width: 300px;
     @include breakpoint(small) {
         position: absolute;
-        top: 18px;
+        top: 23px;
         left: 0;
         display: inline-block;
         float: none;
@@ -239,11 +245,17 @@ header {
     @include breakpoint(small){
         @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), false);
         @include translate3d(0,0,0);
-        background: transparent;
-        position: relative;
+        background: $color6 url("#{$img-path}bg-main.jpg") 0 0 repeat;
+        position: fixed;
+        width: 100%;
+        top: 0;
         min-width: auto;
         max-width: inherit;
         z-index: 1000;
+
+        &.collapse {
+            height: 120px !important;
+        }
     }
 
     &.fixed {

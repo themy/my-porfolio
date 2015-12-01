@@ -79,7 +79,7 @@
         display: block;
         position: absolute;
         left: 50%;
-        top: -65px;
+        bottom: 0;
         margin-left: -600px;
     }
 
@@ -203,9 +203,13 @@
         }
 
         .slick-slider {
-            bottom: -35px;
+            bottom: -28px;
             z-index: 1;
             margin-bottom: 0;
+            @include breakpoint(small){
+                bottom: 50px;
+                margin-bottom: -100px;
+            }
 
             .slick-list {
                 padding: 27px;
@@ -255,6 +259,10 @@
 
             img {
                 max-width: 100%;
+                @include breakpoint(large){
+                    margin-top: -240px;
+                }
+
             }
         }
     }
