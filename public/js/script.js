@@ -81,9 +81,19 @@ jQuery(function() {
     $(navItem).on('click', function(e){
         e.preventDefault();
         var navLink = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(navLink).offset().top
-        }, 500);
+        console.log(navLink);
+        console.log($(navLink).offset().top -120);
+        var query = Modernizr.mq('(min-width: 768px)');
+        if(query){
+            $('html, body').animate({
+                scrollTop: $(navLink).offset().top -120
+            }, 500);
+        }
+        else {
+            $('html, body').animate({
+                scrollTop: $(navLink).offset().top
+            }, 500);
+        }
     });
 
     // Slick carousel
