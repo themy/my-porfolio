@@ -8507,23 +8507,32 @@ Copyright (c) 2015 Daniel Eden
   position: relative; }
   .about-block > .container {
     position: absolute;
+    top: 30%;
     width: 100%;
-    top: 20%;
     z-index: 700; }
   .about-block .about-content {
     font: 1.1em/1.5em "lato-regular-webfont", Helvetica, Arial, sans-serif;
     color: #fff;
     max-width: 800px;
     margin: 0 auto;
-    padding-bottom: 22px;
-    text-align: center;
-    /*@include breakpoint(small) {
-            @include font-size(1.1);
-        }*/ }
+    padding-bottom: 15px;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .about-block .about-content {
+        padding-bottom: 22px;
+        font: 1.7em/1.8em "lato-regular-webfont", Helvetica, Arial, sans-serif; } }
     .about-block .about-content strong {
       font-family: "lato-bold-webfont", Helvetica, Arial, sans-serif;
+      background: rgba(0, 0, 0, 0.7);
+      display: inline-block;
+      padding: 0 10px;
+      margin: 0 7px 7px;
       font-weight: normal;
       text-transform: uppercase; }
+      @media (min-width: 768px) {
+        .about-block .about-content strong {
+          padding: 0 15px;
+          margin: 0 10px 15px 10px; } }
 
 .graphic-block {
   background: #fff;
@@ -8681,7 +8690,7 @@ Copyright (c) 2015 Daniel Eden
   margin: 0; }
 
 .slideshow-wrap.slider-banner .slick-slide {
-  max-height: 500px; }
+  max-height: 835px; }
   .slideshow-wrap.slider-banner .slick-slide img {
     max-width: 100%; }
     @media (min-width: 1200px) {
@@ -8879,11 +8888,19 @@ header {
   right: 0;
   z-index: 100; }
   .navbar-header .navbar-toggle {
-    background: none; }
+    font: 1.2em/1.5em "lato-bold-webfont", Helvetica, Arial, sans-serif;
+    background: none;
+    color: #fff; }
     .navbar-header .navbar-toggle:focus, .navbar-header .navbar-toggle:hover {
       background: none; }
-    .navbar-header .navbar-toggle .glyphicon {
-      color: #fff; }
+    .navbar-header .navbar-toggle .minus:before, .navbar-header .navbar-toggle .minus:after {
+      width: 44px;
+      height: 2px;
+      content: "";
+      display: block;
+      background: #fff;
+      font-size: 1.5em;
+      margin-bottom: 2px; }
 
 .navbar-default {
   background-color: transparent;

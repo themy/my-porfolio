@@ -6,8 +6,8 @@
 
     > .container {
         position: absolute;
+        top: 30%;
         width: 100%;
-        top: 20%;
         z-index: 700;
     }
 
@@ -16,15 +16,24 @@
         color: $color6;
         max-width: 800px;
         margin: 0 auto;
-        padding-bottom: 22px;
+        padding-bottom: 15px;
         text-align: center;
-        /*@include breakpoint(small) {
-            @include font-size(1.1);
-        }*/
+        @include breakpoint(small) {
+            padding-bottom: 22px;
+            @include font(1.7em/1.8em $font-lato-regular);
+        }
         strong {
             @include font-family($font-lato-bold);
+            background: rgba(0,0,0,.7);
+            display: inline-block;
+            padding: 0 10px;
+            margin: 0 7px 7px;
             font-weight: normal;
             text-transform: uppercase;
+            @include breakpoint(small) {
+                padding: 0 15px;
+                margin: 0 10px 15px 10px;
+            }
         }
     }
 }
@@ -255,7 +264,7 @@
         }
 
         .slick-slide {
-            max-height: 500px;
+            max-height: 835px;
 
             img {
                 max-width: 100%;

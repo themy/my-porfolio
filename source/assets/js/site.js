@@ -12,19 +12,23 @@ var Site = (function($, window, undefined) {
 });
 jQuery(function() {
     // Isotope
-    $('.grid-frontend').isotope({
-        itemSelector: '.grid-item',
-        masonry: {
-            columnWidth: '.grid-sizer'
-        }
-    });
+    setTimeout(function() {
+        $('.grid-frontend').isotope({
+            itemSelector: '.grid-item',
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
+    }, 500)
 
-    $('.grid-design').isotope({
-        itemSelector: '.grid-item',
-        masonry: {
-            columnWidth: '.grid-sizer'
-        }
-    });
+    setTimeout(function() {
+        $('.grid-design').isotope({
+            itemSelector: '.grid-item',
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
+    }, 500)
 
     // Scroll to TOP
     if($('#to-top').length){

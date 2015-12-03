@@ -85,14 +85,24 @@ header {
     z-index: 100;
 
     .navbar-toggle{
+        @include font(1.2em/1.5em $font-lato-bold);
         background: none;
+        color: $color6;
 
         &:focus, &:hover{
             background: none;
         }
 
-        .glyphicon{
-            color: $color6;
+        .minus{
+            &:before,
+            &:after {
+                @include size(44px, 2px);
+                content: "";
+                display: block;
+                background: $color6;
+                font-size: 1.5em;
+                margin-bottom: 2px;
+            }
         }
     }
 }
