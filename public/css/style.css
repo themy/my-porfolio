@@ -6011,29 +6011,32 @@ button.close {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-spinner:before {
-  content: "\e800"; }
-
-.icon-heart:before {
-  content: "\e801"; }
-
-.icon-facebook:before {
-  content: "\e807"; }
-
-.icon-instagram:before {
-  content: "\e806"; }
-
-.icon-mail:before {
-  content: "\e805"; }
-
-.icon-youtube:before {
-  content: "\e804"; }
+.icon-twitter:before {
+  content: ""; }
 
 .icon-wordpress:before {
-  content: "\e803"; }
+  content: ""; }
 
-.icon-twitter:before {
-  content: "\e802"; }
+.icon-flickr:before {
+  content: ""; }
+
+.icon-spinner:before {
+  content: ""; }
+
+.icon-heart:before {
+  content: ""; }
+
+.icon-facebook:before {
+  content: ""; }
+
+.icon-instagram:before {
+  content: ""; }
+
+.icon-mail:before {
+  content: ""; }
+
+.icon-youtube:before {
+  content: ""; }
 
 /*!
 Animate.css - http://daneden.me/animate
@@ -8643,6 +8646,14 @@ Copyright (c) 2015 Daniel Eden
       .social-toolbox ul > li a > span {
         display: inline-block;
         text-indent: -9999em; }
+
+#feedControl {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 440px;
+  font-size: 12px;
+  color: #9CADD0; }
 
 /* Slideshow */
 .slideshow-wrap.slider-image {

@@ -1,3 +1,13 @@
+$icon-twitter: "\e900";
+$icon-wordpress: "\e901";
+$icon-flickr: "\e902";
+$icon-spinner: "\e800";
+$icon-heart: "\e801";
+$icon-facebook: "\e807";
+$icon-instagram: "\e806";
+$icon-mail: "\e805";
+$icon-youtube: "\e804";
+
 [class^="icon-"], [class*=" icon-"] {
     font-family: $icomoon;
     speak: none;
@@ -12,27 +22,48 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-spinner:before {
-    content: "\e800";
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
 }
-.icon-heart:before {
-    content: "\e801";
+.icon-wordpress {
+  &:before {
+    content: $icon-wordpress;
+  }
 }
-.icon-facebook:before {
-    content: "\e807";
+.icon-flickr {
+  &:before {
+    content: $icon-flickr;
+  }
 }
-.icon-instagram:before {
-    content: "\e806";
+.icon-spinner {
+  &:before {
+    content: $icon-spinner;
+  }
 }
-.icon-mail:before {
-    content: "\e805";
+.icon-heart {
+  &:before {
+    content: $icon-heart;
+  }
 }
-.icon-youtube:before {
-    content: "\e804";
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
 }
-.icon-wordpress:before {
-    content: "\e803";
+.icon-instagram {
+  &:before {
+    content: $icon-instagram;
+  }
 }
-.icon-twitter:before {
-    content: "\e802";
+.icon-mail {
+  &:before {
+    content: $icon-mail;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
 }
