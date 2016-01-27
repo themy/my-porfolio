@@ -1,0 +1,28 @@
+.icon-twitter {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe900;');
+}
+.icon-wordpress {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe901;');
+}
+.icon-flickr {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe902;');
+}
+.icon-spinner {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;');
+}
+.icon-heart {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;');
+}
+.icon-facebook {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe807;');
+}
+.icon-instagram {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe806;');
+}
+.icon-mail {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe805;');
+}
+.icon-youtube {
+    *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe804;');
+}
+

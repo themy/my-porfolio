@@ -20,19 +20,9 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css"><![endif]-->
     <link rel="stylesheet" href="css/print.css" media="print">
     <script src="js/modernizr.js"></script>
-    <style type="text/css">@import url("http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css");</style>
-    <script type="text/javascript">
-      function load() {
-      var feed ="http://feeds.bbci.co.uk/news/world/rss.xml";
-      new GFdynamicFeedControl(feed, "feedControl");
-      }
-      google.load("feeds", "1");
-      google.setOnLoadCallback(load);
-    </script>
   </head>
   <body class="home">
     <div id="fb-root"></div>
-    <div id="feedControl"></div>
     <script>
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,7 +35,9 @@
     <div id="navigation" class="collapse navbar-collapse">
       <div class="menus">
         <nav class="menu navbar navbar-default">
-          <div class="container"><a href="#" class="navbar-brand hidden-xs"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a>
+          <div class="container-fluid">
+            <!--a.navbar-brand.hidden-xs(href='#')-->
+            <!--    img.img-responsive(src="images/themy-porfolio.png", alt="TheMy porfolio")-->
             <ul class="nav navbar-nav menu-level-1">
               <li><a href="#about" title="About"><span>About</span></a>
               </li>
@@ -64,38 +56,28 @@
       <button type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" class="navbar-toggle collapsed">Menu<span class="minus"></span></button>
     </div>
     <div id="page">
-      <header id="header" class="header visible-xs">
-        <div class="container"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
+      <header id="header" class="header">
+        <div class="container-fluid"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
       </header>
       <main>
         <!-- Form-->
         <section id="about" class="about-block">
-          <div class="container">
+          <div class="container-fluid">
             <div class="about-content">
-              I love creating clean and impresive interfaces
-              I’ve done projects for variety of platforms
-              now<strong>i’m available</strong>as<strong>UI designer frontend developer</strong>
-            </div>
-            <div class="social-toolbox">
-                      <ul>
-                        <li><a href="social.html" title="Twitter" class="icon icon-twitter" target="_blank"><span>Twitter</span></a>
-                        </li>
-                        <li><a href="social.html" title="Facebook" class="icon icon-facebook" target="_blank"><span>Facebook</span></a>
-                        </li>
-                        <li><a href="mailto:themy.trinh@gmail.com?subject=Big%20News&amp;body=Body-goes-here" title="Mail" class="icon icon-mail" target="_blank"><span>Mail</span></a>
-                        </li>
-                        <li><a href="https://www.flickr.com/photos/trinhthemy" title="Flickr" class="icon icon-flickr" target="_blank"><span>Flickr</span></a>
-                        </li>
-                        <li><a href="https://www.instagram.com/my19021987" title="Instagram" class="icon icon-instagram" target="_blank"><span>Instagram</span></a>
-                        </li>
-                        <li><a href="https://trinhthemy.wordpress.com" title="Wordpress" class="icon icon-wordpress" target="_blank"><span>Wordpress</span></a>
-                        </li>
-                      </ul>
+              I love creating clean and impresive interfaces,
+              I’ve done projects for variety of platforms,<br>now<strong>i’m available</strong><br>as<strong>UI DESIGNER - FRONTEND DEVELOPER</strong>
             </div>
           </div>
           <div class="slideshow-wrap slider-banner">
             <div id="sliderbanner" class="slider responsive">
-              <!--+slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/01.jpg'}])-->
+                      <div>
+                        <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/09.jpg" alt="Image 1"></a>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/01.jpg" alt="Image 1"></a>
+                        </div>
+                      </div>
                       <div>
                         <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/02.jpg" alt="Image 1"></a>
                         </div>
@@ -125,10 +107,6 @@
                         </div>
                       </div>
                       <div>
-                        <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/09.jpg" alt="Image 1"></a>
-                        </div>
-                      </div>
-                      <div>
                         <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/10.jpg" alt="Image 1"></a>
                         </div>
                       </div>
@@ -148,7 +126,7 @@
         <section id="feature" data-loadmore class="feature-block">
           <div class="container-fluid">
             <div class="feature-content">
-              <h2 class="title">feature works</h2>
+              <h2 class="title">Participated projects</h2>
               <div id="gridfrontend" data-number="3" class="grid-frontend">
                 <div class="grid-sizer"></div>
                         <div class="grid-item col-lg-6 col-md-8 col-sm-12 col-xs-12">
@@ -236,8 +214,8 @@
         </section>
         <!-- Form-->
         <section id="profile" class="profile-block">
-          <div class="container">
-            <div class="flowers"></div>
+          <div class="container-fluid">
+            <!--.flowers-->
             <div class="profile-content">
               <h2 class="title">my profile</h2>
               <div class="row information-block">
@@ -249,102 +227,73 @@
                     <p>I embrace creativity in all aspects of life. When I am not pushing pixels, I enjoy cooking, painting, gardening, and playing the ukelele. I love to travel and I'm deeply inspired by the diversity of cultures and the natural beauty of the Earth.</p>
                   </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="list-style-1 list-work">
-                    <h3 class="title-s18">My workflow includes the use of:</h3>
-                            <ul>
-                              <li><i class="icon icon-heart"></i><span class="title-s18">Design</span>
-                                        <ul>
-                                          <li><i class="icon icon-spinner"></i><span>User Interface Design</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>User Experience Design</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>Interaction Design</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>Website Design</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>Branding / Logo Design</span>
-                                          </li>
-                                        </ul>
-                              </li>
-                              <li><i class="icon icon-heart"></i><span class="title-s18">Frontend development</span>
-                                        <ul>
-                                          <li><i class="icon icon-spinner"></i><span>NodeJS / Grunt</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>HTML / Jade / Bootstrap</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>CSS / SASS / LESS / STYLUS</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>Responsive Newsletter</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>jQuery</span>
-                                          </li>
-                                          <li><i class="icon icon-spinner"></i><span>WordPress / Demandware</span>
-                                          </li>
-                                        </ul>
-                              </li>
-                            </ul>
+                <div class="col-sm-12">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="list-style-1 list-work first">
+                                <ul>
+                                  <li><i class="icon icon-"></i><span class="title-s18">Design</span>
+                                            <ul>
+                                              <li><i class="icon icon-spinner"></i><span>User Interface Design</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>User Experience Design</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>Interaction Design</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>Website Design</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>Branding / Logo Design</span>
+                                              </li>
+                                            </ul>
+                                  </li>
+                                </ul>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="list-style-1 list-work">
+                                <ul>
+                                  <li><i class="icon icon-"></i><span class="title-s18">Frontend development</span>
+                                            <ul>
+                                              <li><i class="icon icon-spinner"></i><span>NodeJS / Grunt</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>HTML / Jade / Bootstrap</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>CSS / SASS / LESS / STYLUS</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>Responsive Newsletter</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>jQuery</span>
+                                              </li>
+                                              <li><i class="icon icon-spinner"></i><span>WordPress / Demandware</span>
+                                              </li>
+                                            </ul>
+                                  </li>
+                                </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="slideshow-wrap slider-image">
-              <div id="sliderimage" class="slider responsive">
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-1.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-2.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-3.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-4.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-5.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-6.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-7.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-8.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-9.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-10.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-11.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="thumb"><a href="javascript:void()" title="item 1"><img src="images/upload/image-12.jpg" alt="Image 1"></a>
-                          </div>
-                        </div>
-              </div>
-            </div>
+            <!--.slideshow-wrap.slider-image-->
+            <!--    #sliderimage.slider.responsive-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-1.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-2.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-3.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-4.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-5.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-6.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-7.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-8.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-9.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-10.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-11.jpg'}])-->
+            <!--        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-12.jpg'}])-->
           </div>
         </section>
         <!-- Form-->
         <section id="contact" class="contact-block">
-          <div class="container">
+          <div class="container-fluid">
             <div class="contact-content">
               <h2 class="title">get in touch</h2>
               <form name="contact-form" action="/contact" method="POST" data-validate class="row form contact-form">
@@ -379,7 +328,7 @@
                             </div>
                           </div><span class="pull-left">
                     <div data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw" class="g-recaptcha"></div></span><span class="btn-primary btn-style pull-right">
-                    <input type="submit" id="submit" name="submit" value="" class="btn"><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send it</span></span>
+                    <input type="submit" id="submit" name="submit" value="" class="btn"><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send</span></span>
                 </div>
               </form>
             </div>
@@ -387,10 +336,82 @@
         </section>
       </main>
       <footer id="footer" class="footer">
-        <div class="to-top"><a id="to-top" href="javascript:void();" title="To top" class="to-top-toggle"><i></i></a></div>
-        <p>&copy; 2015 My The Trinh.</p>
-        <div class="in-detail">
-          <p>Crafted with<i class="icon icon-heart"></i>in<a href="http://webdesign.tutsplus.com/categories/adobe-photoshop" title="Photoshop">Photoshop</a>&<a href="http://design.tutsplus.com/categories/adobe-illustrator" title="Illustrator">Illustrator</a>built with<a href="http://html5demos.com/" title="HTML 5">HTML 5</a>,<a href="http://www.css3.info/preview/" title="CSS3">CSS3</a>and<a href="https://jquery.com/" title="jQuery">jQuery</a>.</p>
+        <div class="container-fluid">
+          <!--.to-top-->
+          <!--    a#to-top.to-top-toggle(href="javascript:void();", title="To top")-->
+          <!--        i-->
+          <div class="row">
+            <div class="col-sm-4 col-lg-3">
+              <div class="list-style-1 list-link">
+                        <ul>
+                          <li><a href="http://www.templatemonster.com/" title=".template monster" target="_blank"><span>.template monster</span></a>
+                          </li>
+                          <li><a href="http://www.creativebloq.com/" title=".creative bloq" target="_blank"><span>.creative bloq</span></a>
+                          </li>
+                          <li><a href="http://www.tutorial9.net/" title=".tutorial 9" target="_blank"><span>.tutorial 9</span></a>
+                          </li>
+                          <li><a href="http://www.pxleyes.com/" title=".pxl eyes" target="_blank"><span>.pxl eyes</span></a>
+                          </li>
+                          <li><a href="http://design.tutsplus.com/" title=".psd Tuts+" target="_blank"><span>.psd Tuts+</span></a>
+                          </li>
+                          <li><a href="http://blog.spoongraphics.co.uk/" title=".spoon graphics" target="_blank"><span>.spoon graphics</span></a>
+                          </li>
+                        </ul>
+              </div>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+              <div class="list-style-1 list-link">
+                        <ul>
+                          <li><a href="http://www.templatemonster.com/" title=".template monster" target="_blank"><span>.template monster</span></a>
+                          </li>
+                          <li><a href="http://www.creativebloq.com/" title=".creative bloq" target="_blank"><span>.creative bloq</span></a>
+                          </li>
+                          <li><a href="http://www.tutorial9.net/" title=".tutorial 9" target="_blank"><span>.tutorial 9</span></a>
+                          </li>
+                          <li><a href="http://www.pxleyes.com/" title=".pxl eyes" target="_blank"><span>.pxl eyes</span></a>
+                          </li>
+                          <li><a href="http://design.tutsplus.com/" title=".psd Tuts+" target="_blank"><span>.psd Tuts+</span></a>
+                          </li>
+                          <li><a href="http://blog.spoongraphics.co.uk/" title=".spoon graphics" target="_blank"><span>.spoon graphics</span></a>
+                          </li>
+                        </ul>
+              </div>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+              <div class="list-style-1 list-link">
+                        <ul>
+                          <li><a href="http://www.templatemonster.com/" title=".template monster" target="_blank"><span>.template monster</span></a>
+                          </li>
+                          <li><a href="http://www.creativebloq.com/" title=".creative bloq" target="_blank"><span>.creative bloq</span></a>
+                          </li>
+                          <li><a href="http://www.tutorial9.net/" title=".tutorial 9" target="_blank"><span>.tutorial 9</span></a>
+                          </li>
+                          <li><a href="http://www.pxleyes.com/" title=".pxl eyes" target="_blank"><span>.pxl eyes</span></a>
+                          </li>
+                          <li><a href="http://design.tutsplus.com/" title=".psd Tuts+" target="_blank"><span>.psd Tuts+</span></a>
+                          </li>
+                          <li><a href="http://blog.spoongraphics.co.uk/" title=".spoon graphics" target="_blank"><span>.spoon graphics</span></a>
+                          </li>
+                        </ul>
+              </div>
+            </div>
+          </div>
+          <div class="in-detail">
+            <div class="social-toolbox">
+                      <ul>
+                        <li><a href="social.html" title="Twitter" class="icon icon-twitter" target="_blank"><span>Twitter</span></a>
+                        </li>
+                        <li><a href="mailto:themy.trinh@gmail.com?subject=Big%20News&amp;body=Body-goes-here" title="Mail" class="icon icon-mail" target="_blank"><span>Mail</span></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/my19021987" title="Instagram" class="icon icon-instagram" target="_blank"><span>Instagram</span></a>
+                        </li>
+                        <li><a href="https://trinhthemy.wordpress.com" title="Wordpress" class="icon icon-wordpress" target="_blank"><span>Wordpress</span></a>
+                        </li>
+                      </ul>
+            </div>
+            <p>&copy; 2015 My The Trinh.</p>
+            <p class="craft">Crafted with<i class="icon icon-heart"></i>in<a href="http://webdesign.tutsplus.com/categories/adobe-photoshop" title="Photoshop">Photoshop</a>&<a href="http://design.tutsplus.com/categories/adobe-illustrator" title="Illustrator">Illustrator</a>built with<a href="http://html5demos.com/" title="HTML 5">HTML 5</a>,<a href="http://www.css3.info/preview/" title="CSS3">CSS3</a>and<a href="https://jquery.com/" title="jQuery">jQuery</a>.</p>
+          </div>
         </div>
       </footer>
     </div>

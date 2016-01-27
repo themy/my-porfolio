@@ -1,10 +1,10 @@
 include ../mixins/all
 section#contact.contact-block
-    .container
+    .container-fluid
         .contact-content
             h2.title get in touch
             form.row.form.contact-form(name="contact-form", action="/contact", method="POST", data-validate)
-                
+
                 .alert.alert-success.hidden
                     strong Thank you for your feedback!
                     a.close(href="#") ×
@@ -17,13 +17,13 @@ section#contact.contact-block
                     +input-group('yourname', 'Your name')(required)
                     +input-group('yourmail', 'Your email', 'email')(required)
                     .fb-like(data-href="https://developers.facebook.com/docs/plugins/", data-layout="button_count", data-action="like", data-show-faces="true", data-share="true")
-                    
+
                 .col-xs-12.col-sm-6
                     +input-group('yourmsg', 'Your message', 'textarea')(required)
                     span.pull-left
                         .g-recaptcha(data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw")
-                            
+
                     span.btn-primary.btn-style.pull-right
                         input.btn(type="submit", id="submit", name="submit", value="")
                         i.glyphicon.glyphicon-chevron-right
-                        span.value Send it
+                        span.value Send

@@ -1,16 +1,18 @@
 // Common
 // Title
 .title{
-    @include font(4.2em/1em $font-biloxi-script);
-    color: $color5;
+    @include font(2em/1em $font-lato-thin);
+    color: $color2;
     margin: 80px auto 50px;
-    text-align: center;
+    text-transform: uppercase;
 }
 .title-s20 {
     @include font(1.1em/1em $font-lato-regular);
 }
 .title-s18 {
-    @include font(1em/1em $font-lato-regular);
+    @include font(1em/1em $font-lato-thin);
+    color: $color2;
+    text-transform: uppercase;
 }
 
 // Button
@@ -18,10 +20,11 @@
     text-align: center;
 }
 .btn-primary{
-    @include font(1em/1em $font-lato-bold);
-    background: url("#{$img-path}bg-btn.png") 0 0 repeat;
+    @include font(1em/1em $font-lato-thin);
+    background: $bgcolor;
     border: 0;
     border-radius: 0;
+    text-transform: uppercase;
 }
 .btn-style {
     position: relative;
@@ -114,9 +117,9 @@
 // List
 .list-style-1 {
     > ul {
-        margin-left: 20px;
+        margin-top: 15px;
         @include breakpoint(small) {
-            margin-left: 40px;
+
         };
 
         > li {

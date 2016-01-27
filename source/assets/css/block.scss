@@ -1,3 +1,10 @@
+
+.container-fluid {
+  @include breakpoint(small) {
+    width: 80%;
+  }
+}
+
 //**********************************
 // Block - About
 //**********************************
@@ -5,35 +12,41 @@
     position: relative;
 
     > .container {
-        position: absolute;
-        top: 30%;
-        width: 100%;
-        z-index: 700;
+
     }
 
     .about-content{
         @include font(1.1em/1.5em $font-lato-regular);
         color: $color6;
-        max-width: 800px;
-        margin: 0 auto;
-        padding-bottom: 15px;
-        text-align: center;
+        background: rgba(0,0,0,.5);
+        bottom: 20px;
+        max-width: 700px;
+        padding: 30px 40px;
+        position: absolute;
+        text-align: left;
+        z-index: 700;
         @include breakpoint(small) {
-            padding-bottom: 22px;
-            @include font(1.7em/1.8em $font-lato-regular);
+            @include font(1.7em/1.5em $font-lato-thin);
         }
+
         strong {
-            @include font-family($font-lato-bold);
-            background: rgba(0,0,0,.7);
+            @include font-family($font-lato-regular);
             display: inline-block;
-            padding: 0 10px;
-            margin: 0 7px 7px;
             font-weight: normal;
-            text-transform: uppercase;
             @include breakpoint(small) {
-                padding: 0 15px;
-                margin: 0 10px 15px 10px;
+                padding: 0 5px;
             }
+        }
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 5px;
+            display: inline-block;
+            background: $color2;
+            position: absolute;
+            top: -6px;
+            left: 0;
         }
     }
 }
@@ -56,23 +69,18 @@
 // Block - Feature works
 //**********************************
 .feature-block {
-    background: $color6;
     padding-bottom: 100px;
-
-    .container-fluid {
-        @include breakpoint(small) {
-            width: 80%;
-        }
-    }
 }
 
 //**********************************
 // Block - Profile
 //**********************************
 .profile-block {
-    background: $bgcolor url("#{$img-path}bg-main.jpg") 0 0 repeat;;
+    background: $bgcolor url("#{$img-path}bg-main.jpg") 0 0 no-repeat;
+    background-size: 100% auto;
     color: $color6;
     position: relative;
+    min-height: 1000px;
 
     &:after {
         @include box-shadow(0, -1px, 6px, rgba(0,0,0,.5));
@@ -92,28 +100,6 @@
         margin-left: -600px;
     }
 
-    .list-work {
-        > ul > li {
-            line-height: 2em;
-
-            > i {
-                @include font-size(.5);
-                position: relative;
-                top: -2px;
-            }
-
-            > ul > li {
-                line-height: 2em;
-
-                > i {
-                    @include font-size(.5);
-                    position: relative;
-                    top: -2px;
-                }
-            }
-        }
-    }
-
     .information-block {
         .desc {
             p {
@@ -123,7 +109,7 @@
         }
         @include breakpoint(medium) {
             .list-work {
-                margin-left: 100px;
+
             }
         }
     }
@@ -139,10 +125,63 @@
 .contact-block{
     background: $color1;
     padding-bottom: 150px;
+
+    .title {
+        color: $color;
+    }
 }
 
 //**********************************
 // Small Blocks
+
+.list-work {
+  padding-left: 50px;
+  border-top: 1px solid $color2;
+
+  &.first {
+      margin-top: 20px;
+  }
+
+  > ul > li {
+    line-height: 2em;
+
+    > i {
+      @include font-size(.5);
+      position: relative;
+      top: -2px;
+    }
+
+    > ul > li {
+      line-height: 2em;
+
+      > i {
+        @include font-size(.5);
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+}
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+.list-link {
+  @include font(1em/1.2em $font-lato-thin);
+
+  .icon {
+    display: none;
+  }
+
+  #{$a-tags} {
+    color: $color6;
+  }
+}
+
+.in-detail {
+  border-top: 1px solid $color2;
+  padding-top: 65px;
+  margin-top: 60px;
+}
 
 /* Back to Top button */
 .to-top{
@@ -171,22 +210,21 @@
 /* Social */
 .social-toolbox{
     ul{
-        text-align: center;
-
         > li{
             @include rotate(0deg);
             @include transition(all .5s linear);
             display: inline-block;
-            padding: 0 5px;
+            padding: 0 1px;
+            font-size: 0;
 
             &:hover {
                 @include rotate(360deg);
             }
 
             a {
-                @include font-size(2, 1);
                 @include transition(all .3s linear);
                 color: $color6;
+                font-size: 40px;
                 text-decoration: none;
 
                 &:hover {
@@ -271,7 +309,7 @@
         }
 
         .slick-slide {
-            max-height: 835px;
+            max-height: 950px;
 
             img {
                 max-width: 100%;
@@ -322,8 +360,11 @@
             height: 100%;
 
             img {
+                @include opacity(.2);
                 @include scaleY(1);
                 @include transition(all .6s ease-in-out);
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
             }
 
             .mask {
@@ -406,6 +447,8 @@
         &:hover {
             .thumb img {
                 @include scale(1.5);
+              -webkit-filter: grayscale(0%);
+              filter: grayscale(0%);
             }
 
             .mask {

@@ -20,19 +20,9 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css"><![endif]-->
     <link rel="stylesheet" href="css/print.css" media="print">
     <script src="js/modernizr.js"></script>
-    <style type="text/css">@import url("http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css");</style>
-    <script type="text/javascript">
-      function load() {
-      var feed ="http://feeds.bbci.co.uk/news/world/rss.xml";
-      new GFdynamicFeedControl(feed, "feedControl");
-      }
-      google.load("feeds", "1");
-      google.setOnLoadCallback(load);
-    </script>
   </head>
   <body>
     <div id="fb-root"></div>
-    <div id="feedControl"></div>
     <script>
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,7 +35,9 @@
     <div id="navigation" class="collapse navbar-collapse">
       <div class="menus">
         <nav class="menu navbar navbar-default">
-          <div class="container"><a href="#" class="navbar-brand hidden-xs"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a>
+          <div class="container-fluid">
+            <!--a.navbar-brand.hidden-xs(href='#')-->
+            <!--    img.img-responsive(src="images/themy-porfolio.png", alt="TheMy porfolio")-->
             <ul class="nav navbar-nav menu-level-1">
               <li><a href="#about" title="About"><span>About</span></a>
               </li>
@@ -64,16 +56,88 @@
       <button type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" class="navbar-toggle collapsed">Menu<span class="minus"></span></button>
     </div>
     <div id="page">
-      <header id="header" class="header visible-xs">
-        <div class="container"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
+      <header id="header" class="header">
+        <div class="container-fluid"><a href="#" class="navbar-brand"><img src="images/themy-porfolio.png" alt="TheMy porfolio" class="img-responsive"></a></div>
       </header>
       <main><a href="#Pop-1" title="Show layer [Fixed Top]" class="btn">Click here</a> to show layer
       </main>
       <footer id="footer" class="footer">
-        <div class="to-top"><a id="to-top" href="javascript:void();" title="To top" class="to-top-toggle"><i></i></a></div>
-        <p>&copy; 2015 My The Trinh.</p>
-        <div class="in-detail">
-          <p>Crafted with<i class="icon icon-heart"></i>in<a href="http://webdesign.tutsplus.com/categories/adobe-photoshop" title="Photoshop">Photoshop</a>&<a href="http://design.tutsplus.com/categories/adobe-illustrator" title="Illustrator">Illustrator</a>built with<a href="http://html5demos.com/" title="HTML 5">HTML 5</a>,<a href="http://www.css3.info/preview/" title="CSS3">CSS3</a>and<a href="https://jquery.com/" title="jQuery">jQuery</a>.</p>
+        <div class="container-fluid">
+          <!--.to-top-->
+          <!--    a#to-top.to-top-toggle(href="javascript:void();", title="To top")-->
+          <!--        i-->
+          <div class="row">
+            <div class="col-sm-4 col-lg-3">
+              <div class="list-style-1 list-link">
+                <ul>
+                  <li><a href="http://www.templatemonster.com/" title=".template monster" target="_blank"><span>.template monster</span></a>
+                  </li>
+                  <li><a href="http://www.creativebloq.com/" title=".creative bloq" target="_blank"><span>.creative bloq</span></a>
+                  </li>
+                  <li><a href="http://www.tutorial9.net/" title=".tutorial 9" target="_blank"><span>.tutorial 9</span></a>
+                  </li>
+                  <li><a href="http://www.pxleyes.com/" title=".pxl eyes" target="_blank"><span>.pxl eyes</span></a>
+                  </li>
+                  <li><a href="http://design.tutsplus.com/" title=".psd Tuts+" target="_blank"><span>.psd Tuts+</span></a>
+                  </li>
+                  <li><a href="http://blog.spoongraphics.co.uk/" title=".spoon graphics" target="_blank"><span>.spoon graphics</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+              <div class="list-style-1 list-link">
+                <ul>
+                  <li><a href="http://www.templatemonster.com/" title=".template monster" target="_blank"><span>.template monster</span></a>
+                  </li>
+                  <li><a href="http://www.creativebloq.com/" title=".creative bloq" target="_blank"><span>.creative bloq</span></a>
+                  </li>
+                  <li><a href="http://www.tutorial9.net/" title=".tutorial 9" target="_blank"><span>.tutorial 9</span></a>
+                  </li>
+                  <li><a href="http://www.pxleyes.com/" title=".pxl eyes" target="_blank"><span>.pxl eyes</span></a>
+                  </li>
+                  <li><a href="http://design.tutsplus.com/" title=".psd Tuts+" target="_blank"><span>.psd Tuts+</span></a>
+                  </li>
+                  <li><a href="http://blog.spoongraphics.co.uk/" title=".spoon graphics" target="_blank"><span>.spoon graphics</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+              <div class="list-style-1 list-link">
+                <ul>
+                  <li><a href="http://www.templatemonster.com/" title=".template monster" target="_blank"><span>.template monster</span></a>
+                  </li>
+                  <li><a href="http://www.creativebloq.com/" title=".creative bloq" target="_blank"><span>.creative bloq</span></a>
+                  </li>
+                  <li><a href="http://www.tutorial9.net/" title=".tutorial 9" target="_blank"><span>.tutorial 9</span></a>
+                  </li>
+                  <li><a href="http://www.pxleyes.com/" title=".pxl eyes" target="_blank"><span>.pxl eyes</span></a>
+                  </li>
+                  <li><a href="http://design.tutsplus.com/" title=".psd Tuts+" target="_blank"><span>.psd Tuts+</span></a>
+                  </li>
+                  <li><a href="http://blog.spoongraphics.co.uk/" title=".spoon graphics" target="_blank"><span>.spoon graphics</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="in-detail">
+            <div class="social-toolbox">
+              <ul>
+                <li><a href="social.html" title="Twitter" class="icon icon-twitter" target="_blank"><span>Twitter</span></a>
+                </li>
+                <li><a href="mailto:themy.trinh@gmail.com?subject=Big%20News&amp;body=Body-goes-here" title="Mail" class="icon icon-mail" target="_blank"><span>Mail</span></a>
+                </li>
+                <li><a href="https://www.instagram.com/my19021987" title="Instagram" class="icon icon-instagram" target="_blank"><span>Instagram</span></a>
+                </li>
+                <li><a href="https://trinhthemy.wordpress.com" title="Wordpress" class="icon icon-wordpress" target="_blank"><span>Wordpress</span></a>
+                </li>
+              </ul>
+            </div>
+            <p>&copy; 2015 My The Trinh.</p>
+            <p class="craft">Crafted with<i class="icon icon-heart"></i>in<a href="http://webdesign.tutsplus.com/categories/adobe-photoshop" title="Photoshop">Photoshop</a>&<a href="http://design.tutsplus.com/categories/adobe-illustrator" title="Illustrator">Illustrator</a>built with<a href="http://html5demos.com/" title="HTML 5">HTML 5</a>,<a href="http://www.css3.info/preview/" title="CSS3">CSS3</a>and<a href="https://jquery.com/" title="jQuery">jQuery</a>.</p>
+          </div>
         </div>
       </footer>
     </div>

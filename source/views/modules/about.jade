@@ -1,17 +1,19 @@
 include ../mixins/all
 section#about.about-block
-    .container
+    .container-fluid
         .about-content
-            | I love creating clean and impresive interfaces
-            | I’ve done projects for variety of platforms
+            | I love creating clean and impresive interfaces,
+            | I’ve done projects for variety of platforms,
+            br
             | now
             strong i’m available
+            br
             | as
-            strong UI designer frontend developer
-        include ../blocks/social
+            strong UI DESIGNER - FRONTEND DEVELOPER
     .slideshow-wrap.slider-banner
         #sliderbanner.slider.responsive
-            //+slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/01.jpg'}])
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/09.jpg'}])
+            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/01.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/02.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/03.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/04.jpg'}])
@@ -19,7 +21,7 @@ section#about.about-block
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/06.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/07.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/08.jpg'}])
-            +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/09.jpg'}])
+
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/10.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/11.jpg'}])
             +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/12.jpg'}])
