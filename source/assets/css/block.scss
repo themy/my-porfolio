@@ -20,6 +20,8 @@
         color: $color6;
         background: rgba(0,0,0,.5);
         bottom: 20px;
+        left: 0;
+        margin: 0 20px;
         max-width: 700px;
         padding: 10px;
         position: absolute;
@@ -136,15 +138,18 @@
 // Small Blocks
 
 .list-work {
-  padding-left: 50px;
+  padding-left: 10px;
   border-top: 1px solid $color2;
-
-  &.first {
+  @include breakpoint(small){
+    padding-left: 50px;
+    &.first {
       margin-top: 20px;
+    }
   }
 
   > ul > li {
     line-height: 2em;
+    margin-bottom: 40px;
 
     > i {
       @include font-size(.5);
@@ -310,9 +315,9 @@ $a-tags-hover: 'a:active, a:hover';
         }
 
         .slick-slide {
-            min-height: 600px;
+            max-height: 500px;
             @include breakpoint(small){
-              max-height: 950px;
+                max-height: 950px;
             };
 
             img {

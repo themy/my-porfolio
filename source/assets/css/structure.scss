@@ -32,9 +32,11 @@ header {
     position: absolute;
     width: 100%;
     top: 50px;
+    text-align: center;
     z-index: 1;
     @include breakpoint(small) {
       padding: 0;
+      text-align: left;
     }
 
     > .container {
@@ -83,6 +85,7 @@ header {
         @include font(1.2em/1.5em $font-lato-bold);
         background: none;
         color: $color6;
+        margin-top: 25px;
 
         &:focus, &:hover{
             background: none;
@@ -92,13 +95,36 @@ header {
             &:before,
             &:after {
                 @include size(44px, 2px);
+                @include transition(all .3s linear);
                 content: "";
                 display: block;
                 background: $color6;
                 font-size: 1.5em;
-                margin-bottom: 2px;
+                margin-bottom: -2px;
+            }
+
+            &:before {
+              @include rotate(45deg);
+            }
+
+            &:after {
+              @include rotate(-45deg);
             }
         }
+
+      &.collapsed {
+        .minus {
+          &:before {
+            @include rotate(0deg);
+            margin-bottom: 2px;
+          }
+
+          &:after {
+            @include rotate(0deg);
+            margin-bottom: 2px;
+          }
+        }
+      }
     }
 }
 
@@ -232,19 +258,19 @@ header {
     }
 }
 .navbar-collapse{
-    @include translate3d(-200px,0,0);
+    @include translate3d(-100%,0,0);
     @include transition(transform .3s ease-in-out);
-    background: darken($color1, 80%);
+    @include box-shadow(0,0,0,0);
+    background: rgba(0,0,0,.85);
     border: none;
-    height: auto !important;
-    max-width: 300px;
-    min-width: 200px;
+    min-width: 300px;
+    min-height: 200px;
     margin: 0;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    top: 0;
-    text-align: center;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    text-align: right;
     overflow: hidden;
     z-index: 1000;
     @include breakpoint(small){
@@ -277,11 +303,6 @@ header {
     }
 
     .menus {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         @include breakpoint(small) {
             position: static;
             padding-top: 0;
@@ -292,11 +313,6 @@ header {
         overflow: scroll;
         overflow-x: hidden;
         overflow-y: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         @include breakpoint(small) {
             overflow: visible;
             position: static;

@@ -8517,6 +8517,8 @@ Copyright (c) 2015 Daniel Eden
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
     bottom: 20px;
+    left: 0;
+    margin: 0 20px;
     max-width: 700px;
     padding: 10px;
     position: absolute;
@@ -8588,12 +8590,16 @@ Copyright (c) 2015 Daniel Eden
     color: #000; }
 
 .list-work {
-  padding-left: 50px;
+  padding-left: 10px;
   border-top: 1px solid #f0ff00; }
-  .list-work.first {
-    margin-top: 20px; }
+  @media (min-width: 768px) {
+    .list-work {
+      padding-left: 50px; }
+      .list-work.first {
+        margin-top: 20px; } }
   .list-work > ul > li {
-    line-height: 2em; }
+    line-height: 2em;
+    margin-bottom: 40px; }
     .list-work > ul > li > i {
       font-size: 0.5em;
       line-height: 0.625;
@@ -8720,7 +8726,7 @@ Copyright (c) 2015 Daniel Eden
   margin: 0; }
 
 .slideshow-wrap.slider-banner .slick-slide {
-  min-height: 600px; }
+  max-height: 500px; }
   @media (min-width: 768px) {
     .slideshow-wrap.slider-banner .slick-slide {
       max-height: 950px; } }
@@ -8883,10 +8889,12 @@ header {
   position: absolute;
   width: 100%;
   top: 50px;
+  text-align: center;
   z-index: 1; }
   @media (min-width: 768px) {
     header {
-      padding: 0; } }
+      padding: 0;
+      text-align: left; } }
   header > .container {
     position: relative; }
   header nav {
@@ -8925,16 +8933,36 @@ header {
   .navbar-header .navbar-toggle {
     font: 1.2em/1.5em "lato-bold-webfont", Helvetica, Arial, sans-serif;
     background: none;
-    color: #fff; }
+    color: #fff;
+    margin-top: 25px; }
     .navbar-header .navbar-toggle:focus, .navbar-header .navbar-toggle:hover {
       background: none; }
     .navbar-header .navbar-toggle .minus:before, .navbar-header .navbar-toggle .minus:after {
       width: 44px;
       height: 2px;
+      transition: all 0.3s linear;
       content: "";
       display: block;
       background: #fff;
       font-size: 1.5em;
+      margin-bottom: -2px; }
+    .navbar-header .navbar-toggle .minus:before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .navbar-header .navbar-toggle .minus:after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    .navbar-header .navbar-toggle.collapsed .minus:before {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      margin-bottom: 2px; }
+    .navbar-header .navbar-toggle.collapsed .minus:after {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
       margin-bottom: 2px; }
 
 .navbar-default {
@@ -9026,21 +9054,21 @@ header {
         color: #fff; }
 
 .navbar-collapse {
-  -webkit-transform: translate3d(-200px, 0, 0);
-  transform: translate3d(-200px, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  background: #262626;
+  box-shadow: 0 0 0 0;
+  background: rgba(0, 0, 0, 0.85);
   border: none;
-  height: auto !important;
-  max-width: 300px;
-  min-width: 200px;
+  min-width: 300px;
+  min-height: 200px;
   margin: 0;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  text-align: center;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  text-align: right;
   overflow: hidden;
   z-index: 1000; }
   @media (min-width: 768px) {
@@ -9064,25 +9092,14 @@ header {
   .navbar-collapse.in {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
-  .navbar-collapse .menus {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-    @media (min-width: 768px) {
-      .navbar-collapse .menus {
-        position: static;
-        padding-top: 0; } }
+  @media (min-width: 768px) {
+    .navbar-collapse .menus {
+      position: static;
+      padding-top: 0; } }
   .navbar-collapse .menu {
     overflow: scroll;
     overflow-x: hidden;
-    overflow-y: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
+    overflow-y: auto; }
     @media (min-width: 768px) {
       .navbar-collapse .menu {
         overflow: visible;
@@ -9132,7 +9149,6 @@ footer {
     filter: alpha(opacity=0);
     transition: all 0.3s linear;
     content: "";
-    background-color: #000;
     position: absolute;
     left: 0;
     top: 0;

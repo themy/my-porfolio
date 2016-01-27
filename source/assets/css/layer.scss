@@ -10,7 +10,6 @@
       @include opacity(0);
       @include transition(all .3s linear);
     content: "";
-    background-color: $color;
     position: absolute;
     left: 0;
     top: 0;
