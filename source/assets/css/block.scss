@@ -21,12 +21,13 @@
         background: rgba(0,0,0,.5);
         bottom: 20px;
         max-width: 700px;
-        padding: 30px 40px;
+        padding: 10px;
         position: absolute;
         text-align: left;
         z-index: 700;
         @include breakpoint(small) {
             @include font(1.7em/1.5em $font-lato-thin);
+            padding: 30px 40px;
         }
 
         strong {
@@ -309,12 +310,15 @@ $a-tags-hover: 'a:active, a:hover';
         }
 
         .slick-slide {
-            max-height: 950px;
+            min-height: 600px;
+            @include breakpoint(small){
+              max-height: 950px;
+            };
 
             img {
-                max-width: 100%;
-                @include breakpoint(large){
-                    margin-top: -240px;
+                max-width: 300%;
+                @include breakpoint(small){
+                  max-width: 100%;
                 }
 
             }
