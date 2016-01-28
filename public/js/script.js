@@ -41,18 +41,18 @@ jQuery(function() {
     }
 
     // Fixed menu on scrolling
-//    $(window).scroll(function() {
-//        var query = Modernizr.mq('(min-width: 768px)');
-//        if(query) {
-//            var scrollTop = $(window).scrollTop();
-//            if (scrollTop > 0) {
-//                $('#navigation').removeClass('static').addClass('fixed');
-//            }
-//            else {
-//                $('#navigation').removeClass('fixed').addClass('static');
-//            }
-//        }
-//    });
+    $(window).scroll(function() {
+        var query = Modernizr.mq('(min-width: 768px)');
+        if(query) {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 0) {
+                $('#navigation').removeClass('static').addClass('fixed');
+            }
+            else {
+                $('#navigation').removeClass('fixed').addClass('static');
+            }
+        }
+    });
 
     // Navigation
     $('.navbar-toggle').on('click', function(){
@@ -198,14 +198,14 @@ jQuery(function() {
                     if(data.error){
                         $('.alert.alert-success').addClass('hidden');
                         $('.alert.alert-danger').removeClass('hidden');
-                        
+
                     }
                     else{
                         $('.alert.alert-success').removeClass('hidden');
                         $('.alert.alert-danger').addClass('hidden');
                         contactForm[0].reset();
                     }
-                    
+
                 },
                 error: function() {
                     $('.alert.alert-success').addClass('hidden');

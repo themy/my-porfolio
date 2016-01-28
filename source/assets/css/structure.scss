@@ -31,7 +31,7 @@ header {
     padding: 30px 0;
     position: absolute;
     width: 100%;
-    top: 50px;
+    top: 0;
     text-align: center;
     z-index: 1;
     @include breakpoint(small) {
@@ -73,7 +73,8 @@ header {
     width: 300px;
     @include breakpoint(small) {
         height: auto;
-        width: 300px;
+        width: auto;
+        padding: 0;
     }
 }
 .navbar-header {
@@ -264,9 +265,7 @@ header {
     background: rgba(0,0,0,.85);
     border: none;
     min-width: 300px;
-    min-height: 200px;
     margin: 0;
-    height: 100%;
     position: absolute;
     right: 0;
     top: 70px;
@@ -293,9 +292,6 @@ header {
     &.fixed {
         position: fixed;
         top: 0;
-        //height: 120px !important;
-        width: 100%;
-        background: $color6 url("#{$img-path}bg-main.jpg") 0 0 repeat;
     }
 
     &.in {

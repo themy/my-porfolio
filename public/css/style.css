@@ -8515,10 +8515,8 @@ Copyright (c) 2015 Daniel Eden
   .about-block .about-content {
     font: 1.1em/1.5em "lato-regular-webfont", Helvetica, Arial, sans-serif;
     color: #fff;
-    background: rgba(0, 0, 0, 0.5);
     bottom: 20px;
-    left: 0;
-    margin: 0 20px;
+    margin: 0 15px 0 0;
     max-width: 700px;
     padding: 10px;
     position: absolute;
@@ -8537,7 +8535,7 @@ Copyright (c) 2015 Daniel Eden
           padding: 0 5px; } }
     .about-block .about-content:before {
       content: '';
-      width: 100%;
+      width: 70%;
       height: 5px;
       display: inline-block;
       background: #f0ff00;
@@ -8556,11 +8554,15 @@ Copyright (c) 2015 Daniel Eden
   padding-bottom: 100px; }
 
 .profile-block {
-  background: #000 url("../images/bg-main.jpg") 0 0 no-repeat;
-  background-size: 100% auto;
+  background: #000 url("../images/bg-main-1.jpg") 80% 0 no-repeat;
+  background-size: 200% auto;
   color: #fff;
   position: relative;
   min-height: 1000px; }
+  @media (min-width: 768px) {
+    .profile-block {
+      background-size: 100% auto;
+      background-position: 0 0; } }
   .profile-block:after {
     box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -8594,7 +8596,7 @@ Copyright (c) 2015 Daniel Eden
   border-top: 1px solid #f0ff00; }
   @media (min-width: 768px) {
     .list-work {
-      padding-left: 50px; }
+      padding-left: 20px; }
       .list-work.first {
         margin-top: 20px; } }
   .list-work > ul > li {
@@ -8888,7 +8890,7 @@ header {
   padding: 30px 0;
   position: absolute;
   width: 100%;
-  top: 50px;
+  top: 0;
   text-align: center;
   z-index: 1; }
   @media (min-width: 768px) {
@@ -8924,7 +8926,8 @@ header {
   @media (min-width: 768px) {
     .navbar-brand {
       height: auto;
-      width: 300px; } }
+      width: auto;
+      padding: 0; } }
 
 .navbar-header {
   position: absolute;
@@ -9062,9 +9065,7 @@ header {
   background: rgba(0, 0, 0, 0.85);
   border: none;
   min-width: 300px;
-  min-height: 200px;
   margin: 0;
-  height: 100%;
   position: absolute;
   right: 0;
   top: 70px;
@@ -9086,9 +9087,7 @@ header {
       z-index: 1000; } }
   .navbar-collapse.fixed {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background: #fff url("../images/bg-main.jpg") 0 0 repeat; }
+    top: 0; }
   .navbar-collapse.in {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
