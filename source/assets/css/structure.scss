@@ -1,7 +1,7 @@
 // Structure
-html.menu-block {
-    overflow: hidden;
-}
+//html.menu-block {
+//    overflow: hidden;
+//}
 
 body {
     @include font-family($font-lato-thin);
@@ -15,9 +15,9 @@ body {
         line-height: 25px;
     }
 
-    .menu-block &{
-        overflow: hidden;
-    }
+//    .menu-block &{
+//        overflow: hidden;
+//    }
 }
 
 #page {
@@ -28,7 +28,7 @@ body {
 
 header {
     left: 0;
-    padding: 30px 0;
+    padding: 0 0 30px;
     position: absolute;
     width: 100%;
     top: 0;
@@ -70,6 +70,7 @@ header {
     display: inline-block;
     float: none;
     height: auto;
+    padding: 0 15px 15px;
     width: 300px;
     @include breakpoint(small) {
         height: auto;
@@ -85,7 +86,7 @@ header {
     .navbar-toggle{
         @include font(1.2em/1.5em $font-lato-bold);
         background: none;
-        color: $color6;
+        color: $color;
         margin-top: 25px;
 
         &:focus, &:hover{
@@ -99,7 +100,7 @@ header {
                 @include transition(all .3s linear);
                 content: "";
                 display: block;
-                background: $color6;
+                background: $color;
                 font-size: 1.5em;
                 margin-bottom: -2px;
             }
@@ -153,7 +154,7 @@ header {
         li {
             a {
                  display: block;
-                 padding: 20px;
+                 padding: 15px 40px 15px 0;
             }
         }
 
@@ -185,8 +186,6 @@ header {
                 line-height: 1.5em;
                 text-transform: uppercase;
                 @include breakpoint(small){
-                    line-height: 8px;
-
                     &:after{
                         @include opacity(0);
                         @include size(1%, 3px);
@@ -194,7 +193,8 @@ header {
                         background: $color2;
                         content: '';
                         display: inline-block;
-                        margin: 0 auto;
+                        float: left;
+                        margin: 0 auto 10px;
                     }
 
                     &:hover{
@@ -259,28 +259,30 @@ header {
     }
 }
 .navbar-collapse{
-    @include translate3d(-100%,0,0);
-    @include transition(transform .3s ease-in-out);
+//    @include translate3d(-100%,0,0);
+//    @include transition(max-height .7s ease-in-out);
     @include box-shadow(0,0,0,0);
     background: rgba(0,0,0,.85);
     border: none;
-    min-width: 300px;
+    width: 100%;
     margin: 0;
+//    max-height: 0;
+    padding: 0;
     position: absolute;
     right: 0;
-    top: 70px;
-    text-align: right;
+    top: 100px;
+    text-align: center;
     overflow: hidden;
     z-index: 1000;
     @include breakpoint(small){
         @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), false);
-        @include translate3d(0,0,0);
-        background: rgba(0,0,0,.67%);
+//        @include translate3d(0,0,0);
+        background: rgba(0,0,0,.67);
         position: absolute;
         width: 100%;
         top: 210px;
         bottom: auto;
-        min-width: auto;
+        width: 100%;
         max-width: inherit;
         z-index: 1000;
 
@@ -295,7 +297,11 @@ header {
     }
 
     &.in {
-        @include translate3d(0,0,0);
+//        width: 100%;
+//        max-height: 100%;
+//        overflow: hidden;
+//        @include transition(max-height .7s ease-in-out);
+//        @include translate3d(0,0,0);
     }
 
     .menus {

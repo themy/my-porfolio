@@ -68,6 +68,13 @@ jQuery(function() {
         }
     });
 
+    $(document).on('touchstart', function(e) {
+      var overlay = $('.overlay');
+      if(overlay.length) {
+        overlay.remove();
+      }
+    });
+
     var navbar = function(){
         var overlay = $('.overlay');
         var query = Modernizr.mq('(min-width: 768px)');

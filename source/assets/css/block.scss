@@ -118,10 +118,6 @@
             }
         }
     }
-
-    .title {
-        color: $color6;
-    }
 }
 
 //**********************************
@@ -141,8 +137,8 @@
 
 .list-work {
   padding-left: 10px;
-  border-top: 1px solid $color2;
   @include breakpoint(small){
+    border-top: 1px solid $color2;
     padding-left: 20px;
     &.first {
       margin-top: 20px;
@@ -220,24 +216,21 @@ $a-tags-hover: 'a:active, a:hover';
 .social-toolbox{
     ul{
         > li{
-            @include rotate(0deg);
-            @include transition(all .5s linear);
             display: inline-block;
             padding: 0 1px;
             font-size: 0;
 
-            &:hover {
-                @include rotate(360deg);
-            }
-
             a {
-                @include transition(all .3s linear);
+                @include rotate(0deg);
+                @include transition(all .5s linear);
                 color: $color6;
+                display: inline-block;
                 font-size: 40px;
                 text-decoration: none;
 
                 &:hover {
                     color: $color6;
+                    @include rotate(360deg);
                 }
 
                 > span {
@@ -334,8 +327,6 @@ $a-tags-hover: 'a:active, a:hover';
     }
 }
 
-
-
 .grid-frontend,
 .grid-design {
     display: block;
@@ -359,10 +350,10 @@ $a-tags-hover: 'a:active, a:hover';
     .grid-item {
         float: left;
         border: 5px solid transparent;
-        height: 200px;
+        display: none;
+        height: 400px;
         padding: 0;
         overflow: hidden;
-        display: none;
         @include breakpoint(small) {
             height: auto;
         }
@@ -371,29 +362,37 @@ $a-tags-hover: 'a:active, a:hover';
             position: relative;
             height: 100%;
 
+            .image {
+                height: 200px;
+                overflow: hidden;
+                @include breakpoint(small) {
+                    height: auto;
+                }
+            }
+
             img {
                 @include opacity(.2);
                 @include scaleY(1);
                 @include transition(all .6s ease-in-out);
                 -webkit-filter: grayscale(100%);
                 filter: grayscale(100%);
+
+                &:hover {
+                    @include opacity(1);
+                    @include scale(1.5);
+                    -webkit-filter: grayscale(0);
+                    filter: grayscale(0);
+                }
             }
 
             .mask {
-                @include size(100%, 100%);
-                @include opacity(0);
-                @include scale(.8);
+                @include size(100%, auto);
                 @include transition(all .4s ease-in-out .2s);
-                background: rgba(255,255,255,0.8);
+                background: $color;
                 padding: 10px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
 
                 @include breakpoint(medium) {
-                    padding: 15px;
+                    padding: 15px 10px 40px;
                 }
 
                 .outer {
@@ -405,27 +404,21 @@ $a-tags-hover: 'a:active, a:hover';
                     @include font-family($font-lato-regular);
                     display: table-cell;
                     vertical-align: middle;
-                    text-align: center;
-                    color: $color;
+                    color: $color6;
 
                     a, a:hover, a:focus, a:visited {
-                        color: $color;
+                        color: $color2;
                     }
 
                     a {
                         display: block;
                         margin-top: 15px;
-                        text-transform: uppercase;
-                        @include breakpoint(small) {
-                            margin-top: 35px;
-                        }
                     }
 
                     .tooltip-title {
                         @include font-size(1);
-                        border: 1px solid $color;
+                        color: $color2;
                         display: inline-block;
-                        padding: 10px;
                     }
                 }
 
@@ -457,16 +450,50 @@ $a-tags-hover: 'a:active, a:hover';
         }
 
         &:hover {
-            .thumb img {
-                @include scale(1.5);
-              -webkit-filter: grayscale(0%);
-              filter: grayscale(0%);
-            }
-
             .mask {
                 @include opacity(1);
                 @include scale(1);
             }
         }
     }
+}
+
+.mask-image {
+  background: url("#{$img-path}bg-profile.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  max-width: 480px;
+  margin-bottom: 40px;
+  @include breakpoint(small){
+    margin-top: -80px;
+  }
+//
+//  &:before {
+//    content: "";
+//    background: rgba(255,255,255,.1);
+//    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+//    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+//    position: absolute;
+//    width: 100%;
+//    height: 100%;
+//    z-index: 1;
+//  }
+//
+//  &:after {
+//    content: "";
+//    background: rgba(255,255,255,.1);
+//    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+//    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+//    position: absolute;
+//    width: 100%;
+//    height: 100%;
+//    z-index: 2;
+//  }
+}
+
+.element {
+    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+    width: 100%;
+    max-width: 484px;
 }

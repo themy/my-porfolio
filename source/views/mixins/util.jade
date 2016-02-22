@@ -14,7 +14,6 @@ mixin input-group(name, title, type, placeholder)
             else
                 input.input(type="#{type}", id="#{name}" ,name="#{name}", placeholder="#{placeholder}")&attributes(attributes)
 
-
 mixin input-group-error(name, title, placeholder, type)
     - if (typeof(placeholder) === "undefined") placeholder = ""
     .input-group.error
@@ -28,12 +27,14 @@ mixin thumbnail(items)
     each item, key in items
         .grid-item&attributes(attributes)
             .thumb
-                +img(item.alt, item.src)
+                .image
+                  +link(item.title, item.href, item.text).tooltip-title
+                    +img(item.alt, item.src)
                 .mask
                     .outer
                         .inner
-                            h4.tooltip-title!=item.titleTooltip
-                            +link(item.title, item.href, item.text)
+                            //h4.tooltip-title!=item.titleTooltip
+                            +link(item.title, item.href, item.text).tooltip-title
                             for detail in item.itemsDetail
                                 span.details
                                     i.icon.icon-heart

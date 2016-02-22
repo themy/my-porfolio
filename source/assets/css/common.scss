@@ -25,6 +25,10 @@
     border: 0;
     border-radius: 0;
     text-transform: uppercase;
+
+    &:hover {
+        background: $bgcolor;
+    }
 }
 .btn-style {
     position: relative;
