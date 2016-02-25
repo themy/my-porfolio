@@ -138,19 +138,19 @@
 //        @include animation('slide-down 5s 3');
 //    }
 @mixin keyframes($animation-name) {
-    @-webkit-keyframes $animation-name {
+    @-webkit-keyframes #{$animation-name} {
         @content;
     }
-    @-moz-keyframes $animation-name {
+    @-moz-keyframes #{$animation-name} {
         @content;
     }
-    @-ms-keyframes $animation-name {
+    @-ms-keyframes #{$animation-name} {
         @content;
     }
-    @-o-keyframes $animation-name {
+    @-o-keyframes #{$animation-name} {
         @content;
     }
-    @keyframes $animation-name {
+    @keyframes #{$animation-name} {
         @content;
     }
 }
@@ -354,7 +354,7 @@
     left: percentage(($columns / $grid-columns));
   }
 }
-@mixin make-lg-column-pull($columns) {
+@mixin make-lg-column-pull($columns) {;
   @media (min-width: $screen-lg-min) {
     right: percentage(($columns / $grid-columns));
   }

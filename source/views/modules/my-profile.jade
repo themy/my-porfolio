@@ -7,17 +7,17 @@ section#profile.profile-block
             .row.information-block
                 .col-sm-6.col-md-6.col-lg-6
                     h3.title-s18 About me
-                    .desc
+                    .desc.slideanimate
                         p Hello, my name is The My. I’m working as a web designer & front-end developer based in HCM City, Vietnam.
                         p For the last 5 years I’ve worked with clients to provide responsive web design, front-end development, and WordPress integrations.
                         p I embrace creativity in all aspects of life. When I am not pushing pixels, I enjoy cooking, painting, gardening, and playing the ukelele. I love to travel and I'm deeply inspired by the diversity of cultures and the natural beauty of the Earth.
                 .col-sm-6.col-md-6.col-lg-5.text-center
-                    .mask-image
+                    .mask-image.slideanimate
                         +img('image','upload/my-profile.jpg')(class="element")
                 .col-sm-12
                     .row
                         .col-sm-6
-                            .list-style-1.list-work.first
+                            .list-style-1.list-work.first.slideanimate
                                 +list([
                                     {iconclass: '', title: 'Design', class: 'title-s18', itemsMenu: [
                                     {iconclass: 'spinner', title: 'User Interface Design'},
@@ -29,7 +29,7 @@ section#profile.profile-block
                                 ])
 
                         .col-sm-6
-                            .list-style-1.list-work
+                            .list-style-1.list-work.slideanimate
                                 +list([
                                     {iconclass: '', title: 'Frontend development', class: 'title-s18', itemsMenu: [
                                     {iconclass: 'spinner', title: 'NodeJS / Grunt'},
@@ -40,20 +40,3 @@ section#profile.profile-block
                                     {iconclass: 'spinner', title: 'WordPress / Demandware'},
                                     ]}
                                 ])
-
-
-
-        //.slideshow-wrap.slider-image
-        //    #sliderimage.slider.responsive
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-1.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-2.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-3.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-4.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-5.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-6.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-7.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-8.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-9.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-10.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-11.jpg'}])
-        //        +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/image-12.jpg'}])
