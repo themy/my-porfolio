@@ -72,6 +72,7 @@ jQuery(function() {
         }
     });
 
+    var myCenter = 
     // Navigation
     $('.navbar-toggle').on('click', function(){
         $('#page').toggleClass("menu-open");
@@ -240,6 +241,7 @@ jQuery(function() {
         });
     }
 });
+
 
 /**
  *  @name plugin

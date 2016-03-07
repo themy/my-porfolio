@@ -14,16 +14,27 @@ section#contact.contact-block
                     a.close(href="#") ×
 
                 .col-xs-12.col-sm-6
-                    +input-group('yourname', 'Your name')(required)
-                    +input-group('yourmail', 'Your email', 'email')(required)
+                    address
+                        p 448 Huynh Van Banh, Ward 13, District Phu Nhuan, Ho Chi Minh City
+                        p [+84] 945 406 504
+                        p trinhthemy@hotmail.com
                     .fb-like(data-href="https://developers.facebook.com/docs/plugins/", data-layout="button_count", data-action="like", data-show-faces="true", data-share="true")
 
                 .col-xs-12.col-sm-6
-                    +input-group('yourmsg', 'Your message', 'textarea')(required)
-                    span.pull-left
-                        .g-recaptcha(data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw")
+                    .row
+                        .col-sm-6
+                            +input-group('yourname', 'Your name')(required)
+                        .col-sm-6
+                            +input-group('yourmail', 'Your email', 'email')(required)
+                        .col-sm-12
+                            +input-group('yourmsg', 'Your message', 'textarea')(required)
+                            span.pull-left
+                                .g-recaptcha(data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw")
 
-                    span.btn-primary.btn-style.pull-right
-                        input.btn(type="submit", id="submit", name="submit", value="")
-                        i.glyphicon.glyphicon-chevron-right
-                        span.value Send
+                            span.btn-primary.btn-style.pull-right
+                                input.btn(type="submit", id="submit", name="submit", value="")
+                                i.glyphicon.glyphicon-chevron-right
+                                span.value Send
+
+                .col-xs-12
+                    #googleMap

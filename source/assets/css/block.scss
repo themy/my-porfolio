@@ -1,4 +1,3 @@
-
 .container-fluid {
   @include breakpoint(small) {
     width: 80%;
@@ -12,6 +11,7 @@
     position: relative;
 
     > .container {
+
 
     }
 
@@ -511,4 +511,9 @@ $a-tags-hover: 'a:active, a:hover';
     };
     @include animation(slide 1s);
     visibility: visible;
+}
+
+// Google map
+#googleMap {
+  @include size(100%, 400px);
 }

@@ -72,6 +72,8 @@ jQuery(function() {
         }
     });
 
+    // Google map
+
     // Navigation
     $('.navbar-toggle').on('click', function(){
         $('#page').toggleClass("menu-open");
@@ -240,3 +242,4 @@ jQuery(function() {
         });
     }
 });
+

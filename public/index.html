@@ -225,7 +225,7 @@
                           </div>
                         </div>
               </div>
-              <div class="wrap-btn"><a href="javascript:void(0);" title="Load more" class="btn btn-load-more" data-id="#gridfrontend">Load more</a>
+              <div class="wrap-btn visible-print"><a href="javascript:void(0);" title="Load more" class="btn btn-load-more" data-id="#gridfrontend">Load more</a>
               </div>
             </div>
           </div>
@@ -308,35 +308,51 @@
                 <div class="alert alert-success hidden"><strong>Thank you for your feedback!</strong><a href="#" class="close">×</a></div>
                 <div class="alert alert-danger hidden"><strong>There is an error while sending email. Please try later!</strong><a href="#" class="close">×</a></div>
                 <div class="col-xs-12 col-sm-6">
-                          <div class="input-group">
-                            <div class="text">
-                              <label for="yourname">Your name</label>
-                            </div>
-                            <div class="control">
-                              <input type="text" id="yourname" name="yourname" placeholder="" class="input" required>
-                            </div>
-                          </div>
-                          <div class="input-group">
-                            <div class="text">
-                              <label for="yourmail">Your email</label>
-                            </div>
-                            <div class="control">
-                              <input type="email" id="yourmail" name="yourmail" placeholder="" class="input" required>
-                            </div>
-                          </div>
+                  <address>
+                    <p>448 Huynh Van Banh, Ward 13, District Phu Nhuan, Ho Chi Minh City</p>
+                    <p>[+84] 945 406 504</p>
+                    <p>trinhthemy@hotmail.com</p>
+                  </address>
                   <div data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" class="fb-like"></div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                          <div class="input-group">
-                            <div class="text">
-                              <label for="yourmsg">Your message</label>
-                            </div>
-                            <div class="control"><span class="input input-textarea">
-                                <textarea id="yourmsg" name="yourmsg" placeholder="" rows="5" required></textarea></span>
-                            </div>
-                          </div><span class="pull-left">
-                    <div data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw" class="g-recaptcha"></div></span><span class="btn-primary btn-style pull-right">
-                    <input type="submit" id="submit" name="submit" value="" class="btn"><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send</span></span>
+                  <div class="row">
+                    <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="text">
+                                  <label for="yourname">Your name</label>
+                                </div>
+                                <div class="control">
+                                  <input type="text" id="yourname" name="yourname" placeholder="" class="input" required>
+                                </div>
+                              </div>
+                    </div>
+                    <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="text">
+                                  <label for="yourmail">Your email</label>
+                                </div>
+                                <div class="control">
+                                  <input type="email" id="yourmail" name="yourmail" placeholder="" class="input" required>
+                                </div>
+                              </div>
+                    </div>
+                    <div class="col-sm-12">
+                              <div class="input-group">
+                                <div class="text">
+                                  <label for="yourmsg">Your message</label>
+                                </div>
+                                <div class="control"><span class="input input-textarea">
+                                    <textarea id="yourmsg" name="yourmsg" placeholder="" rows="5" required></textarea></span>
+                                </div>
+                              </div><span class="pull-left">
+                        <div data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw" class="g-recaptcha"></div></span><span class="btn-primary btn-style pull-right">
+                        <input type="submit" id="submit" name="submit" value="" class="btn"><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div id="googleMap"></div>
                 </div>
               </form>
             </div>
@@ -430,6 +446,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/slick-carousel.js"></script>
     <script src="js/isotope.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
     <noscript>JavaScript is off. Please enable to view full site.</noscript>
   </body>

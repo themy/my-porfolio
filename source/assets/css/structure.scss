@@ -79,9 +79,12 @@ header {
     }
 }
 .navbar-header {
-    position: absolute;
+    position: fixed;
     right: 0;
-    z-index: 100;
+    z-index: 1000;
+    @include breakpoint(small) {
+        position: absolute;
+    }
 
     .navbar-toggle{
         @include font(1.2em/1.5em $font-lato-bold);
@@ -268,7 +271,7 @@ header {
     margin: 0;
 //    max-height: 0;
     padding: 0;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 100px;
     text-align: center;

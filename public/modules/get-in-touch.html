@@ -8,35 +8,51 @@
         <div class="alert alert-success hidden"><strong>Thank you for your feedback!</strong><a href="#" class="close">×</a></div>
         <div class="alert alert-danger hidden"><strong>There is an error while sending email. Please try later!</strong><a href="#" class="close">×</a></div>
         <div class="col-xs-12 col-sm-6">
-          <div class="input-group">
-            <div class="text">
-              <label for="yourname">Your name</label>
-            </div>
-            <div class="control">
-              <input type="text" id="yourname" name="yourname" placeholder="" class="input" required="required"/>
-            </div>
-          </div>
-          <div class="input-group">
-            <div class="text">
-              <label for="yourmail">Your email</label>
-            </div>
-            <div class="control">
-              <input type="email" id="yourmail" name="yourmail" placeholder="" class="input" required="required"/>
-            </div>
-          </div>
+          <address>
+            <p>448 Huynh Van Banh, Ward 13, District Phu Nhuan, Ho Chi Minh City</p>
+            <p>[+84] 945 406 504</p>
+            <p>trinhthemy@hotmail.com</p>
+          </address>
           <div data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" class="fb-like"></div>
         </div>
         <div class="col-xs-12 col-sm-6">
-          <div class="input-group">
-            <div class="text">
-              <label for="yourmsg">Your message</label>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="input-group">
+                <div class="text">
+                  <label for="yourname">Your name</label>
+                </div>
+                <div class="control">
+                  <input type="text" id="yourname" name="yourname" placeholder="" class="input" required="required"/>
+                </div>
+              </div>
             </div>
-            <div class="control"><span class="input input-textarea">
-                <textarea id="yourmsg" name="yourmsg" placeholder="" rows="5" required="required"></textarea></span>
+            <div class="col-sm-6">
+              <div class="input-group">
+                <div class="text">
+                  <label for="yourmail">Your email</label>
+                </div>
+                <div class="control">
+                  <input type="email" id="yourmail" name="yourmail" placeholder="" class="input" required="required"/>
+                </div>
+              </div>
             </div>
-          </div><span class="pull-left">
-            <div data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw" class="g-recaptcha"></div></span><span class="btn-primary btn-style pull-right">
-            <input type="submit" id="submit" name="submit" value="" class="btn"/><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="text">
+                  <label for="yourmsg">Your message</label>
+                </div>
+                <div class="control"><span class="input input-textarea">
+                    <textarea id="yourmsg" name="yourmsg" placeholder="" rows="5" required="required"></textarea></span>
+                </div>
+              </div><span class="pull-left">
+                <div data-sitekey="6LduaggTAAAAAMRhb602lU2wbZNr26Lyvj3OD0dw" class="g-recaptcha"></div></span><span class="btn-primary btn-style pull-right">
+                <input type="submit" id="submit" name="submit" value="" class="btn"/><i class="glyphicon glyphicon-chevron-right"></i><span class="value">Send</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div id="googleMap"></div>
         </div>
       </form>
     </div>
