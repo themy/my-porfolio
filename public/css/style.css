@@ -8757,7 +8757,6 @@ Copyright (c) 2015 Daniel Eden
   .grid-design .grid-item {
     float: left;
     border: 5px solid transparent;
-    display: none;
     height: 400px;
     padding: 0;
     overflow: hidden; }
@@ -8791,9 +8790,9 @@ Copyright (c) 2015 Daniel Eden
         .grid-design .grid-item .thumb img:hover {
           opacity: 1;
           filter: alpha(opacity=100);
-          -webkit-transform: scale(1.5);
-          -ms-transform: scale(1.5);
-          transform: scale(1.5);
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
           -webkit-filter: grayscale(0);
           filter: grayscale(0); }
       .grid-frontend .grid-item .thumb .mask,
@@ -9116,7 +9115,10 @@ header {
       z-index: 1000; } }
   .navbar-collapse.fixed {
     position: fixed;
-    top: 0; }
+    top: 80px; }
+    @media (min-width: 768px) {
+      .navbar-collapse.fixed {
+        top: 0; } }
   @media (min-width: 768px) {
     .navbar-collapse .menus {
       position: static;

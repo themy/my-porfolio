@@ -279,7 +279,6 @@ header {
     z-index: 1000;
     @include breakpoint(small){
         @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), false);
-//        @include translate3d(0,0,0);
         background: rgba(0,0,0,.67);
         position: absolute;
         width: 100%;
@@ -295,8 +294,11 @@ header {
     }
 
     &.fixed {
+        @include breakpoint(small){
+            top: 0;
+        };
         position: fixed;
-        top: 0;
+        top: 80px;
     }
 
     &.in {

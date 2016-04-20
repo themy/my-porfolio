@@ -3,7 +3,7 @@ section#feature.feature-block(data-loadmore)
     .container-fluid
         .feature-content.slideanimate
             h2.title Participated projects
-            #gridfrontend.grid-frontend(data-number="3")
+            #gridfrontend.grid-frontend(data-number)
                 .grid-sizer
                 +thumbnail([{alt: '01', src: 'upload/thumb/01.jpg',
                 title: 'American Education Group', href: 'http://aegvietnam.com', itemsDetail: [
@@ -36,5 +36,5 @@ section#feature.feature-block(data-loadmore)
                     {text: 'HTML5/CSS3'},
                     {text: 'Javascript'}
                 ]}])(class="col-lg-3 col-md-4 col-sm-6 col-xs-12")
-            .wrap-btn.visible-print
-                +link('Load more', 'javascript:void(0);')(class="btn btn-load-more")(data-id="#gridfrontend")
+            //.wrap-btn.visible-print
+            //    +link('Load more', 'javascript:void(0);')(class="btn btn-load-more")(data-id="#gridfrontend")

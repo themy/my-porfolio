@@ -350,7 +350,6 @@ $a-tags-hover: 'a:active, a:hover';
     .grid-item {
         float: left;
         border: 5px solid transparent;
-        display: none;
         height: 400px;
         padding: 0;
         overflow: hidden;
@@ -379,7 +378,7 @@ $a-tags-hover: 'a:active, a:hover';
 
                 &:hover {
                     @include opacity(1);
-                    @include scale(1.5);
+                    @include scale(1.1);
                     -webkit-filter: grayscale(0);
                     filter: grayscale(0);
                 }

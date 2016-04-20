@@ -16,7 +16,7 @@ jQuery(function() {
         $('.grid-frontend').isotope({
             itemSelector: '.grid-item',
             masonry: {
-                columnWidth: '.grid-sizer'
+              columnWidth: '.grid-sizer'
             }
         });
     }, 500);
