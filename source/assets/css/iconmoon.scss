@@ -1,12 +1,15 @@
-$icon-twitter: "\e900";
-$icon-wordpress: "\e901";
-$icon-flickr: "\e902";
-$icon-spinner: "\e800";
+$icon-beamed-note: "\e900";
+$icon-code: "\e90c";
+$icon-colours: "\e901";
+$icon-feather: "\e903";
+$icon-paper-plane: "\e905";
+$icon-icon-twitter: "\e906";
+$icon-icon-wordpress: "\e907";
+$icon-icon-youtube: "\e908";
+$icon-icon-mail: "\e909";
+$icon-icon-instagram: "\e90a";
+$icon-icon-facebook: "\e90b";
 $icon-heart: "\e801";
-$icon-facebook: "\e807";
-$icon-instagram: "\e806";
-$icon-mail: "\e805";
-$icon-youtube: "\e804";
 
 [class^="icon-"], [class*=" icon-"] {
     font-family: $icomoon;
@@ -22,24 +25,59 @@ $icon-youtube: "\e804";
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-twitter {
+.icon-beamed-note {
   &:before {
-    content: $icon-twitter;
+    content: $icon-beamed-note;
   }
 }
-.icon-wordpress {
+.icon-code {
   &:before {
-    content: $icon-wordpress;
+    content: $icon-code;
   }
 }
-.icon-flickr {
+.icon-colours {
   &:before {
-    content: $icon-flickr;
+    content: $icon-colours;
   }
 }
-.icon-spinner {
+.icon-feather {
   &:before {
-    content: $icon-spinner;
+    content: $icon-feather;
+  }
+}
+.icon-paper-plane {
+  &:before {
+    content: $icon-paper-plane;
+  }
+}
+.icon-icon-twitter {
+  &:before {
+    content: $icon-icon-twitter;
+  }
+}
+.icon-icon-wordpress {
+  &:before {
+    content: $icon-icon-wordpress;
+  }
+}
+.icon-icon-youtube {
+  &:before {
+    content: $icon-icon-youtube;
+  }
+}
+.icon-icon-mail {
+  &:before {
+    content: $icon-icon-mail;
+  }
+}
+.icon-icon-instagram {
+  &:before {
+    content: $icon-icon-instagram;
+  }
+}
+.icon-icon-facebook {
+  &:before {
+    content: $icon-icon-facebook;
   }
 }
 .icon-heart {
@@ -47,23 +85,4 @@ $icon-youtube: "\e804";
     content: $icon-heart;
   }
 }
-.icon-facebook {
-  &:before {
-    content: $icon-facebook;
-  }
-}
-.icon-instagram {
-  &:before {
-    content: $icon-instagram;
-  }
-}
-.icon-mail {
-  &:before {
-    content: $icon-mail;
-  }
-}
-.icon-youtube {
-  &:before {
-    content: $icon-youtube;
-  }
-}
+

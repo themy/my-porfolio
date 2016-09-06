@@ -301,7 +301,7 @@ module.exports = function (grunt) {
     });
     grunt.file.expand('./node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
     require('time-grunt')(grunt);
-    grunt.registerTask('build', ['clean', 'concat', 'sass', 'jade', 'copy', 'autoprefixer', 'htmlhint', 'csslint']);
+    grunt.registerTask('build', ['clean', 'concat', 'sass', 'jade', 'copy', 'autoprefixer']);
     grunt.registerTask('default', ['build', 'concurrent:dev']);
     grunt.registerTask('test', ['qunit']);
     grunt.registerTask('doc', ['markdownpdf']);

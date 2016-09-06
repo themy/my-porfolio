@@ -4,362 +4,617 @@
 //}
 
 body {
-    @include font-family($font-lato-thin);
-    background: $color;
-    color: $text-color;
-    font-size: 14px;
-    line-height: 30px;
+  @include font-family($font-lato-regular);
+  background: $color;
+  color: $text-color;
+  font-size: 14px;
+  line-height: 30px;
 
-    @include breakpoint(small) {
-        font-size: 18px;
-        line-height: 25px;
-    }
-
-//    .menu-block &{
-//        overflow: hidden;
-//    }
+  @include breakpoint(small) {
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 
 #page {
-    @include breakpoint(small){
-        //margin-top: 120px;
-    }
+  @include breakpoint(small) {
+
+  }
 }
 
 header {
-    left: 0;
-    padding: 0 0 30px;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    text-align: center;
-    z-index: 1;
-    @include breakpoint(small) {
-      padding: 0;
-      text-align: left;
+  @include translate(-50%, 0);
+  padding: 0 0 30px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  @include breakpoint(small) {
+    padding: 0;
+    text-align: left;
+    top: 30%;
+    width: 50%;
+  }
+
+  > .container {
+    position: relative;
+  }
+
+  nav {
+    @include clearfix();
+
+    li {
+      display: block;
+      float: left;
+      position: relative;
+
+      a {
+        padding: 5px;
+      }
     }
 
-    > .container {
-        position: relative;
+    .active a {
+      color: gray;
     }
 
-    nav {
-        @include clearfix();
-
-        li {
-            display: block;
-            float: left;
-            position: relative;
-
-            a {
-                padding: 5px;
-            }
-        }
-
-        .active a {
-            color: gray;
-        }
-
-        &.navbar-default{
-            background: none;
-            border: none;
-        }
+    &.navbar-default {
+      background: none;
+      border: none;
     }
+  }
 }
+
 .navbar-brand {
-    display: inline-block;
-    float: none;
-    height: auto;
-    padding: 0 15px 15px;
-    width: 300px;
-    @include breakpoint(small) {
-        height: auto;
-        width: auto;
-        padding: 0;
-    }
+  display: inline-block;
+  float: none;
+  padding: 0;
+  width: 200px;
+  @include breakpoint(small) {
+    width: auto;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .slogan {
+    @include font(1.7em/1em $font-lato-thin);
+  }
 }
-.navbar-header {
-    position: fixed;
-    right: 0;
-    z-index: 1000;
+
+//.toggle{
+//    @include border-radius(none);
+//    @include font(1.2em/1.5em $font-lato-bold);
+//    @include square(68px);
+//    @include bg-transparent($color, .85);
+//    border: 0;
+//    color: $color;
+//    display: block;
+//    margin: 0;
+//
+//    .minus{
+//        @include rotate(0deg);
+//        @include size(44px, 2px);
+//        @include transition(all .5s ease);
+//        color: $color6;
+//        content: "";
+//        display: block;
+//        background: $color6;
+//        font-size: 1.5em;
+//        margin-bottom: 5px;
+//    }
+//
+//    &.collapsed {
+//        .minus {
+//          margin-bottom: -2px;
+//
+//          &.middle {
+//            @include scale(0.2);
+//            @include opacity(0);
+//          }
+//
+//          &:first-child {
+//            @include rotate(45deg);
+//            @include opacity(1);
+//          }
+//
+//          &:last-child {
+//            @include rotate(-45deg);
+//            @include opacity(1);
+//          }
+//        }
+//    }
+//}
+
+// vars
+
+$button-width: 50px; // The width of the button area
+$button-height: 50px; // The height of the button area
+$bar-thickness: 3px; // The thickness of the button bars
+$button-pad: 8px; // The left/right padding between button area and bars.
+$button-bar-space: 6px; // The spacing between button bars
+$button-transistion-duration: 0.3s; // The transition duration
+
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `c-hamburger` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+
+.c-hamburger {
+  @include square($button-width);
+  @include appearance(none);
+  @include box-shadow(0, 0, 0, 0);
+  @include border-radius(none);
+  @include transition(background, $button-transistion-duration);
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  text-indent: -9999px;
+  border: none;
+  cursor: pointer;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: ($button-height / 2) - ($bar-thickness / 2);
+  left: $button-pad;
+  right: $button-pad;
+  height: $bar-thickness;
+  background: $color6;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: $bar-thickness;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -$bar-thickness - $button-bar-space;
+}
+
+.c-hamburger span::after {
+  bottom: -$bar-thickness - $button-bar-space;
+}
+
+/**
+ * Style 2
+ *
+ * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ */
+
+.c-hamburger--htx {
+  @include bg-transparent($color, .5);
+}
+
+.c-hamburger--htx span {
+  transition: background 0s $button-transistion-duration;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: $button-transistion-duration, $button-transistion-duration;
+  transition-delay: $button-transistion-duration, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+
+.c-hamburger--htx.is-active {
+  background-color: darken($color, 20%);
+}
+
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, $button-transistion-duration;
+}
+
+.navbar-default {
+  @include translate3d(0, -200%, 0);
+  @include transition(all .7s ease-in-out);
+  @include bg-transparent($color, .85);
+  @include border-radius(0);
+  border-color: transparent;
+  margin: 0;
+  padding: 40px 20px;
+
+  > .container {
+    position: relative;
+  }
+
+  .navbar-nav {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
     @include breakpoint(small) {
-        position: absolute;
+      display: inline-block;
+      float: right;
+    }
+  ;
+
+    li {
+      a {
+        display: block;
+        padding: 15px 0;
+      }
     }
 
-    .navbar-toggle{
-        @include font(1.2em/1.5em $font-lato-bold);
-        background: none;
-        color: $color;
-        margin-top: 25px;
+    > li {
+      float: none;
+      border-bottom: 1px solid $color8;
+      position: relative;
+      @include breakpoint(small) {
+        border-bottom: 0;
+        background-position: center right;
+        text-align: right;
 
-        &:focus, &:hover{
-            background: none;
-        }
-
-        .minus{
-            &:before,
-            &:after {
-                @include size(44px, 2px);
-                @include transition(all .3s linear);
-                content: "";
-                display: block;
-                background: $color;
-                font-size: 1.5em;
-                margin-bottom: -2px;
-            }
-
-            &:before {
-              @include rotate(45deg);
-            }
-
-            &:after {
-              @include rotate(-45deg);
-            }
-        }
-
-      &.collapsed {
-        .minus {
-          &:before {
-            @include rotate(0deg);
-            margin-bottom: 2px;
-          }
-
-          &:after {
-            @include rotate(0deg);
-            margin-bottom: 2px;
+        &:hover {
+          .menu-level-2 {
+            @include opacity(1);
+            z-index: 800;
           }
         }
       }
-    }
-}
+    ;
 
-.navbar-default{
-    background-color: transparent;
-    border-color: transparent;
-    margin: 0;
-    @include breakpoint(small){
+      &:last-child {
+        background: none;
+        border: 0;
+      }
 
-    }
-
-    > .container {
-        position: relative;
-        //min-height: 120px;
-    }
-
-    .navbar-nav{
-        display: block;
-        margin: 0 auto;
-        @include breakpoint(small){
+      > a {
+        @include font-family($font-lato-regular);
+        color: $color6;
+        line-height: 1.5em;
+        text-transform: uppercase;
+        @include breakpoint(small) {
+          &:after {
+            @include size(80%, 1px);
+            @include transition(width .3s linear);
+            background: $color2;
+            content: '';
             display: inline-block;
-            float: left;
-        };
+            float: right;
+            margin: 0 auto 10px;
+          }
 
-        li {
-            a {
-                 display: block;
-                 padding: 15px 40px 15px 0;
-            }
+          &:hover {
+            color: $color6;
+          }
         }
 
-        > li{
-            float: none;
-            border-bottom: 1px solid $color8;
-            position: relative;
-            @include breakpoint(small){
-                border-bottom: 0;
-                background-position: center right;
-                float: left;
-
-                &:hover {
-                    .menu-level-2 {
-                        @include opacity(1);
-                        z-index: 800;
-                    }
-                }
-            };
-
-            &:last-child{
-                background: none;
-                border: 0;
-            }
-
-            > a{
-                @include font-family($font-lato-regular);
-                color: $color6;
-                line-height: 1.5em;
-                text-transform: uppercase;
-                @include breakpoint(small){
-                    &:after{
-                        @include opacity(0);
-                        @include size(1%, 3px);
-                        @include transition(width .3s linear);
-                        background: $color2;
-                        content: '';
-                        display: inline-block;
-                        float: left;
-                        margin: 0 auto 10px;
-                    }
-
-                    &:hover{
-                        color: $color6;
-
-                        &:after{
-                            @include opacity(1);
-                            @include size(80%, 3px);
-                        }
-                    }
-                }
-
-                &:hover, &:focus {
-                    color: $color6;
-                }
-            }
-
-            &.active a{
-                background: none;
-                color: $color6;
-
-                &:hover{
-                    background: none;
-                    color: $color6;
-                }
-            }
-
-            ul {
-                display: none;
-            }
+        &:hover, &:focus {
+          color: $color6;
         }
+      }
+
+      &.active a {
+        background: none;
+        color: $color6;
+
+        &:hover {
+          background: none;
+          color: $color6;
+        }
+      }
+
+      ul {
+        display: none;
+      }
     }
+  }
 
-    .menu-level-2 {
-        position: static;
-        overflow: hidden;
-        @include breakpoint(small){
-            @include transition(all .7s ease-in-out);
-            background: $color6;
-            position: absolute;
-            left: 50%;
-            margin-left: -100px;
-            width: 200px;
-        }
-
-        li {
-            a {
-                padding: 10px;
-                color: $color6;
-                background: $color5;
-
-                &:visited, &:focus {
-                    color: $color6;
-                }
-
-                &:hover {
-                    background: $color9;
-                    color: $color6;
-                }
-            }
-        }
-    }
-}
-.navbar-collapse{
-//    @include translate3d(-100%,0,0);
-//    @include transition(max-height .7s ease-in-out);
-    @include box-shadow(0,0,0,0);
-    background: rgba(0,0,0,.85);
-    border: none;
-    width: 100%;
-    margin: 0;
-//    max-height: 0;
-    padding: 0;
-    position: fixed;
-    right: 0;
-    top: 100px;
-    text-align: center;
+  .menu-level-2 {
+    position: static;
     overflow: hidden;
-    z-index: 1000;
-    @include breakpoint(small){
-        @include box-shadow(0, 4px, 5px, rgba(0,0,0,.2), false);
-        background: rgba(0,0,0,.67);
-        position: absolute;
-        width: 100%;
-        top: 210px;
-        bottom: auto;
-        width: 100%;
-        max-width: inherit;
-        z-index: 1000;
+    @include breakpoint(small) {
+      @include transition(all .7s ease-in-out);
+      background: $color6;
+      position: absolute;
+      left: 50%;
+      margin-left: -100px;
+      width: 200px;
+    }
 
-        &.collapse {
-            //height: 120px !important;
+    li {
+      a {
+        padding: 10px;
+        color: $color6;
+        background: $color5;
+
+        &:visited, &:focus {
+          color: $color6;
         }
-    }
 
-    &.fixed {
-        @include breakpoint(small){
-            top: 0;
-        };
-        position: fixed;
-        top: 80px;
-    }
-
-    &.in {
-//        width: 100%;
-//        max-height: 100%;
-//        overflow: hidden;
-//        @include transition(max-height .7s ease-in-out);
-//        @include translate3d(0,0,0);
-    }
-
-    .menus {
-        @include breakpoint(small) {
-            position: static;
-            padding-top: 0;
+        &:hover {
+          background: $color9;
+          color: $color6;
         }
+      }
     }
+  }
+}
 
-    .menu {
-        overflow: scroll;
-        overflow-x: hidden;
-        overflow-y: auto;
-        @include breakpoint(small) {
-            overflow: visible;
-            position: static;
-        }
+.navigation {
+  @include box-shadow(0, 0, 0, 0);
+  @include transition(all .7s ease-in-out);
+  border: none;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  &.in {
+    .navbar-default {
+      @include translate3d(0, 0, 0);
     }
+  }
 }
 
 main {
-    min-height: 500px;
+
 }
 
 footer {
-    padding: 70px 0 40px 0;
-    color: $color6;
+  padding-bottom: 40px;
+  color: $color6;
 
-    .icon-heart{
-        @include font-size(.6);
-        color: $color3;
-        margin: 0 5px;
+  .icon-heart {
+    @include font-size(.6);
+    color: $color3;
+    margin: 0 5px;
+  }
+
+  a {
+    color: $color2;
+    &:hover,
+    &:visited,
+    &:focus {
+      color: $color2;
     }
+  }
 
-    a{
-        color: $color2;
-        &:hover,
-        &:visited,
-        &:focus{
-            color: $color2;
-        }
+  .craft {
+    line-height: 1.5em;
+
+    a {
+      margin: 0 5px;
     }
-
-    .craft {
-        line-height: 1.5em;
-
-        a {
-            margin: 0 5px;
-        }
-    }
+  }
 }
 
 .selection_bubble_root,
 .selection_img_search {
-    display: none;
+  display: none;
 }
+
+// SVG
+.clip-wrap {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+
+  .clip-svg {
+    width: 0;
+    height: 0;
+    overflow: visible;
+  }
+
+  &.triangle-clip1 {
+    height: 100px;
+
+    @include breakpoint(small) {
+      height: 130px;
+    }
+
+    @include breakpoint(large) {
+      height: 220px;
+    }
+
+    .clip {
+      background-color: $color2;
+      height: 100px;
+      -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 100%, 0 100%);
+      -webkit-clip-path: url("#clip-polygon1");
+      clip-path: url("#clip-polygon1");
+
+      @include breakpoint(small) {
+        height: 130px;
+      }
+
+      @include breakpoint(large) {
+        height: 220px;
+      }
+    }
+  }
+
+  &.triangle-clip2 {
+    height: 120px;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 250px;
+    }
+
+    .clip {
+      background-color: $color;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      -webkit-clip-path: url("#clip-polygon2");
+      clip-path: url("#clip-polygon2");
+      height: 120px;
+
+      @include breakpoint(small) {
+        height: 160px;
+      }
+
+      @include breakpoint(large) {
+        height: 250px;
+      }
+    }
+  }
+
+  &.triangle-clip3 {
+    @include size(260px, 65px);
+    bottom: auto;
+    top: 0;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 250px;
+    }
+
+    .clip {
+      background-color: $color;
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      -webkit-clip-path: url("#clip-polygon3");
+      clip-path: url("#clip-polygon3");
+      height: 65px;
+    }
+  }
+
+  &.triangle-clip4 {
+    bottom: auto;
+    top: 0;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 250px;
+    }
+
+    .clip {
+      background-color: $color;
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      -webkit-clip-path: url("#clip-polygon4");
+      clip-path: url("#clip-polygon4");
+      height: 120px;
+
+      @include breakpoint(small) {
+        height: 160px;
+      }
+
+      @include breakpoint(large) {
+        height: 250px;
+      }
+    }
+  }
+
+  &.triangle-clip5 {
+    height: 120px;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 250px;
+    }
+
+    .clip {
+      background-color: $color6;
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      -webkit-clip-path: url("#clip-polygon5");
+      clip-path: url("#clip-polygon5");
+      height: 120px;
+
+      @include breakpoint(small) {
+        height: 160px;
+      }
+
+      @include breakpoint(large) {
+        height: 250px;
+      }
+    }
+  }
+
+  &.triangle-clip6 {
+    width: 50%;
+    height: 80px;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 250px;
+    }
+
+    .clip {
+      background-color: $color1;
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      -webkit-clip-path: url("#clip-polygon6");
+      clip-path: url("#clip-polygon6");
+      height: 80px;
+
+      @include breakpoint(small) {
+        height: 160px;
+      }
+
+      @include breakpoint(large) {
+        height: 250px;
+      }
+    }
+  }
+}
+
+
+
+

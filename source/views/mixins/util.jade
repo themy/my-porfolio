@@ -34,7 +34,7 @@ mixin thumbnail(items)
                     .outer
                         .inner
                             //h4.tooltip-title!=item.titleTooltip
-                            +link(item.title, item.href, item.text).tooltip-title
+                            +link(item.title, item.href, item.text)(target="_blank").tooltip-title
                             for detail in item.itemsDetail
                                 span.details
                                     i.icon.icon-heart

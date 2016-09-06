@@ -30,12 +30,6 @@ jQuery(function() {
         });
     }, 500);
 
-    // Load more
-    $('.feature-content').on('click', function(e){
-        e.preventDefault();
-
-    });
-
     // Load element
     $(window).scroll(function(){
         $('.slideanimate').each(function(){
@@ -58,6 +52,10 @@ jQuery(function() {
         });
     }
 
+  // Google map
+
+  // Navigation
+
     // Fixed menu on scrolling
     $(window).scroll(function() {
         var query = Modernizr.mq('(min-width: 768px)');
@@ -72,20 +70,12 @@ jQuery(function() {
         }
     });
 
-    // Google map
+    var overlay = $('.overlay');
+    $('.toggle').on('click', function(){
+      overlay.fadeToggle("slow", "linear");
 
-    // Navigation
-    $('.navbar-toggle').on('click', function(){
-        $('#page').toggleClass("menu-open");
-        $('html').toggleClass("menu-block");
-        var overlay = $('.overlay');
-        var query = Modernizr.mq('(max-width: 768px)');
-        if(query && !overlay.length) {
-            $('body').append('<div class="overlay in"></div>');
-        }
-        else {
-            overlay.remove();
-        }
+      $('.navigation').toggleClass("in");
+      $(this).toggleClass("is-active");
     });
 
     $(document).on('touchstart', function(e) {
@@ -105,7 +95,7 @@ jQuery(function() {
     $(window).resize(navbar);
 
     $(document).on('click', '.overlay', function(){
-        $('.navbar-toggle').trigger('click');
+        $('.toggle').trigger('click');
     });
 
     var navItem = $('.navbar-nav > li > a');
@@ -172,7 +162,10 @@ jQuery(function() {
             speed: 300,
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false
+            arrows: false,
+            fade: true,
+            cssEase: 'linear',
+            adaptiveHeight: true
         });
     }, 2000);
 
@@ -241,6 +234,16 @@ jQuery(function() {
             return false;
         });
     }
+
+    function initialize(){
+      var mapProp = {
+        center: new google.maps.LatLng(51.508742,-0.120850),
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map= new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
 });
 
 

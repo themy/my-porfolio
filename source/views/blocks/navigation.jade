@@ -1,28 +1,25 @@
-#navigation.collapse.navbar-collapse
+#navigation.navigation
     .menus
-        nav.menu.navbar.navbar-default
-            .container-fluid
-                //a.navbar-brand.hidden-xs(href='#')
-                //    img.img-responsive(src="images/themy-porfolio.png", alt="TheMy porfolio")
-                +nav([
-                        {title: 'About', href: '#about'
-                            //, itemsMenu:
-                            //[
-                            //    {title: 'submenu', itemsMenu:
-                            //        [
-                            //            {title: 'submenu 2'}
-                            //        ], subMenu: 'menu-level-3'
-                            //    },
-                            //    {title: 'submenu'}
-                            //], subMenu: 'menu-level-2'
-                        },
-                        //{title: 'Graphic design', href: '#graphic'},
-                        {title: 'Feature works', href: '#feature'},
-                        {title: 'My profile', href: '#profile'},
-                        {title: 'Get in touch', href: '#contact'}
-                    ])(class="nav navbar-nav menu-level-1")
+        button.toggle.c-hamburger.c-hamburger--htx(type='button')
+          span toggle menu
 
-.navbar-header
-    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navigation', aria-expanded='false')
-        span.minus
+        nav.menu.navbar.navbar-default
+            +nav([
+                {title: 'About', href: '#about'
+                  //, itemsMenu:
+                  //[
+                  //    {title: 'submenu', itemsMenu:
+                  //        [
+                  //            {title: 'submenu 2'}
+                  //        ], subMenu: 'menu-level-3'
+                  //    },
+                  //    {title: 'submenu'}
+                  //], subMenu: 'menu-level-2'
+                },
+                //{title: 'Graphic design', href: '#graphic'},
+                {title: 'Feature works', href: '#feature'},
+                {title: 'My profile', href: '#profile'},
+                {title: 'Get in touch', href: '#contact'}
+            ])(class="nav navbar-nav menu-level-1")
+
 

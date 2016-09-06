@@ -7,13 +7,20 @@
 //      font-size: 14px; //Will be overridden if browser supports rem
 //      font-size: 0.8rem;
 //  }
+
+@mixin font-lato-regular($arg) {
+  font-family: $font-lato-regular;
+  @include font-size($arg);
+}
 @function calculateRem($size) {
     $remSize: $size / 14px;
     @return #{$remSize}rem;
 }
-@mixin font-size($size, $line-height: $size * 1.25) {
-    font-size: $size + em;
-    line-height: $line-height;
+@mixin font-size($size: $font-size-base, $line-height: $size * 1.25) {
+    font-size: $size + px;
+    line-height: $line-height + px;
+    font-size: ($size * 0.125) + rem;
+    line-height: ($line-height * 0.125) + rem;
 }
 @mixin font-size-rem($sizeValue: 1.4, $line-height: 1) {
     font-size: ($sizeValue * 10) + px;
@@ -23,9 +30,8 @@
 @mixin font-family($family) {
     font-family: '#{$family}',$font-family-base;
 }
-
 @mixin font($arg){
-    font: $arg, $font-family-base;
+    font: $arg;
 }
 // Background image for svg, no-svg, retina screen
 //    pattern.svg
@@ -34,6 +40,7 @@
 //    body {
 //        @include background-image('pattern');
 //    }
+
 @mixin background-image($name, $size:false){
     background-image: url(#{$image-path}/#{$name}.svg);
     @if($size){
@@ -68,6 +75,9 @@
   width: $width;
   height: $height;
 }
+@mixin square($size) {
+  @include size($size, $size);
+}
 // Center-align a block level element
 @mixin center-block() {
   display: block;
@@ -79,6 +89,17 @@
   border-top-right-radius: $radius;
   border-bottom-right-radius: $radius;
   border-bottom-left-radius: $radius;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
 }
 // Placeholder text
 @mixin placeholder($color: $placeholder-color) {
@@ -94,6 +115,11 @@
   &::-webkit-input-placeholder {
     color: $color;
   }
+}
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+          appearance: $value;
 }
 // Text overflow
 @mixin text-overflow() {

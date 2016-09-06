@@ -1,11 +1,11 @@
 {
-  "name": "Frontend",
+  "name": "my",
   "description": "HTML5 template",
   "version": "0.1.0",
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:lennguyen/html5-template.git"
+    "url": ""
   },
   "engines": {
     "node": "~0.10.x",
@@ -25,6 +25,7 @@
     "nodemailer": "^1.10.0"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
     "grunt-autoprefixer": "~3.0.3",
     "grunt-concurrent": "~2.0.0",
     "grunt-contrib-clean": "~0.6.0",
@@ -50,5 +51,11 @@
   },
   "keywords": [
     "Frontend, HTML5 template"
-  ]
+  ],
+  "homepage": "",
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
 }

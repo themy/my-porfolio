@@ -1,3 +1,6 @@
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
 .container-fluid {
   @include breakpoint(small) {
     width: 80%;
@@ -8,136 +11,147 @@
 // Block - About
 //**********************************
 .about-block {
-    position: relative;
+  position: relative;
 
-    > .container {
-
-
+  .about-content {
+    @include font-lato-regular(18);
+    @include translate(-50%, 0);
+    color: $color6;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    width: 90%;
+    z-index: 700;
+    @include breakpoint(small) {
+      @include font(1.7em/1.5em $font-lato-thin);
+      padding: 30px 0;
+      width: 50%;
     }
 
-    .about-content{
-        @include font(1.1em/1.5em $font-lato-regular);
-        color: $color6;
-        bottom: 20px;
-        margin: 0 15px 0 0;
-        max-width: 700px;
-        padding: 10px;
-        position: absolute;
-        text-align: left;
-        z-index: 700;
-        @include breakpoint(small) {
-            @include font(1.7em/1.5em $font-lato-thin);
-            padding: 30px 40px;
-        }
-
-        strong {
-            @include font-family($font-lato-regular);
-            display: inline-block;
-            font-weight: normal;
-            @include breakpoint(small) {
-                padding: 0 5px;
-            }
-        }
-
-        &:before {
-            content: '';
-            width: 70%;
-            height: 5px;
-            display: inline-block;
-            background: $color2;
-            position: absolute;
-            top: -6px;
-            left: 0;
-        }
+    strong {
+      @include font-family($font-lato-regular);
+      display: inline-block;
+      font-weight: normal;
+      @include breakpoint(small) {
+        padding: 0 5px;
+      }
     }
+
+    &:before {
+      content: '';
+      width: 70%;
+      height: 5px;
+      display: inline-block;
+      background: $color2;
+      margin-left: -35%;
+      position: absolute;
+      top: -6px;
+      left: 50%;
+    }
+  }
 }
 
 //**********************************
 // Block - Graphic design
 //**********************************
 .graphic-block {
-    background: $color6;
-    padding-bottom: 100px;
+  background: $color6;
+  padding-bottom: 100px;
 
-    .container-fluid {
-        @include breakpoint(small) {
-            width: 80%;
-        }
+  .container-fluid {
+    @include breakpoint(small) {
+      width: 80%;
     }
+  }
 }
 
 //**********************************
 // Block - Feature works
 //**********************************
 .feature-block {
-    padding-bottom: 100px;
+
 }
 
 //**********************************
 // Block - Profile
 //**********************************
 .profile-block {
-    background: $bgcolor url("#{$img-path}bg-main-1.jpg") 80% 0 no-repeat;
-    background-size: 200% auto;
-    color: $color6;
+  background: $bgcolor url("#{$img-path}bg-main-1.jpg") 0 0 repeat;
+  background-size: 200% auto;
+  color: $color6;
+  padding: 100px 0 0;
+  position: relative;
+  @include breakpoint(small) {
+    background-size: 100% auto;
+    background-position: 0 0;
+  };
+
+  .profile-title {
+    color: $color2;
+    margin-top: 0;
+  }
+
+  .block {
+    padding-left: 38px;
     position: relative;
-    min-height: 1000px;
-    @include breakpoint(small){
-        background-size: 100% auto;
-        background-position: 0 0;
-    };
 
-    &:after {
-        @include box-shadow(0, -1px, 6px, rgba(0,0,0,.5));
-        @include size(100%, 1px);
-        bottom: 0;
-        content: '';
-        position: absolute;
+    .circle {
+      @include border-radius(40px);
+      @include box-shadow(0, 0, 60px, $color1);
+      @include square(80px);
+      background: $color6;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        @include font-size(15);
+        color: $color;
+      }
     }
 
-    .flowers {
-        @include size(558px, 890px);
-        background: url("#{$img-path}flower.png") 0 0 no-repeat;
-        display: block;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        margin-left: -600px;
+    .content {
+      border-left: 1px solid $color6;
+      padding-left: 60px;
+      padding-top: 50px;
+      padding-bottom: 20px;
     }
 
-    .information-block {
-        .desc {
-            p {
-                line-height: 1.6em;
-                margin-bottom: 30px;
-            }
-        }
-        @include breakpoint(medium) {
-            .list-work {
+    &.about-me {
 
-            }
-        }
     }
+
+    &.hobbies {
+      .content {
+        padding-bottom: 100px;
+      }
+    }
+  }
 }
 
 //**********************************
 // Block - Get in touch
 //**********************************
-.contact-block{
-    background: $color1;
-    padding-bottom: 150px;
+.contact-block {
+  background: $color6;
+  padding-bottom: 150px;
 
-    .title {
-        color: $color;
-    }
+  .title {
+    color: $color;
+  }
 }
 
 //**********************************
 // Small Blocks
-
 .list-work {
   padding-left: 10px;
-  @include breakpoint(small){
+  @include breakpoint(small) {
     border-top: 1px solid $color2;
     padding-left: 20px;
     &.first {
@@ -167,9 +181,6 @@
   }
 }
 
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
-
 .list-link {
   @include font(1em/1.2em $font-lato-thin);
 
@@ -189,272 +200,281 @@ $a-tags-hover: 'a:active, a:hover';
 }
 
 /* Back to Top button */
-.to-top{
-    @include box-shadow(0, 2px, 2px, rgba(0,0,0,.3), false);
-    @include size(100%, 38px);
-    background: $color1;
-    margin-bottom: 30px;
+.to-top {
+  @include box-shadow(0, 2px, 2px, rgba(0, 0, 0, .3), false);
+  @include size(100%, 38px);
+  background: $color1;
+  margin-bottom: 30px;
 
-    .to-top-toggle{
-        @include size(106px, 46px);
-        background: url("#{$img-path}bg-to-top.png") center center no-repeat;
-        display: inline-block;
-        text-align: center;
+  .to-top-toggle {
+    @include size(106px, 46px);
+    background: url("#{$img-path}bg-to-top.png") center center no-repeat;
+    display: inline-block;
+    text-align: center;
 
-        i {
-            @include animation(bounce1 2s infinite);
-            @include size(27px, 19px);
-            display: inline-block;
-            background: url("#{$img-path}icon-to-top.png") center center no-repeat;
-            margin-top: 23px;
-            margin-left: 4px;
-        }
+    i {
+      @include animation(bounce1 2s infinite);
+      @include size(27px, 19px);
+      display: inline-block;
+      background: url("#{$img-path}icon-to-top.png") center center no-repeat;
+      margin-top: 23px;
+      margin-left: 4px;
     }
+  }
 }
 
 /* Social */
-.social-toolbox{
-    ul{
-        > li{
-            display: inline-block;
-            padding: 0 1px;
-            font-size: 0;
+.social-toolbox {
+  ul {
+    > li {
+      display: inline-block;
+      padding: 0 1px;
+      font-size: 0;
 
-            a {
-                @include rotate(0deg);
-                @include transition(all .5s linear);
-                color: $color6;
-                display: inline-block;
-                font-size: 40px;
-                text-decoration: none;
+      a {
+        @include rotate(0deg);
+        @include transition(all .5s linear);
+        color: $color6;
+        display: inline-block;
+        font-size: 40px;
+        text-decoration: none;
 
-                &:hover {
-                    color: $color6;
-                    @include rotate(360deg);
-                }
-
-                > span {
-                    display: inline-block;
-                    text-indent: -9999em;
-                }
-            }
+        &:hover {
+          color: $color6;
+          @include rotate(360deg);
         }
+
+        > span {
+          display: inline-block;
+          text-indent: -9999em;
+        }
+      }
     }
+  }
 }
+
 #feedControl {
-  margin-top : 10px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width : 440px;
+  width: 440px;
   font-size: 12px;
   color: #9CADD0;
 }
+
 /* Slideshow */
-.slideshow-wrap{
-    &.slider-image {
-        margin: 0 -15px 0 -15px;
+.slideshow-wrap {
+  &.slider-image {
+    margin: 0 -15px 0 -15px;
+    @include breakpoint(small) {
+      width: 70%;
+      margin-left: -50px;
+    }
+
+    .slick-slider {
+      bottom: -28px;
+      z-index: 1;
+      margin-bottom: 0;
+      @include breakpoint(small) {
+        bottom: 50px;
+        margin-bottom: -100px;
+      }
+
+      .slick-list {
+        padding: 27px;
+      }
+
+      .slick-slide {
+        @include transition(opacity .2s linear);
+
+        &.hidden-slide {
+          @include opacity(0);
+        }
+
+        .thumb {
+          @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, .2));
+          border: 5px solid $color6;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+          }
+
+        }
+        &:nth-child(1n) .thumb {
+          @include rotate(10deg);
+        }
+
+        &:nth-child(2n) .thumb {
+          @include rotate(-10deg);
+        }
+
+        &:nth-child(3n) .thumb {
+          @include rotate(5deg);
+        }
+
+      }
+    }
+  }
+
+  &.slider-banner {
+    position: relative;
+
+    .slick-slider {
+      margin: 0;
+    }
+
+    .slick-slide {
+      @include breakpoint(small) {
+
+      };
+
+      a {
+        display: block;
+      }
+
+      img {
+        max-width: 240%;
+        margin-left: -30%;
+
         @include breakpoint(small) {
-            width: 70%;
-            margin-left: -50px;
+          max-width: 100%;
+          margin-left: 0;
         }
 
-        .slick-slider {
-            bottom: -28px;
-            z-index: 1;
-            margin-bottom: 0;
-            @include breakpoint(small){
-                bottom: 50px;
-                margin-bottom: -100px;
-            }
-
-            .slick-list {
-                padding: 27px;
-            }
-
-            .slick-slide {
-                @include transition(opacity .2s linear);
-
-                &.hidden-slide {
-                    @include opacity(0);
-                }
-
-                .thumb {
-                    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, .2));
-                    border: 5px solid $color6;
-
-                    img {
-                        max-width: 100%;
-                        max-height: 100%;
-                        width: 100%;
-                    }
-
-                }
-                &:nth-child(1n) .thumb {
-                    @include rotate(10deg);
-                }
-
-                &:nth-child(2n) .thumb {
-                    @include rotate(-10deg);
-                }
-
-                &:nth-child(3n) .thumb {
-                    @include rotate(5deg);
-                }
-
-            }
-        }
+      }
     }
-
-    &.slider-banner {
-        .slick-slider {
-            margin: 0;
-        }
-
-        .slick-slide {
-            max-height: 500px;
-            @include breakpoint(small){
-                max-height: 950px;
-            };
-
-            img {
-                max-width: 300%;
-                @include breakpoint(small){
-                  max-width: 100%;
-                }
-
-            }
-        }
-    }
+  }
 }
 
 .grid-frontend,
 .grid-design {
+  display: block;
+  margin: 30px auto 0;
+
+  &:after {
+    content: '';
     display: block;
-    margin: 30px auto;
+    clear: both;
+  }
 
-    &:after {
-        content: '';
-        display: block;
-        clear: both;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .grid-sizer {
+    width: (100/12) +%;
+  }
+
+  .grid-item {
+    float: left;
+    height: 400px;
+    padding: 0;
+    overflow: hidden;
+    @include breakpoint(small) {
+      height: auto;
     }
 
-    img{
-        display: block;
-        max-width: 100%;
-    }
+    .thumb {
+      position: relative;
+      height: 100%;
 
-    .grid-sizer {
-        width: (100/12) + %;
-    }
-
-    .grid-item {
-        float: left;
-        border: 5px solid transparent;
-        height: 400px;
-        padding: 0;
+      .image {
+        height: 200px;
         overflow: hidden;
         @include breakpoint(small) {
-            height: auto;
+          height: auto;
         }
+      }
 
-        .thumb {
-            position: relative;
-            height: 100%;
-
-            .image {
-                height: 200px;
-                overflow: hidden;
-                @include breakpoint(small) {
-                    height: auto;
-                }
-            }
-
-            img {
-                @include opacity(.2);
-                @include scaleY(1);
-                @include transition(all .6s ease-in-out);
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-
-                &:hover {
-                    @include opacity(1);
-                    @include scale(1.1);
-                    -webkit-filter: grayscale(0);
-                    filter: grayscale(0);
-                }
-            }
-
-            .mask {
-                @include size(100%, auto);
-                @include transition(all .4s ease-in-out .2s);
-                background: $color;
-                padding: 10px;
-
-                @include breakpoint(medium) {
-                    padding: 15px 10px 40px;
-                }
-
-                .outer {
-                    @include size(100%, 100%);
-                    display: table;
-                }
-
-                .inner {
-                    @include font-family($font-lato-regular);
-                    display: table-cell;
-                    vertical-align: middle;
-                    color: $color6;
-
-                    a, a:hover, a:focus, a:visited {
-                        color: $color2;
-                    }
-
-                    a {
-                        display: block;
-                        margin-top: 15px;
-                    }
-
-                    .tooltip-title {
-                        @include font-size(1);
-                        color: $color2;
-                        display: inline-block;
-                    }
-                }
-
-                .details {
-                    @include font-size(0.9);
-                    display: block;
-                    margin-top: 8px;
-
-                    .icon {
-                        @include font-size(0.5);
-                        display: inline-block;
-                        margin-right: 10px;
-                        margin-top: -2px;
-                    }
-                }
-            }
-
-            &:hover {
-                .tooltip-content {
-                    .outer {
-                        border-width: 1px;
-                    }
-                }
-            }
-        }
-
-        img {
-            width: 100%;
-        }
+      img {
+        @include opacity(.2);
+        @include scaleY(1);
+        @include transition(all .6s ease-in-out);
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
 
         &:hover {
-            .mask {
-                @include opacity(1);
-                @include scale(1);
-            }
+          @include opacity(1);
+          @include scale(1.1);
+          -webkit-filter: grayscale(0);
+          filter: grayscale(0);
         }
+      }
+
+      .mask {
+        @include size(100%, auto);
+        @include transition(all .4s ease-in-out .2s);
+        background: $color;
+        padding: 10px;
+
+        @include breakpoint(medium) {
+          padding: 15px 10px 40px;
+        }
+
+        .outer {
+          @include size(100%, 100%);
+          display: table;
+        }
+
+        .inner {
+          @include font-family($font-lato-regular);
+          display: table-cell;
+          vertical-align: middle;
+          color: $color6;
+
+          a, a:hover, a:focus, a:visited {
+            color: $color2;
+          }
+
+          a {
+            display: block;
+            margin-top: 15px;
+          }
+
+          .tooltip-title {
+            @include font-size(20);
+            color: $color2;
+            display: inline-block;
+          }
+        }
+
+        .details {
+          @include font-size(15);
+          display: block;
+          margin-top: 8px;
+
+          .icon {
+            @include font-size(10);
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: -2px;
+          }
+        }
+      }
+
+      &:hover {
+        .tooltip-content {
+          .outer {
+            border-width: 1px;
+          }
+        }
+      }
     }
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      .mask {
+        @include opacity(1);
+        @include scale(1);
+      }
+    }
+  }
 }
 
 .mask-image {
@@ -463,56 +483,66 @@ $a-tags-hover: 'a:active, a:hover';
   display: inline-block;
   max-width: 480px;
   margin-bottom: 40px;
-  @include breakpoint(small){
+  @include breakpoint(small) {
     margin-top: -80px;
   }
-//
-//  &:before {
-//    content: "";
-//    background: rgba(255,255,255,.1);
-//    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
-//    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
-//    position: absolute;
-//    width: 100%;
-//    height: 100%;
-//    z-index: 1;
-//  }
-//
-//  &:after {
-//    content: "";
-//    background: rgba(255,255,255,.1);
-//    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
-//    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
-//    position: absolute;
-//    width: 100%;
-//    height: 100%;
-//    z-index: 2;
-//  }
+  //
+  //  &:before {
+  //    content: "";
+  //    background: rgba(255,255,255,.1);
+  //    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+  //    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+  //    position: absolute;
+  //    width: 100%;
+  //    height: 100%;
+  //    z-index: 1;
+  //  }
+  //
+  //  &:after {
+  //    content: "";
+  //    background: rgba(255,255,255,.1);
+  //    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+  //    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+  //    position: absolute;
+  //    width: 100%;
+  //    height: 100%;
+  //    z-index: 2;
+  //  }
 }
 
 .element {
-    -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
-    clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
-    width: 100%;
-    max-width: 484px;
+  -webkit-clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+  clip-path: polygon(41% 0, 100% 19%, 100% 78%, 36% 100%, 0 48%);
+  width: 100%;
+  max-width: 484px;
 }
-.slideanimate {visibility:hidden;}
+
+.slideanimate {
+  visibility: hidden;
+}
+
 .slide {
-    @include keyframes(slide){
-        0% {
-            opacity: 0;
-            -webkit-transform: translateY(70%);
-        }
-        100% {
-            opacity: 1;
-            -webkit-transform: translateY(0%);
-        }
-    };
-    @include animation(slide 1s);
-    visibility: visible;
+  @include keyframes(slide) {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+;
+  @include animation(slide 1s);
+  visibility: visible;
 }
 
 // Google map
 #googleMap {
   @include size(100%, 400px);
+}
+
+// Address
+address {
+  padding-top: 6px;
 }
