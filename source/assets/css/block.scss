@@ -81,11 +81,14 @@ $a-tags-hover: 'a:active, a:hover';
   background: $bgcolor url("#{$img-path}bg-main-1.jpg") 0 0 repeat;
   background-size: 200% auto;
   color: $color6;
-  padding: 100px 0 0;
+  padding: 180px 0 0;
   position: relative;
   @include breakpoint(small) {
     background-size: 100% auto;
     background-position: 0 0;
+  };
+  @include breakpoint(large) {
+    padding: 300px 0 32px;
   };
 
   .profile-title {
@@ -129,7 +132,7 @@ $a-tags-hover: 'a:active, a:hover';
 
     &.hobbies {
       .content {
-        padding-bottom: 100px;
+        padding-bottom: 200px;
       }
     }
   }
