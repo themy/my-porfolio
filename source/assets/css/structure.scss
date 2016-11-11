@@ -31,12 +31,6 @@ header {
   text-align: center;
   width: 100%;
   z-index: 1;
-  @include breakpoint(small) {
-    padding: 0;
-    text-align: left;
-    top: 30%;
-    width: 50%;
-  }
 
   > .container {
     position: relative;
@@ -228,7 +222,7 @@ $button-transistion-duration: 0.3s; // The transition duration
 /* active state, i.e. menu open */
 
 .c-hamburger--htx.is-active {
-  background-color: darken($color, 20%);
+  @include bg-transparent($color, .85);
 }
 
 .c-hamburger--htx.is-active span {
@@ -269,13 +263,12 @@ $button-transistion-duration: 0.3s; // The transition duration
     overflow: hidden;
     @include breakpoint(small) {
       display: inline-block;
-      float: right;
     }
   ;
 
     li {
       a {
-        display: block;
+        display: inline-block;
         padding: 15px 0;
       }
     }
@@ -287,7 +280,6 @@ $button-transistion-duration: 0.3s; // The transition duration
       @include breakpoint(small) {
         border-bottom: 0;
         background-position: center right;
-        text-align: right;
 
         &:hover {
           .menu-level-2 {
@@ -315,7 +307,7 @@ $button-transistion-duration: 0.3s; // The transition duration
             background: $color2;
             content: '';
             display: inline-block;
-            float: right;
+            float: left;
             margin: 0 auto 10px;
           }
 
@@ -386,7 +378,10 @@ $button-transistion-duration: 0.3s; // The transition duration
   position: fixed;
   top: 0;
   z-index: 1000;
-
+  @include breakpoint(small){
+    top: 50px;
+    left: 50px;
+  }
   &.in {
     .navbar-default {
       @include translate3d(0, 0, 0);
@@ -394,13 +389,13 @@ $button-transistion-duration: 0.3s; // The transition duration
   }
 }
 
-main {
-
-}
-
 footer {
-  padding-bottom: 40px;
-  color: $color6;
+  background: $color2;
+  color: $text-color;
+
+  .inner {
+    position: relative;
+  }
 
   .icon-heart {
     @include font-size(.6);
@@ -408,12 +403,12 @@ footer {
     margin: 0 5px;
   }
 
-  a {
-    color: $color2;
+  .list-link a {
+    color: $link-color;
     &:hover,
     &:visited,
     &:focus {
-      color: $color2;
+      color: $link-hover-color;
     }
   }
 
@@ -457,19 +452,11 @@ footer {
 
     .clip {
       background-color: $color2;
-      height: 100px;
+      height: 100%;
       -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
       clip-path: polygon(0 0, 100% 100%, 0 100%);
       -webkit-clip-path: url("#clip-polygon1");
       clip-path: url("#clip-polygon1");
-
-      @include breakpoint(small) {
-        height: 130px;
-      }
-
-      @include breakpoint(large) {
-        height: 220px;
-      }
     }
   }
 
@@ -490,15 +477,7 @@ footer {
       clip-path: polygon(100% 0, 100% 100%, 0 100%);
       -webkit-clip-path: url("#clip-polygon2");
       clip-path: url("#clip-polygon2");
-      height: 120px;
-
-      @include breakpoint(small) {
-        height: 160px;
-      }
-
-      @include breakpoint(large) {
-        height: 250px;
-      }
+      height: 100%;
     }
   }
 
@@ -543,15 +522,7 @@ footer {
       clip-path: polygon(0 0, 100% 0, 0 100%);
       -webkit-clip-path: url("#clip-polygon4");
       clip-path: url("#clip-polygon4");
-      height: 120px;
-
-      @include breakpoint(small) {
-        height: 160px;
-      }
-
-      @include breakpoint(large) {
-        height: 250px;
-      }
+      height: 100%;
     }
   }
 
@@ -563,7 +534,7 @@ footer {
     }
 
     @include breakpoint(large) {
-      height: 250px;
+      height: 344px;
     }
 
     .clip {
@@ -572,15 +543,7 @@ footer {
       clip-path: polygon(0 0, 100% 0, 0 100%);
       -webkit-clip-path: url("#clip-polygon5");
       clip-path: url("#clip-polygon5");
-      height: 120px;
-
-      @include breakpoint(small) {
-        height: 160px;
-      }
-
-      @include breakpoint(large) {
-        height: 250px;
-      }
+      height: 100%;
     }
   }
 
@@ -593,22 +556,53 @@ footer {
     }
 
     @include breakpoint(large) {
-      height: 250px;
+      height: 344px;
     }
 
     .clip {
       background-color: $color1;
       -webkit-clip-path: url("#clip-polygon6");
       clip-path: url("#clip-polygon6");
-      height: 120px;
+      height: 100%;
+    }
+  }
 
-      @include breakpoint(small) {
-        height: 160px;
-      }
+  &.triangle-clip7 {
+    width: 100%;
+    height: 120px;
 
-      @include breakpoint(large) {
-        height: 250px;
-      }
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 344px;
+    }
+  }
+
+  &.triangle-clip8 {
+    width: 100%;
+    height: 120px;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 190px;
+    }
+  }
+
+  &.triangle-clip9 {
+    width: 100%;
+    height: 120px;
+
+    @include breakpoint(small) {
+      height: 160px;
+    }
+
+    @include breakpoint(large) {
+      height: 320px;
     }
   }
 }

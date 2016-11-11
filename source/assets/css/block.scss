@@ -14,16 +14,15 @@ $a-tags-hover: 'a:active, a:hover';
   position: relative;
 
   .about-content {
-    @include font-lato-regular(18);
-    @include translate(-50%, 0);
     color: $color6;
-    text-align: center;
     padding: 10px;
     position: absolute;
-    top: 250px;
+    bottom: 250px;
     left: 50%;
     width: 90%;
     z-index: 700;
+    @include font-lato-regular(12);
+    @include translate(-50%, 0);
     @include breakpoint(small) {
       @include font(1.7em/1.5em $font-lato-thin);
       padding: 30px 0;
@@ -31,9 +30,9 @@ $a-tags-hover: 'a:active, a:hover';
     }
 
     strong {
-      @include font-family($font-lato-regular);
       display: inline-block;
       font-weight: normal;
+      @include font-family($font-lato-regular);
       @include breakpoint(small) {
         padding: 0 5px;
       }
@@ -45,10 +44,9 @@ $a-tags-hover: 'a:active, a:hover';
       height: 5px;
       display: inline-block;
       background: $color2;
-      margin-left: -35%;
       position: absolute;
       top: -6px;
-      left: 50%;
+      left: 0;
     }
   }
 }
@@ -101,9 +99,6 @@ $a-tags-hover: 'a:active, a:hover';
     position: relative;
 
     .circle {
-      @include border-radius(40px);
-      @include box-shadow(0, 0, 60px, $color1);
-      @include square(80px);
       background: $color6;
       display: inline-block;
       position: absolute;
@@ -112,6 +107,9 @@ $a-tags-hover: 'a:active, a:hover';
       display: flex;
       justify-content: center;
       align-items: center;
+      @include border-radius(40px);
+      @include box-shadow(0, 0, 60px, $color1);
+      @include square(80px);
 
       .icon {
         @include font-size(15);
@@ -121,9 +119,7 @@ $a-tags-hover: 'a:active, a:hover';
 
     .content {
       border-left: 1px solid $color6;
-      padding-left: 60px;
-      padding-top: 50px;
-      padding-bottom: 20px;
+      padding: 50px 0 50px 60px;
     }
 
     &.about-me {
@@ -144,6 +140,7 @@ $a-tags-hover: 'a:active, a:hover';
 .contact-block {
   background: $color6;
   padding-bottom: 150px;
+  position: relative;
 
   .title {
     color: $color;
@@ -381,6 +378,7 @@ $a-tags-hover: 'a:active, a:hover';
     }
 
     .thumb {
+      padding: 10px;
       position: relative;
       height: 100%;
 
@@ -541,6 +539,9 @@ $a-tags-hover: 'a:active, a:hover';
 }
 
 // Google map
+.google-map {
+  position: relative;
+}
 #googleMap {
   @include size(100%, 400px);
 }

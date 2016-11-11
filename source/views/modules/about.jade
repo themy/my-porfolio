@@ -26,22 +26,12 @@ section#about.about-block
       +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/11.jpg'}])
       +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/12.jpg'}])
       +slick-slide([{title: 'item 1', href: 'javascript:void()', alt: 'Image 1', src: 'upload/13.jpg'}])
-    .clip-wrap.triangle-clip1
-      .clip
-      svg.clip-svg
-        defs
-          clippath#clip-polygon1(clippathunits='objectBoundingBox')
-            polygon(points="0 0, 1 1, 0 1")
     .clip-wrap.triangle-clip2
-      .clip
-      svg.clip-svg
-        defs
-          clippath#clip-polygon2(clippathunits='objectBoundingBox')
-            polygon(points="1 0, 1 1, 0 1")
-    .clip-wrap.triangle-clip3
-      .clip
-      svg.clip-svg
-        defs
-          clippath#clip-polygon3(clippathunits='objectBoundingBox')
-            polygon(points="0 0, 1 0, 0 1")
+      svg(viewBox="0 0 100 50", preserveAspectRatio="none", width="100%", height="100%")
+        polygon(points="0,0 50,50 0,50", fill="yellow")
+    
+    .clip-wrap.triangle-clip1
+      svg(viewBox="0 0 100 50", preserveAspectRatio="none", width="100%", height="100%")
+        polygon(points="100,0 100,50 0,50", fill="#000")
+
 

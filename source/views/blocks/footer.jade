@@ -1,55 +1,64 @@
 footer#footer.footer
-  #googleMap
-  .container-fluid
-    //.to-top
-    //    a#to-top.to-top-toggle(href="javascript:void();", title="To top")
-    //        i
-    .row
-      .col-sm-4.col-lg-3
-        .list-style-1.list-link
-          +list-link([
-            {title: '.template monster', href: 'http://www.templatemonster.com/'},
-            {title: '.creative bloq', href: 'http://www.creativebloq.com/'},
-            {title: '.tutorial 9', href: 'http://www.tutorial9.net/'},
-            {title: '.pxl eyes', href: 'http://www.pxleyes.com/'},
-            {title: '.psd Tuts+', href: 'http://design.tutsplus.com/'},
-            {title: '.spoon graphics', href: 'http://blog.spoongraphics.co.uk/'}
-          ])
-      .col-sm-4.col-lg-3
-        .list-style-1.list-link
-          +list-link([
-            {title: '.template monster', href: 'http://www.templatemonster.com/'},
-            {title: '.creative bloq', href: 'http://www.creativebloq.com/'},
-            {title: '.tutorial 9', href: 'http://www.tutorial9.net/'},
-            {title: '.pxl eyes', href: 'http://www.pxleyes.com/'},
-            {title: '.psd Tuts+', href: 'http://design.tutsplus.com/'},
-            {title: '.spoon graphics', href: 'http://blog.spoongraphics.co.uk/'}
-          ])
-      .col-sm-4.col-lg-3
-        .list-style-1.list-link
-          +list-link([
-            {title: '.template monster', href: 'http://www.templatemonster.com/'},
-            {title: '.creative bloq', href: 'http://www.creativebloq.com/'},
-            {title: '.tutorial 9', href: 'http://www.tutorial9.net/'},
-            {title: '.pxl eyes', href: 'http://www.pxleyes.com/'},
-            {title: '.psd Tuts+', href: 'http://design.tutsplus.com/'},
-            {title: '.spoon graphics', href: 'http://blog.spoongraphics.co.uk/'}
-          ])
+  .inner
+    .clip-wrap.triangle-clip8
+      svg(viewBox="0 0 100 50", preserveAspectRatio="none", width="100%", height="100%")
+        polygon(points="0,0 50,50 0,50", fill="#000")
+    
+    .clip-wrap.triangle-clip9
+      svg(viewBox="0 0 100 50", preserveAspectRatio="none", width="100%", height="100%")
+        polygon(points="100,0 100,50 0,50", fill="#fff")
 
-    .in-detail
-      include social
-      p &copy; 2015 My The Trinh.
-      p.craft Crafted with
-        i.icon.icon-heart
-        | in
-        a(href="http://webdesign.tutsplus.com/categories/adobe-photoshop", title="Photoshop") Photoshop
-        | &
-        a(href="http://design.tutsplus.com/categories/adobe-illustrator", title="Illustrator") Illustrator
-        | built with
-        a(href="http://html5demos.com/", title="HTML 5") HTML 5
-        | ,
-        a(href="http://www.css3.info/preview/", title="CSS3") CSS3
-        | and
-        a(href="https://jquery.com/", title="jQuery") jQuery
-        | .
+    .container-fluid
+      //- .to-top
+      //-   a#to-top.to-top-toggle(href="javascript:void();", title="To top")
+      //-     i
+      .row
+        .col-sm-4.col-lg-3
+          .list-style-1.list-link
+            +list-link([
+              {title: '.template monster', href: 'http://www.templatemonster.com/'},
+              {title: '.creative bloq', href: 'http://www.creativebloq.com/'},
+              {title: '.tutorial 9', href: 'http://www.tutorial9.net/'},
+              {title: '.pxl eyes', href: 'http://www.pxleyes.com/'},
+              {title: '.psd Tuts+', href: 'http://design.tutsplus.com/'},
+              {title: '.spoon graphics', href: 'http://blog.spoongraphics.co.uk/'}
+            ])
+        .col-sm-4.col-lg-3
+          .list-style-1.list-link
+            +list-link([
+              {title: '.template monster', href: 'http://www.templatemonster.com/'},
+              {title: '.creative bloq', href: 'http://www.creativebloq.com/'},
+              {title: '.tutorial 9', href: 'http://www.tutorial9.net/'},
+              {title: '.pxl eyes', href: 'http://www.pxleyes.com/'},
+              {title: '.psd Tuts+', href: 'http://design.tutsplus.com/'},
+              {title: '.spoon graphics', href: 'http://blog.spoongraphics.co.uk/'}
+            ])
+        .col-sm-4.col-lg-3
+          .list-style-1.list-link
+            +list-link([
+              {title: '.template monster', href: 'http://www.templatemonster.com/'},
+              {title: '.creative bloq', href: 'http://www.creativebloq.com/'},
+              {title: '.tutorial 9', href: 'http://www.tutorial9.net/'},
+              {title: '.pxl eyes', href: 'http://www.pxleyes.com/'},
+              {title: '.psd Tuts+', href: 'http://design.tutsplus.com/'},
+              {title: '.spoon graphics', href: 'http://blog.spoongraphics.co.uk/'}
+            ])
 
+      .in-detail
+        include social
+        p &copy; 2015 My The Trinh.
+        p.craft Crafted with
+          i.icon.icon-heart
+          | in
+          a(href="http://webdesign.tutsplus.com/categories/adobe-photoshop", title="Photoshop") Photoshop
+          | &
+          a(href="http://design.tutsplus.com/categories/adobe-illustrator", title="Illustrator") Illustrator
+          | built with
+          a(href="http://html5demos.com/", title="HTML 5") HTML 5
+          | ,
+          a(href="http://www.css3.info/preview/", title="CSS3") CSS3
+          | and
+          a(href="https://jquery.com/", title="jQuery") jQuery
+          | .
+
+    
