@@ -33,8 +33,6 @@ jQuery(function() {
     // Load element
     $(window).scroll(function(){
         $('.slideanimate').each(function(){
-            console.log("mask position top: " + $(this).offset().top);
-            console.log("window position top: " + $(window).scrollTop());
             if($(window).scrollTop() + 600 > $(this).offset().top) {
                 console.log("bigger");
                 $(this).addClass("slide");
